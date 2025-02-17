@@ -1,0 +1,22 @@
+[
+    {
+        "ID": "45",
+        "IBLOCK_ID": "15",
+        "NAME": "Картинки галереи",
+        "ACTIVE": "Y",
+        "SORT": "500",
+        "CODE": "MORE_PHOTO",
+        "DEFAULT_VALUE": null,
+        "PROPERTY_TYPE": "F",
+        "ROW_COUNT": "1",
+        "COL_COUNT": "30",
+        "MULTIPLE": "Y",
+        "XML_ID": "CML2_PICTURES",
+        "FILE_TYPE": "jpg, gif, bmp, png, jpeg, webp",
+        "LINK_IBLOCK_ID": null,
+        "IS_REQUIRED": "N",
+        "USER_TYPE": null,
+        "USER_TYPE_SETTINGS": null,
+        "VALUES": null
+    }
+]

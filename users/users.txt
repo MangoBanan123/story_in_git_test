@@ -1,0 +1,58 @@
+[
+    {
+        "ID": "1",
+        "XML_ID": "51339936",
+        "ACTIVE": true,
+        "NAME": "Константин",
+        "LAST_NAME": "Яблочкин",
+        "TIME_ZONE_OFFSET": "0",
+        "TIMESTAMP_X": {},
+        "DATE_REGISTER": "2025-01-26T03:00:00+03:00",
+        "PERSONAL_GENDER": "",
+        "PERSONAL_BIRTHDAY": "",
+        "PERSONAL_PHOTO": "https://cdn-ru.bitrix24.ru/b32470784/main/634/63457961ccb104997953344d220313b9/519bfb1ce0af29cd2e520897ca625505.png",
+        "LAST_ACTIVITY_DATE": {},
+        "UF_EMPLOYMENT_DATE": "",
+        "UF_DEPARTMENT": [
+            1
+        ],
+        "USER_TYPE": "employee"
+    },
+    {
+        "ID": "13",
+        "XML_ID": "51338788",
+        "ACTIVE": true,
+        "NAME": "Илья",
+        "LAST_NAME": "Голобородько",
+        "TIME_ZONE_OFFSET": "0",
+        "TIMESTAMP_X": {},
+        "DATE_REGISTER": "2025-01-28T03:00:00+03:00",
+        "PERSONAL_GENDER": "",
+        "PERSONAL_BIRTHDAY": "",
+        "PERSONAL_PHOTO": "https://cdn-ru.bitrix24.ru/b32470784/main/a99/a99d6e1cab038289f543e317197f1065/dd52a7a0373f6d17e18c0b0042b87d9b.png",
+        "LAST_ACTIVITY_DATE": {},
+        "UF_EMPLOYMENT_DATE": "",
+        "UF_DEPARTMENT": [
+            1
+        ],
+        "USER_TYPE": "employee"
+    },
+    {
+        "ID": "15",
+        "XML_ID": "51340174",
+        "ACTIVE": true,
+        "NAME": "Teest User",
+        "LAST_NAME": "",
+        "TIME_ZONE_OFFSET": "0",
+        "TIMESTAMP_X": {},
+        "DATE_REGISTER": "2025-01-28T03:00:00+03:00",
+        "PERSONAL_GENDER": "",
+        "PERSONAL_BIRTHDAY": "",
+        "LAST_ACTIVITY_DATE": {},
+        "UF_EMPLOYMENT_DATE": "",
+        "UF_DEPARTMENT": [
+            1
+        ],
+        "USER_TYPE": "employee"
+    }
+]
