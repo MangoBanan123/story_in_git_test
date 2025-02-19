@@ -54,5 +54,23 @@
             1
         ],
         "USER_TYPE": "employee"
+    },
+    {
+        "ID": "27",
+        "XML_ID": "11979963",
+        "ACTIVE": true,
+        "NAME": "Марк",
+        "LAST_NAME": "Битриксов",
+        "TIMESTAMP_X": {},
+        "DATE_REGISTER": "2025-02-19T03:00:00+03:00",
+        "PERSONAL_GENDER": "",
+        "PERSONAL_BIRTHDAY": "",
+        "PERSONAL_PHOTO": "https://cdn-ru.bitrix24.ru/b32470784/main/13c/13c24039a79bdbf28a67d1ab91b20f55/0ca1dccd3af7fdb615196c38c6780c61.jpg",
+        "LAST_ACTIVITY_DATE": {},
+        "UF_EMPLOYMENT_DATE": "",
+        "UF_DEPARTMENT": [
+            1
+        ],
+        "USER_TYPE": "employee"
     }
 ]
