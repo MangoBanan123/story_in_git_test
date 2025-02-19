@@ -40,6 +40,34 @@
                     "Title": "Уведомление пользователя"
                 },
                 "Type": "IMNotifyActivity"
+            },
+            {
+                "Activated": "Y",
+                "Children": [
+                    {
+                        "Activated": "Y",
+                        "Children": [],
+                        "Name": "A54444_15528_81115_59290",
+                        "Properties": {
+                            "Title": "Условие"
+                        },
+                        "Type": "IfElseBranchActivity"
+                    },
+                    {
+                        "Activated": "Y",
+                        "Children": [],
+                        "Name": "A60394_66342_9887_38415",
+                        "Properties": {
+                            "Title": "Условие"
+                        },
+                        "Type": "IfElseBranchActivity"
+                    }
+                ],
+                "Name": "A28792_36966_12272_95286",
+                "Properties": {
+                    "Title": "Условие"
+                },
+                "Type": "IfElseActivity"
             }
         ],
         "Name": "Template",
