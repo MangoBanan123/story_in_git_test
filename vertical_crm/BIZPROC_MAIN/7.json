@@ -2105,7 +2105,17 @@
                 "Type": "SequentialWorkflowActivity"
             }
         ],
-        "VARIABLES": [],
+        "VARIABLES": {
+            "Variable1123123": {
+                "Default": [],
+                "Description": "",
+                "Multiple": 1,
+                "Name": "test123",
+                "Options": null,
+                "Required": 0,
+                "Type": "string"
+            }
+        },
         "VERSION": 2
     }
 }
