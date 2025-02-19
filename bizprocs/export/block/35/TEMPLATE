@@ -1,0 +1,32 @@
+[
+    {
+        "Activated": "Y",
+        "Children": [
+            {
+                "Activated": "Y",
+                "Children": [],
+                "Name": "A15271_8498_92359_31494",
+                "Properties": {
+                    "AuthUserId": [
+                        "user_13"
+                    ],
+                    "EditorComment": "",
+                    "SetStatusMessage": "Y",
+                    "StatusMessage": "Ожидание ответа от приложения",
+                    "TimeoutDuration": "",
+                    "TimeoutDurationType": "s",
+                    "Title": "[is_demo] Testtest",
+                    "UseSubscription": "Y",
+                    "test_property": "123"
+                },
+                "Type": "rest_25ee5b6592fb92bba3cedb141dddfab7"
+            }
+        ],
+        "Name": "Template",
+        "Properties": {
+            "Permission": [],
+            "Title": "Последовательный бизнес-процесс"
+        },
+        "Type": "SequentialWorkflowActivity"
+    }
+]

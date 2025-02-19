@@ -1,0 +1,20 @@
+{
+    "article_id_var": {
+        "Default": "26",
+        "Description": "",
+        "Multiple": 0,
+        "Name": "article_id",
+        "Options": null,
+        "Required": 0,
+        "Type": "string"
+    },
+    "user_id_var": {
+        "Default": "1",
+        "Description": "",
+        "Multiple": "0",
+        "Name": "user_id",
+        "Options": "",
+        "Required": "0",
+        "Type": "string"
+    }
+}

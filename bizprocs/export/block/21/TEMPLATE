@@ -1,0 +1,714 @@
+[
+    {
+        "Children": [
+            {
+                "Name": "A20280_54123_41914_3428",
+                "Properties": {
+                    "Title": "Изменение переменных",
+                    "VariableValue": {
+                        "username": "{=Document:CREATED_BY}"
+                    }
+                },
+                "Type": "SetVariableActivity"
+            },
+            {
+                "Name": "A20665_95361_70430_79003",
+                "Properties": {
+                    "FieldValue": {
+                        "NAME": "{=Variable:username_printable} запрашивает выдачу наличных в сумме {=Document:PROPERTY_SUM}",
+                        "PROPERTY_IS_APPROVED": "IN_PROGRESS"
+                    },
+                    "Title": "Изменение документа"
+                },
+                "Type": "SetFieldActivity"
+            },
+            {
+                "Name": "A35342_99789_13121_99674",
+                "Properties": {
+                    "Permission": {
+                        "R": [
+                            "{=Variable:username}"
+                        ]
+                    },
+                    "Rewrite": "",
+                    "SetMode": "1",
+                    "SetScope": "1",
+                    "Title": "Установка прав"
+                },
+                "Type": "SetPermissionsActivity"
+            },
+            {
+                "Name": "A68935_99666_93925_76241",
+                "Properties": {
+                    "Title": "Установка утверждающего",
+                    "VariableValue": {
+                        "Approver": "{=Document:CREATED_BY}"
+                    }
+                },
+                "Type": "SetVariableActivity"
+            },
+            {
+                "Children": [
+                    {
+                        "Children": [
+                            {
+                                "Children": [
+                                    {
+                                        "Children": [
+                                            {
+                                                "Name": "A77528_46139_89478_92721",
+                                                "Properties": {
+                                                    "FieldValue": {
+                                                        "PROPERTY_IS_APPROVED": "YES"
+                                                    },
+                                                    "Title": "Установка поля \"Утвержден\" документа"
+                                                },
+                                                "Type": "SetFieldActivity"
+                                            }
+                                        ],
+                                        "Name": "A52261_55978_4813_86977",
+                                        "Properties": {
+                                            "Title": "Да",
+                                            "propertyvariablecondition": [
+                                                [
+                                                    "Approver",
+                                                    "in",
+                                                    "{=Constant:Manager}"
+                                                ]
+                                            ]
+                                        },
+                                        "Type": "IfElseBranchActivity"
+                                    },
+                                    {
+                                        "Children": [
+                                            {
+                                                "Name": "A4546_76347_16478_18736",
+                                                "Properties": {
+                                                    "SetVariable": "0",
+                                                    "Text": "Поиск начальника для {=Variable:Approver_printable}",
+                                                    "Title": "Запись в отчет"
+                                                },
+                                                "Type": "LogActivity"
+                                            },
+                                            {
+                                                "Name": "A19429_10315_83739_11751",
+                                                "Properties": {
+                                                    "MaxLevel": "1",
+                                                    "ReserveUserParameter": [
+                                                        "{=Constant:Manager}"
+                                                    ],
+                                                    "SkipAbsent": "Y",
+                                                    "Title": "Выбор начальника",
+                                                    "UserParameter": [
+                                                        "{=Variable:Approver}"
+                                                    ],
+                                                    "UserType": "boss"
+                                                },
+                                                "Type": "GetUserActivity"
+                                            },
+                                            {
+                                                "Name": "A89843_86045_3653_86435",
+                                                "Properties": {
+                                                    "Title": "Установка утверждающего",
+                                                    "VariableValue": {
+                                                        "Approver": "{=A19429_10315_83739_11751:GetUser}"
+                                                    }
+                                                },
+                                                "Type": "SetVariableActivity"
+                                            },
+                                            {
+                                                "Children": [
+                                                    {
+                                                        "Children": [
+                                                            {
+                                                                "Name": "A80054_79038_67708_93824",
+                                                                "Properties": {
+                                                                    "Title": "Изменение переменных",
+                                                                    "VariableValue": {
+                                                                        "Approver": "{=Constant:Manager}"
+                                                                    }
+                                                                },
+                                                                "Type": "SetVariableActivity"
+                                                            }
+                                                        ],
+                                                        "Name": "A66671_5332_43862_22313",
+                                                        "Properties": {
+                                                            "Title": "Нет утверждающего",
+                                                            "propertyvariablecondition": [
+                                                                [
+                                                                    "Approver",
+                                                                    "=",
+                                                                    ""
+                                                                ]
+                                                            ]
+                                                        },
+                                                        "Type": "IfElseBranchActivity"
+                                                    },
+                                                    {
+                                                        "Name": "A51684_71103_99600_11523",
+                                                        "Properties": {
+                                                            "Title": "Условие",
+                                                            "truecondition": "1"
+                                                        },
+                                                        "Type": "IfElseBranchActivity"
+                                                    }
+                                                ],
+                                                "Name": "A22910_82893_46280_49531",
+                                                "Properties": {
+                                                    "Title": "Условие"
+                                                },
+                                                "Type": "IfElseActivity"
+                                            },
+                                            {
+                                                "Children": [
+                                                    {
+                                                        "Children": [
+                                                            {
+                                                                "Name": "A82170_46991_69737_75430",
+                                                                "Properties": {
+                                                                    "Title": "Прерывание процесса"
+                                                                },
+                                                                "Type": "TerminateActivity"
+                                                            }
+                                                        ],
+                                                        "Name": "A27805_16986_66743_89422",
+                                                        "Properties": {
+                                                            "Title": "Нет утверждающего",
+                                                            "propertyvariablecondition": [
+                                                                [
+                                                                    "Approver",
+                                                                    "=",
+                                                                    ""
+                                                                ]
+                                                            ]
+                                                        },
+                                                        "Type": "IfElseBranchActivity"
+                                                    },
+                                                    {
+                                                        "Name": "A27455_36911_13077_84538",
+                                                        "Properties": {
+                                                            "Title": "Условие",
+                                                            "truecondition": "1"
+                                                        },
+                                                        "Type": "IfElseBranchActivity"
+                                                    }
+                                                ],
+                                                "Name": "A52060_43329_33621_2442",
+                                                "Properties": {
+                                                    "Title": "Условие"
+                                                },
+                                                "Type": "IfElseActivity"
+                                            },
+                                            {
+                                                "Name": "A1114_98853_11585_95239",
+                                                "Properties": {
+                                                    "SetVariable": "0",
+                                                    "Text": "Начальник {=Variable:Approver_printable}",
+                                                    "Title": "Запись в отчет"
+                                                },
+                                                "Type": "LogActivity"
+                                            },
+                                            {
+                                                "Name": "A39493_81346_81595_77500",
+                                                "Properties": {
+                                                    "Permission": {
+                                                        "R": [
+                                                            "{=Variable:Approver}"
+                                                        ]
+                                                    },
+                                                    "Rewrite": "",
+                                                    "SetMode": "1",
+                                                    "SetScope": "1",
+                                                    "Title": "Установка прав: утверждающему чтение"
+                                                },
+                                                "Type": "SetPermissionsActivity"
+                                            },
+                                            {
+                                                "Name": "A15387_38326_13007_19395",
+                                                "Properties": {
+                                                    "MessageOut": "",
+                                                    "MessageSite": "Вам необходимо утвердить заявку на выдачу наличных на сумму {=Document:PROPERTY_SUM} \n\nДата, на которую необходимы деньги: {=Document:PROPERTY_DATE}\nСодержание заявки:\n{=Document:PREVIEW_TEXT}\n",
+                                                    "MessageType": "2",
+                                                    "MessageUserFrom": [
+                                                        "{=Document:CREATED_BY}"
+                                                    ],
+                                                    "MessageUserTo": [
+                                                        "{=Variable:Approver}"
+                                                    ],
+                                                    "Title": "Уведомление пользователя"
+                                                },
+                                                "Type": "IMNotifyActivity"
+                                            },
+                                            {
+                                                "Children": [
+                                                    {
+                                                        "Children": [
+                                                            {
+                                                                "Name": "A66080_42798_63443_88940",
+                                                                "Properties": {
+                                                                    "Title": "Изменение переменных",
+                                                                    "VariableValue": {
+                                                                        "Approver": "{=A64696_64609_13825_72841:LastApprover}"
+                                                                    }
+                                                                },
+                                                                "Type": "SetVariableActivity"
+                                                            }
+                                                        ],
+                                                        "Name": "A24893_44227_30478_28800",
+                                                        "Properties": {
+                                                            "Title": "Последовательность действий"
+                                                        },
+                                                        "Type": "SequenceActivity"
+                                                    },
+                                                    {
+                                                        "Children": [
+                                                            {
+                                                                "Name": "A34487_13921_97785_56991",
+                                                                "Properties": {
+                                                                    "FieldValue": {
+                                                                        "PROPERTY_IS_APPROVED": "NO"
+                                                                    },
+                                                                    "Title": "Установка поля \"Утвержден\" документа"
+                                                                },
+                                                                "Type": "SetFieldActivity"
+                                                            }
+                                                        ],
+                                                        "Name": "A13401_31312_41650_65157",
+                                                        "Properties": {
+                                                            "Title": "Последовательность действий"
+                                                        },
+                                                        "Type": "SequenceActivity"
+                                                    }
+                                                ],
+                                                "Name": "A64696_64609_13825_72841",
+                                                "Properties": {
+                                                    "ApproveMinPercent": "50",
+                                                    "ApproveType": "any",
+                                                    "ApproveWaitForAll": "N",
+                                                    "CommentLabelMessage": "Комментарий",
+                                                    "Description": "Вам необходимо утвердить заявку на выдачу наличных на сумму {=Document:PROPERTY_SUM} \n\nДата, на которую необходимы деньги: {=Document:PROPERTY_DATE}\nСодержание заявки:\n{=Document:PREVIEW_TEXT}\n",
+                                                    "Name": "{=Variable:username_printable} запрашивает выдачу наличных в сумме {=Document:PROPERTY_SUM}",
+                                                    "OverdueDate": "",
+                                                    "Parameters": "",
+                                                    "SetStatusMessage": "Y",
+                                                    "ShowComment": "N",
+                                                    "StatusMessage": "Утверждение заявки руководителем",
+                                                    "TaskButton1Message": "Утвердить заявку",
+                                                    "TaskButton2Message": "Отклонить заявку",
+                                                    "TimeoutDuration": "0",
+                                                    "TimeoutDurationType": "d",
+                                                    "Title": "Утверждение",
+                                                    "Users": [
+                                                        "{=Variable:Approver}"
+                                                    ]
+                                                },
+                                                "Type": "ApproveActivity"
+                                            }
+                                        ],
+                                        "Name": "A94299_42184_84034_30257",
+                                        "Properties": {
+                                            "Title": "Нет",
+                                            "truecondition": "1"
+                                        },
+                                        "Type": "IfElseBranchActivity"
+                                    }
+                                ],
+                                "Name": "A87781_87302_72642_41090",
+                                "Properties": {
+                                    "Title": "Дошли до руководства",
+                                    "_DesMinimized": "N"
+                                },
+                                "Type": "IfElseActivity"
+                            }
+                        ],
+                        "Name": "A95640_73854_87590_68502",
+                        "Properties": {
+                            "Title": "Последовательность действий"
+                        },
+                        "Type": "SequenceActivity"
+                    }
+                ],
+                "Name": "A74565_27697_83505_7259",
+                "Properties": {
+                    "Title": "Цикл согласования",
+                    "fieldcondition": [
+                        [
+                            "PROPERTY_IS_APPROVED",
+                            "=",
+                            "IN_PROGRESS"
+                        ]
+                    ]
+                },
+                "Type": "WhileActivity"
+            },
+            {
+                "Children": [
+                    {
+                        "Children": [
+                            {
+                                "Name": "A63767_31546_92293_47603",
+                                "Properties": {
+                                    "MessageOut": "",
+                                    "MessageSite": "Заявка на выдачу наличных в сумме {=Document:PROPERTY_SUM} утверждена.\n\nПолучить деньги можно в бухгалтерии у сотрудника(ов): {=Constant:Bookkeeper_printable}\n",
+                                    "MessageType": "2",
+                                    "MessageUserFrom": [
+                                        "{=Variable:Approver}"
+                                    ],
+                                    "MessageUserTo": [
+                                        "{=Document:CREATED_BY}"
+                                    ],
+                                    "Title": "Уведомление пользователя"
+                                },
+                                "Type": "IMNotifyActivity"
+                            },
+                            {
+                                "Name": "A17644_21551_78646_81132",
+                                "Properties": {
+                                    "Permission": {
+                                        "R": [
+                                            "{=Constant:Bookkeeper}"
+                                        ]
+                                    },
+                                    "Rewrite": "",
+                                    "SetMode": "1",
+                                    "SetScope": "1",
+                                    "Title": "Установка прав"
+                                },
+                                "Type": "SetPermissionsActivity"
+                            },
+                            {
+                                "Name": "A63994_13077_91990_67715",
+                                "Properties": {
+                                    "MessageOut": "",
+                                    "MessageSite": "Заявление на выдачу наличных утверждено руководством. Вам необходимо выдать наличные в сумме {=Document:PROPERTY_SUM} сотруднику {=Document:CREATED_BY_PRINTABLE}.\n\nДата, на которую необходимы деньги: {=Document:PROPERTY_DATE}\nЗаявка:\n{=Document:PREVIEW_TEXT}\n",
+                                    "MessageType": "2",
+                                    "MessageUserFrom": [
+                                        "{=Variable:Approver}"
+                                    ],
+                                    "MessageUserTo": [
+                                        "{=Constant:Bookkeeper}"
+                                    ],
+                                    "Title": "Уведомление пользователя"
+                                },
+                                "Type": "IMNotifyActivity"
+                            },
+                            {
+                                "Name": "A16672_18312_71259_96603",
+                                "Properties": {
+                                    "ApproveType": "all",
+                                    "CommentLabelMessage": "Комментарий",
+                                    "Description": "Заявление на выдачу наличных утверждено руководством. Вам необходимо выдать наличные в сумме {=Document:PROPERTY_SUM} сотруднику {=Document:CREATED_BY_PRINTABLE}.\n\nДата, на которую необходимы деньги: {=Document:PROPERTY_DATE}\nЗаявка:\n{=Document:PREVIEW_TEXT}\n",
+                                    "Name": "{=Variable:username_printable} запрашивает выдачу наличных в сумме {=Document:PROPERTY_SUM}",
+                                    "OverdueDate": "",
+                                    "Parameters": "",
+                                    "SetStatusMessage": "Y",
+                                    "ShowComment": "N",
+                                    "StatusMessage": "Выдача наличных",
+                                    "TaskButtonMessage": "Наличные выданы",
+                                    "TimeoutDuration": "",
+                                    "TimeoutDurationType": "s",
+                                    "Title": "Выдача наличных",
+                                    "Users": [
+                                        "{=Constant:Bookkeeper}"
+                                    ]
+                                },
+                                "Type": "ReviewActivity"
+                            },
+                            {
+                                "Name": "A11916_60615_73944_28651",
+                                "Properties": {
+                                    "MessageOut": "",
+                                    "MessageSite": "Вам необходимо сдать отчет о полученных наличных в сумме {=Document:PROPERTY_SUM} в бухгалтерию. Укажите товары или услуги, которые были приобретены, предоставьте остаток денежных средств.",
+                                    "MessageType": "2",
+                                    "MessageUserFrom": [
+                                        "{=Constant:Bookkeeper}"
+                                    ],
+                                    "MessageUserTo": [
+                                        "{=Document:CREATED_BY}"
+                                    ],
+                                    "Title": "Уведомление пользователя"
+                                },
+                                "Type": "IMNotifyActivity"
+                            },
+                            {
+                                "Name": "A41099_98242_17946_90916",
+                                "Properties": {
+                                    "AccessControl": "N",
+                                    "CommentLabelMessage": "Комментарий",
+                                    "Description": "Вам необходимо сдать отчет о полученных наличных в сумме {=Document:PROPERTY_SUM} в бухгалтерию. Укажите товары или услуги, которые были приобретены, предоставьте остаток денежных средств.",
+                                    "Name": "Отчет о полученных наличных в сумме {=Document:PROPERTY_SUM}",
+                                    "OverdueDate": "",
+                                    "Parameters": "",
+                                    "RequestedInformation": [
+                                        {
+                                            "Default": "",
+                                            "Default_printable": "",
+                                            "Multiple": "0",
+                                            "Name": "Report",
+                                            "Required": "1",
+                                            "Title": "Отчет",
+                                            "Type": "text"
+                                        }
+                                    ],
+                                    "SetStatusMessage": "Y",
+                                    "ShowComment": "N",
+                                    "StatusMessage": "Ожидание отчета",
+                                    "TaskButtonMessage": "Отправить",
+                                    "Title": "Отчет о полученных наличных",
+                                    "Users": [
+                                        "{=Document:CREATED_BY}"
+                                    ]
+                                },
+                                "Type": "RequestInformationActivity"
+                            },
+                            {
+                                "Name": "A81488_51155_48697_19170",
+                                "Properties": {
+                                    "FieldValue": {
+                                        "DETAIL_TEXT": "{=Variable:Report_printable}",
+                                        "PROPERTY_IS_REPORTED": "NO"
+                                    },
+                                    "Title": "Изменение документа"
+                                },
+                                "Type": "SetFieldActivity"
+                            },
+                            {
+                                "Children": [
+                                    {
+                                        "Children": [
+                                            {
+                                                "Name": "A40360_6660_99224_98429",
+                                                "Properties": {
+                                                    "MessageOut": "",
+                                                    "MessageSite": "{=Variable:username_printable} сдал(а) отчет о полученных наличных в сумме {=Document:PROPERTY_SUM}.\n\n{=Document:DETAIL_TEXT}\n\nВам необходимо проверить отчет.\n",
+                                                    "MessageType": "2",
+                                                    "MessageUserFrom": [
+                                                        "{=Document:CREATED_BY}"
+                                                    ],
+                                                    "MessageUserTo": [
+                                                        "{=Constant:Bookkeeper}"
+                                                    ],
+                                                    "Title": "Уведомление пользователя"
+                                                },
+                                                "Type": "IMNotifyActivity"
+                                            },
+                                            {
+                                                "Children": [
+                                                    {
+                                                        "Children": [
+                                                            {
+                                                                "Name": "A60853_94792_19662_13002",
+                                                                "Properties": {
+                                                                    "FieldValue": {
+                                                                        "PROPERTY_IS_REPORTED": "YES"
+                                                                    },
+                                                                    "Title": "Изменение документа"
+                                                                },
+                                                                "Type": "SetFieldActivity"
+                                                            }
+                                                        ],
+                                                        "Name": "A26385_25139_60814_81601",
+                                                        "Properties": {
+                                                            "Title": "Последовательность действий"
+                                                        },
+                                                        "Type": "SequenceActivity"
+                                                    },
+                                                    {
+                                                        "Children": [
+                                                            {
+                                                                "Name": "A79732_67583_38064_95373",
+                                                                "Properties": {
+                                                                    "MessageOut": "",
+                                                                    "MessageSite": "Ваш отчет о полученных наличных в сумме {=Document:PROPERTY_SUM} не принят. Вам необходимо внести изменения в отчет.\n",
+                                                                    "MessageType": "2",
+                                                                    "MessageUserFrom": [
+                                                                        "{=A59364_56755_10171_80406:LastApprover}"
+                                                                    ],
+                                                                    "MessageUserTo": [
+                                                                        "{=Document:CREATED_BY}"
+                                                                    ],
+                                                                    "Title": "Уведомление пользователя"
+                                                                },
+                                                                "Type": "IMNotifyActivity"
+                                                            },
+                                                            {
+                                                                "Name": "A37746_62890_28352_10280",
+                                                                "Properties": {
+                                                                    "AccessControl": "N",
+                                                                    "CommentLabelMessage": "Комментарий",
+                                                                    "Description": "Ваш отчет о полученных наличных в сумме {=Document:PROPERTY_SUM}  не принят. Вам необходимо внести изменения в отчет.\n",
+                                                                    "Name": "Отчет о полученных наличных в сумме {=Document:PROPERTY_SUM}",
+                                                                    "OverdueDate": "",
+                                                                    "Parameters": "",
+                                                                    "RequestedInformation": [
+                                                                        {
+                                                                            "Default": "{=Variable:Report}",
+                                                                            "Default_printable": "{=Variable:Report}",
+                                                                            "Multiple": "0",
+                                                                            "Name": "Report",
+                                                                            "Required": "1",
+                                                                            "Title": "Отчет",
+                                                                            "Type": "text"
+                                                                        }
+                                                                    ],
+                                                                    "SetStatusMessage": "Y",
+                                                                    "ShowComment": "N",
+                                                                    "StatusMessage": "Ожидание отчета",
+                                                                    "TaskButtonMessage": "Отправить",
+                                                                    "Title": "Запрос дополнительной информации",
+                                                                    "Users": [
+                                                                        "{=Document:CREATED_BY}"
+                                                                    ]
+                                                                },
+                                                                "Type": "RequestInformationActivity"
+                                                            },
+                                                            {
+                                                                "Name": "A48075_81921_55827_89326",
+                                                                "Properties": {
+                                                                    "FieldValue": {
+                                                                        "DETAIL_TEXT": "{=Variable:Report_printable}"
+                                                                    },
+                                                                    "Title": "Изменение документа"
+                                                                },
+                                                                "Type": "SetFieldActivity"
+                                                            }
+                                                        ],
+                                                        "Name": "A51511_43322_95913_8350",
+                                                        "Properties": {
+                                                            "Title": "Последовательность действий"
+                                                        },
+                                                        "Type": "SequenceActivity"
+                                                    }
+                                                ],
+                                                "Name": "A59364_56755_10171_80406",
+                                                "Properties": {
+                                                    "ApproveMinPercent": "50",
+                                                    "ApproveType": "any",
+                                                    "ApproveWaitForAll": "N",
+                                                    "CommentLabelMessage": "Комментарий",
+                                                    "Description": "{=Variable:username_printable} сдал отчет о полученных наличных в сумме {=Document:PROPERTY_SUM}. Вам необходимо проверить отчет.\n\n{=Document:DETAIL_TEXT}\n\nДата, на которую необходимы деньги: {=Document:PROPERTY_DATE}\nЗаявка:\n{=Document:PREVIEW_TEXT}\n",
+                                                    "Name": "{=Variable:username_printable} сдал(а) отчет о полученных наличных в сумме {=Document:PROPERTY_SUM}",
+                                                    "OverdueDate": "",
+                                                    "Parameters": "",
+                                                    "SetStatusMessage": "Y",
+                                                    "ShowComment": "N",
+                                                    "StatusMessage": "Проверка отчета",
+                                                    "TaskButton1Message": "Утвердить отчет",
+                                                    "TaskButton2Message": "Отправить на доработку",
+                                                    "TimeoutDuration": "",
+                                                    "TimeoutDurationType": "s",
+                                                    "Title": "Утверждение отчета",
+                                                    "Users": [
+                                                        "{=Constant:Bookkeeper}"
+                                                    ]
+                                                },
+                                                "Type": "ApproveActivity"
+                                            }
+                                        ],
+                                        "Name": "A22419_20114_64035_57200",
+                                        "Properties": {
+                                            "Title": "Последовательность действий"
+                                        },
+                                        "Type": "SequenceActivity"
+                                    }
+                                ],
+                                "Name": "A60678_43092_71695_71736",
+                                "Properties": {
+                                    "Title": "Цикл",
+                                    "fieldcondition": [
+                                        [
+                                            "PROPERTY_IS_REPORTED",
+                                            "=",
+                                            "NO"
+                                        ]
+                                    ]
+                                },
+                                "Type": "WhileActivity"
+                            },
+                            {
+                                "Name": "A56518_55232_25302_12490",
+                                "Properties": {
+                                    "MessageOut": "",
+                                    "MessageSite": "Ваш отчет о полученных наличных в сумме {=Document:PROPERTY_SUM} принят. Процесс завершен.",
+                                    "MessageType": "2",
+                                    "MessageUserFrom": [
+                                        "{=A59364_56755_10171_80406:LastApprover}"
+                                    ],
+                                    "MessageUserTo": [
+                                        "{=Document:CREATED_BY}"
+                                    ],
+                                    "Title": "Уведомление пользователя"
+                                },
+                                "Type": "IMNotifyActivity"
+                            },
+                            {
+                                "Name": "A10911_23414_68453_4179",
+                                "Properties": {
+                                    "TargetStateTitle": "Отчет принят",
+                                    "Title": "Установить текст статуса"
+                                },
+                                "Type": "SetStateTitleActivity"
+                            }
+                        ],
+                        "Name": "A83321_89688_99552_36265",
+                        "Properties": {
+                            "Title": "Да",
+                            "fieldcondition": [
+                                [
+                                    "PROPERTY_IS_APPROVED",
+                                    "=",
+                                    "YES"
+                                ]
+                            ]
+                        },
+                        "Type": "IfElseBranchActivity"
+                    },
+                    {
+                        "Children": [
+                            {
+                                "Name": "A60244_12844_9196_88416",
+                                "Properties": {
+                                    "TargetStateTitle": "Отклонено ({=Variable:Approver_printable})",
+                                    "Title": "Статус: не утвержден"
+                                },
+                                "Type": "SetStateTitleActivity"
+                            },
+                            {
+                                "Name": "A36295_93153_65449_80544",
+                                "Properties": {
+                                    "MessageOut": "",
+                                    "MessageSite": "Заявка на выдачу наличных в сумме {=Document:PROPERTY_SUM} отклонена.",
+                                    "MessageType": "2",
+                                    "MessageUserFrom": [
+                                        "{=Variable:Approver}"
+                                    ],
+                                    "MessageUserTo": [
+                                        "{=Document:CREATED_BY}"
+                                    ],
+                                    "Title": "Уведомление пользователя"
+                                },
+                                "Type": "IMNotifyActivity"
+                            }
+                        ],
+                        "Name": "A90898_8246_97677_2106",
+                        "Properties": {
+                            "Title": "Нет",
+                            "truecondition": "1"
+                        },
+                        "Type": "IfElseBranchActivity"
+                    }
+                ],
+                "Name": "A65073_61494_62760_68889",
+                "Properties": {
+                    "Title": "Заявка утверждена"
+                },
+                "Type": "IfElseActivity"
+            }
+        ],
+        "Name": "Template",
+        "Properties": {
+            "Title": "Последовательный бизнес-процесс"
+        },
+        "Type": "SequentialWorkflowActivity"
+    }
+]

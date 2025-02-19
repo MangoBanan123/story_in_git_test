@@ -1,0 +1,56 @@
+{
+    "ENTITY": {
+        "ID": "CONTACT_TYPE",
+        "NAME": "Тип контакта"
+    },
+    "ITEMS": [
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "CONTACT_TYPE",
+            "ID": "35",
+            "NAME": "Клиенты",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "10",
+            "STATUS_ID": "CLIENT",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "CONTACT_TYPE",
+            "ID": "37",
+            "NAME": "Поставщики",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "20",
+            "STATUS_ID": "SUPPLIER",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "CONTACT_TYPE",
+            "ID": "39",
+            "NAME": "Партнеры",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "30",
+            "STATUS_ID": "PARTNER",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "CONTACT_TYPE",
+            "ID": "41",
+            "NAME": "Другое",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "40",
+            "STATUS_ID": "OTHER",
+            "SYSTEM": "N"
+        }
+    ]
+}

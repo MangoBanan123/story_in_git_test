@@ -1,0 +1,75 @@
+{
+    "ENTITY": {
+        "ENTITY_TYPE_ID": 7,
+        "ID": "QUOTE_STATUS",
+        "NAME": "Стадии предложения",
+        "SEMANTIC_INFO": {
+            "FINAL_SORT": 0,
+            "FINAL_SUCCESS_FIELD": "APPROVED",
+            "FINAL_UNSUCCESS_FIELD": "DECLAINED",
+            "START_FIELD": "DRAFT"
+        }
+    },
+    "ITEMS": [
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": "#39A8EF",
+            "ENTITY_ID": "QUOTE_STATUS",
+            "ID": "131",
+            "NAME": "Новое",
+            "NAME_INIT": "Новое",
+            "SEMANTICS": null,
+            "SORT": "10",
+            "STATUS_ID": "DRAFT",
+            "SYSTEM": "Y"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": "#2FC6F6",
+            "ENTITY_ID": "QUOTE_STATUS",
+            "ID": "133",
+            "NAME": "Отправлено клиенту",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "20",
+            "STATUS_ID": "SENT",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": "#7BD500",
+            "ENTITY_ID": "QUOTE_STATUS",
+            "ID": "135",
+            "NAME": "Принято",
+            "NAME_INIT": "Принято",
+            "SEMANTICS": "S",
+            "SORT": "30",
+            "STATUS_ID": "APPROVED",
+            "SYSTEM": "Y"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": "#FF5752",
+            "ENTITY_ID": "QUOTE_STATUS",
+            "ID": "137",
+            "NAME": "Отклонено",
+            "NAME_INIT": "Отклонено",
+            "SEMANTICS": "F",
+            "SORT": "40",
+            "STATUS_ID": "DECLAINED",
+            "SYSTEM": "Y"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": "#FF5752",
+            "ENTITY_ID": "QUOTE_STATUS",
+            "ID": "139",
+            "NAME": "Анализ причины отклонения",
+            "NAME_INIT": "",
+            "SEMANTICS": "F",
+            "SORT": "50",
+            "STATUS_ID": "APOLOGY",
+            "SYSTEM": "N"
+        }
+    ]
+}

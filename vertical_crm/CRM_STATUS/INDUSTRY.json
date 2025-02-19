@@ -1,0 +1,140 @@
+{
+    "ENTITY": {
+        "ID": "INDUSTRY",
+        "NAME": "Сфера деятельности"
+    },
+    "ITEMS": [
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "INDUSTRY",
+            "ID": "69",
+            "NAME": "Информационные технологии",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "10",
+            "STATUS_ID": "IT",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "INDUSTRY",
+            "ID": "71",
+            "NAME": "Телекоммуникации и связь",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "20",
+            "STATUS_ID": "TELECOM",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "INDUSTRY",
+            "ID": "73",
+            "NAME": "Производство",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "30",
+            "STATUS_ID": "MANUFACTURING",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "INDUSTRY",
+            "ID": "75",
+            "NAME": "Банковские услуги",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "40",
+            "STATUS_ID": "BANKING",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "INDUSTRY",
+            "ID": "77",
+            "NAME": "Консалтинг",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "50",
+            "STATUS_ID": "CONSULTING",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "INDUSTRY",
+            "ID": "79",
+            "NAME": "Финансы",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "60",
+            "STATUS_ID": "FINANCE",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "INDUSTRY",
+            "ID": "81",
+            "NAME": "Правительство",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "70",
+            "STATUS_ID": "GOVERNMENT",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "INDUSTRY",
+            "ID": "83",
+            "NAME": "Доставка",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "80",
+            "STATUS_ID": "DELIVERY",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "INDUSTRY",
+            "ID": "85",
+            "NAME": "Развлечения",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "90",
+            "STATUS_ID": "ENTERTAINMENT",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "INDUSTRY",
+            "ID": "87",
+            "NAME": "Не для получения прибыли",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "100",
+            "STATUS_ID": "NOTPROFIT",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "INDUSTRY",
+            "ID": "89",
+            "NAME": "Другое",
+            "NAME_INIT": "Другое",
+            "SEMANTICS": null,
+            "SORT": "110",
+            "STATUS_ID": "OTHER",
+            "SYSTEM": "Y"
+        }
+    ]
+}

@@ -1,0 +1,68 @@
+{
+    "ENTITY": {
+        "ID": "COMPANY_TYPE",
+        "NAME": "Тип компании"
+    },
+    "ITEMS": [
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "COMPANY_TYPE",
+            "ID": "43",
+            "NAME": "Клиент",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "10",
+            "STATUS_ID": "CUSTOMER",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "COMPANY_TYPE",
+            "ID": "45",
+            "NAME": "Поставщик",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "20",
+            "STATUS_ID": "SUPPLIER",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "COMPANY_TYPE",
+            "ID": "47",
+            "NAME": "Конкурент",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "30",
+            "STATUS_ID": "COMPETITOR",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "COMPANY_TYPE",
+            "ID": "49",
+            "NAME": "Партнер",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "40",
+            "STATUS_ID": "PARTNER",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "COMPANY_TYPE",
+            "ID": "51",
+            "NAME": "Другое",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "50",
+            "STATUS_ID": "OTHER",
+            "SYSTEM": "N"
+        }
+    ]
+}

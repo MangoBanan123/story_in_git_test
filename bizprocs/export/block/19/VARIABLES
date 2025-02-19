@@ -1,0 +1,38 @@
+{
+    "Approver": {
+        "Default": "",
+        "Default_printable": "",
+        "Description": "",
+        "Multiple": "1",
+        "Name": "Утверждающий",
+        "Required": "0",
+        "Type": "user"
+    },
+    "Documents": {
+        "Default": "",
+        "Default_printable": "",
+        "Multiple": "1",
+        "Name": "Документы",
+        "Required": "0",
+        "Title": "Документы",
+        "Type": "file"
+    },
+    "Employee": {
+        "Default": "",
+        "Default_printable": "",
+        "Description": "",
+        "Multiple": "0",
+        "Name": "Командированный",
+        "Required": "0",
+        "Type": "user"
+    },
+    "username": {
+        "Default": "",
+        "Default_printable": "",
+        "Description": "",
+        "Multiple": "0",
+        "Name": "Имя пользователя",
+        "Required": "0",
+        "Type": "string"
+    }
+}

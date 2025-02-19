@@ -1,0 +1,10 @@
+[
+    {
+        "Children": [],
+        "Name": "Template",
+        "Properties": {
+            "Title": "Bizproc Automation template"
+        },
+        "Type": "SequentialWorkflowActivity"
+    }
+]

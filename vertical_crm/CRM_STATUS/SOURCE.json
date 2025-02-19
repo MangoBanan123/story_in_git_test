@@ -1,0 +1,164 @@
+{
+    "ENTITY": {
+        "ID": "SOURCE",
+        "NAME": "Источники"
+    },
+    "ITEMS": [
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "SOURCE",
+            "ID": "11",
+            "NAME": "Звонок",
+            "NAME_INIT": "Звонок",
+            "SEMANTICS": null,
+            "SORT": "10",
+            "STATUS_ID": "CALL",
+            "SYSTEM": "Y"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "SOURCE",
+            "ID": "13",
+            "NAME": "Электронная почта",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "20",
+            "STATUS_ID": "EMAIL",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "SOURCE",
+            "ID": "15",
+            "NAME": "Веб-сайт",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "30",
+            "STATUS_ID": "WEB",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "SOURCE",
+            "ID": "17",
+            "NAME": "Реклама",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "40",
+            "STATUS_ID": "ADVERTISING",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "SOURCE",
+            "ID": "19",
+            "NAME": "Существующий клиент",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "50",
+            "STATUS_ID": "PARTNER",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "SOURCE",
+            "ID": "21",
+            "NAME": "По рекомендации",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "60",
+            "STATUS_ID": "RECOMMENDATION",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "SOURCE",
+            "ID": "23",
+            "NAME": "Выставка",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "70",
+            "STATUS_ID": "TRADE_SHOW",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "SOURCE",
+            "ID": "25",
+            "NAME": "CRM-форма",
+            "NAME_INIT": "CRM-форма",
+            "SEMANTICS": null,
+            "SORT": "75",
+            "STATUS_ID": "WEBFORM",
+            "SYSTEM": "Y"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "SOURCE",
+            "ID": "27",
+            "NAME": "Обратный звонок",
+            "NAME_INIT": "Обратный звонок",
+            "SEMANTICS": null,
+            "SORT": "77",
+            "STATUS_ID": "CALLBACK",
+            "SYSTEM": "Y"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "SOURCE",
+            "ID": "29",
+            "NAME": "Генератор продаж",
+            "NAME_INIT": "Генератор продаж",
+            "SEMANTICS": null,
+            "SORT": "78",
+            "STATUS_ID": "RC_GENERATOR",
+            "SYSTEM": "Y"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "SOURCE",
+            "ID": "31",
+            "NAME": "Интернет-магазин",
+            "NAME_INIT": "Интернет-магазин",
+            "SEMANTICS": null,
+            "SORT": "79",
+            "STATUS_ID": "STORE",
+            "SYSTEM": "Y"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "SOURCE",
+            "ID": "33",
+            "NAME": "Другое",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "80",
+            "STATUS_ID": "OTHER",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "SOURCE",
+            "ID": "175",
+            "NAME": "Онлайн-чат - Открытая линия",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "115",
+            "STATUS_ID": "1|OPENLINE",
+            "SYSTEM": "N"
+        }
+    ]
+}

@@ -1,0 +1,589 @@
+[
+    {
+        "Children": [
+            {
+                "Name": "A43746_41229_75377_56706",
+                "Properties": {
+                    "Title": "Изменение переменных",
+                    "VariableValue": {
+                        "username": "{=Document:CREATED_BY}"
+                    }
+                },
+                "Type": "SetVariableActivity"
+            },
+            {
+                "Name": "A7863_93007_16514_83599",
+                "Properties": {
+                    "FieldValue": {
+                        "NAME": "{=Variable:username_printable} запрашивает отпуск с {=Document:PROPERTY_FROM} по {=Document:PROPERTY_TO}",
+                        "PROPERTY_IS_APPROVED": "2611"
+                    },
+                    "Title": "Изменение документа"
+                },
+                "Type": "SetFieldActivity"
+            },
+            {
+                "Name": "A70197_60940_99196_61268",
+                "Properties": {
+                    "Permission": {
+                        "R": [
+                            "author"
+                        ]
+                    },
+                    "Rewrite": "",
+                    "SetMode": "1",
+                    "SetScope": "1",
+                    "Title": "Установка прав: автору"
+                },
+                "Type": "SetPermissionsActivity"
+            },
+            {
+                "Name": "A1616_10288_22301_25856",
+                "Properties": {
+                    "Title": "Установка утверждающего",
+                    "VariableValue": {
+                        "Approver": [
+                            "{=Document:CREATED_BY}"
+                        ]
+                    }
+                },
+                "Type": "SetVariableActivity"
+            },
+            {
+                "Name": "A71026_84473_24610_19894",
+                "Properties": {
+                    "SetVariable": "0",
+                    "Text": "Утверждение отпуска для сотрудника {=Document:CREATED_BY_PRINTABLE} с {=Document:PROPERTY_FROM} по {=Document:PROPERTY_TO}",
+                    "Title": "Запись в отчет"
+                },
+                "Type": "LogActivity"
+            },
+            {
+                "Children": [
+                    {
+                        "Children": [
+                            {
+                                "Children": [
+                                    {
+                                        "Children": [
+                                            {
+                                                "Name": "A42632_30934_21795_54480",
+                                                "Properties": {
+                                                    "FieldValue": {
+                                                        "PROPERTY_IS_APPROVED": "2610"
+                                                    },
+                                                    "Title": "Установка поля \"Утвержден\" документа"
+                                                },
+                                                "Type": "SetFieldActivity"
+                                            }
+                                        ],
+                                        "Name": "A73194_18815_56133_13880",
+                                        "Properties": {
+                                            "Title": "Да",
+                                            "propertyvariablecondition": [
+                                                [
+                                                    "Approver",
+                                                    "in",
+                                                    [
+                                                        "{=Constant:Manager}"
+                                                    ]
+                                                ]
+                                            ]
+                                        },
+                                        "Type": "IfElseBranchActivity"
+                                    },
+                                    {
+                                        "Children": [
+                                            {
+                                                "Name": "A50278_76434_68172_28260",
+                                                "Properties": {
+                                                    "SetVariable": "0",
+                                                    "Text": "Поиск начальника для {=Variable:Approver_printable}",
+                                                    "Title": "Запись в отчет"
+                                                },
+                                                "Type": "LogActivity"
+                                            },
+                                            {
+                                                "Name": "A62351_13892_65034_70711",
+                                                "Properties": {
+                                                    "MaxLevel": "1",
+                                                    "ReserveUserParameter": [
+                                                        "{=Constant:Manager}"
+                                                    ],
+                                                    "SkipAbsent": "Y",
+                                                    "Title": "Выбор начальника",
+                                                    "UserParameter": [
+                                                        "{=Variable:Approver}"
+                                                    ],
+                                                    "UserType": "boss"
+                                                },
+                                                "Type": "GetUserActivity"
+                                            },
+                                            {
+                                                "Name": "A19319_19284_94376_40816",
+                                                "Properties": {
+                                                    "Title": "Установка утверждающего",
+                                                    "VariableValue": {
+                                                        "Approver": [
+                                                            "{=A62351_13892_65034_70711:GetUser}"
+                                                        ]
+                                                    }
+                                                },
+                                                "Type": "SetVariableActivity"
+                                            },
+                                            {
+                                                "Children": [
+                                                    {
+                                                        "Children": [
+                                                            {
+                                                                "Name": "A56357_56778_50061_37558",
+                                                                "Properties": {
+                                                                    "Title": "Изменение переменных",
+                                                                    "VariableValue": {
+                                                                        "Approver": [
+                                                                            "{=Constant:Manager}"
+                                                                        ]
+                                                                    }
+                                                                },
+                                                                "Type": "SetVariableActivity"
+                                                            }
+                                                        ],
+                                                        "Name": "A19316_40219_16977_49833",
+                                                        "Properties": {
+                                                            "Title": "Нет утверждающего",
+                                                            "propertyvariablecondition": [
+                                                                [
+                                                                    "Approver",
+                                                                    "=",
+                                                                    ""
+                                                                ]
+                                                            ]
+                                                        },
+                                                        "Type": "IfElseBranchActivity"
+                                                    },
+                                                    {
+                                                        "Name": "A28631_19301_32917_27465",
+                                                        "Properties": {
+                                                            "Title": "Условие",
+                                                            "truecondition": "1"
+                                                        },
+                                                        "Type": "IfElseBranchActivity"
+                                                    }
+                                                ],
+                                                "Name": "A17124_65917_94569_16956",
+                                                "Properties": {
+                                                    "Title": "Условие"
+                                                },
+                                                "Type": "IfElseActivity"
+                                            },
+                                            {
+                                                "Children": [
+                                                    {
+                                                        "Children": [
+                                                            {
+                                                                "Name": "A82170_46991_69737_75430",
+                                                                "Properties": {
+                                                                    "Title": "Прерывание процесса"
+                                                                },
+                                                                "Type": "TerminateActivity"
+                                                            }
+                                                        ],
+                                                        "Name": "A27805_16986_66743_89422",
+                                                        "Properties": {
+                                                            "Title": "Нет утверждающего",
+                                                            "propertyvariablecondition": [
+                                                                [
+                                                                    "Approver",
+                                                                    "="
+                                                                ]
+                                                            ]
+                                                        },
+                                                        "Type": "IfElseBranchActivity"
+                                                    },
+                                                    {
+                                                        "Name": "A27455_36911_13077_84538",
+                                                        "Properties": {
+                                                            "Title": "Условие",
+                                                            "truecondition": "1"
+                                                        },
+                                                        "Type": "IfElseBranchActivity"
+                                                    }
+                                                ],
+                                                "Name": "A52060_43329_33621_2442",
+                                                "Properties": {
+                                                    "Title": "Условие"
+                                                },
+                                                "Type": "IfElseActivity"
+                                            },
+                                            {
+                                                "Name": "A69423_63391_94988_95610",
+                                                "Properties": {
+                                                    "SetVariable": "0",
+                                                    "Text": "Начальник {=Variable:Approver_printable}",
+                                                    "Title": "Запись в отчет"
+                                                },
+                                                "Type": "LogActivity"
+                                            },
+                                            {
+                                                "Name": "A33518_77010_95258_20619",
+                                                "Properties": {
+                                                    "Permission": {
+                                                        "R": [
+                                                            "{=Variable:Approver}"
+                                                        ]
+                                                    },
+                                                    "Rewrite": "",
+                                                    "SetMode": "1",
+                                                    "SetScope": "1",
+                                                    "Title": "Установка прав: утверждающему чтение"
+                                                },
+                                                "Type": "SetPermissionsActivity"
+                                            },
+                                            {
+                                                "Name": "A92386_34614_98476_25437",
+                                                "Properties": {
+                                                    "MessageOut": "",
+                                                    "MessageSite": "Вам необходимо утвердить или отклонить заявление на отпуск.\n\nСотрудник: {=Document:CREATED_BY_PRINTABLE}\nДата начала: {=Document:PROPERTY_FROM}\nДата окончания: {=Document:PROPERTY_TO}\nКомментарий: {=Document:PREVIEW_TEXT}\n",
+                                                    "MessageType": "2",
+                                                    "MessageUserFrom": [
+                                                        "author"
+                                                    ],
+                                                    "MessageUserTo": [
+                                                        "{=Variable:Approver}"
+                                                    ],
+                                                    "Title": "Уведомление пользователя"
+                                                },
+                                                "Type": "IMNotifyActivity"
+                                            },
+                                            {
+                                                "Children": [
+                                                    {
+                                                        "Children": [
+                                                            {
+                                                                "Name": "A17915_69641_82938_37949",
+                                                                "Properties": {
+                                                                    "Title": "Изменение переменных",
+                                                                    "VariableValue": {
+                                                                        "Approver": [
+                                                                            "{=A58853_60082_34258_61777:LastApprover}"
+                                                                        ]
+                                                                    }
+                                                                },
+                                                                "Type": "SetVariableActivity"
+                                                            }
+                                                        ],
+                                                        "Name": "A27147_6731_92080_88258",
+                                                        "Properties": {
+                                                            "Title": "Последовательность действий"
+                                                        },
+                                                        "Type": "SequenceActivity"
+                                                    },
+                                                    {
+                                                        "Children": [
+                                                            {
+                                                                "Name": "A77467_72171_34395_65026",
+                                                                "Properties": {
+                                                                    "FieldValue": {
+                                                                        "PROPERTY_IS_APPROVED": "2609"
+                                                                    },
+                                                                    "Title": "Установка поля \"Утвержден\" документа"
+                                                                },
+                                                                "Type": "SetFieldActivity"
+                                                            }
+                                                        ],
+                                                        "Name": "A27802_76371_20200_57131",
+                                                        "Properties": {
+                                                            "Title": "Последовательность действий"
+                                                        },
+                                                        "Type": "SequenceActivity"
+                                                    }
+                                                ],
+                                                "Name": "A58853_60082_34258_61777",
+                                                "Properties": {
+                                                    "ApproveMinPercent": "50",
+                                                    "ApproveType": "any",
+                                                    "ApproveWaitForAll": "N",
+                                                    "CommentLabelMessage": "Комментарий",
+                                                    "Description": "Вам необходимо утвердить или отклонить заявление на отпуск. В случае отказа укажите, пожалуйста, причину отклонения заявления.\n\nСотрудник: {=Document:CREATED_BY_PRINTABLE}\nДата начала: {=Document:PROPERTY_FROM}\nДата окончания: {=Document:PROPERTY_TO}\nКомментарий: {=Document:PREVIEW_TEXT}",
+                                                    "Name": "Утверждение отпуска {=Document:CREATED_BY_PRINTABLE} с {=Document:PROPERTY_FROM} по {=Document:PROPERTY_TO}",
+                                                    "OverdueDate": "",
+                                                    "Parameters": "",
+                                                    "SetStatusMessage": "Y",
+                                                    "ShowComment": "N",
+                                                    "StatusMessage": "Утверждение отпуска руководителем",
+                                                    "TaskButton1Message": "Утвердить отпуск",
+                                                    "TaskButton2Message": "Отклонить отпуск",
+                                                    "TimeoutDuration": "0",
+                                                    "TimeoutDurationType": "d",
+                                                    "Title": "Утверждение",
+                                                    "Users": [
+                                                        "{=Variable:Approver}"
+                                                    ]
+                                                },
+                                                "Type": "ApproveActivity"
+                                            }
+                                        ],
+                                        "Name": "A99668_49419_49977_64690",
+                                        "Properties": {
+                                            "Title": "Нет",
+                                            "truecondition": "1"
+                                        },
+                                        "Type": "IfElseBranchActivity"
+                                    }
+                                ],
+                                "Name": "A27506_14464_63914_70168",
+                                "Properties": {
+                                    "Title": "Дошли до руководства",
+                                    "_DesMinimized": "N"
+                                },
+                                "Type": "IfElseActivity"
+                            }
+                        ],
+                        "Name": "A44262_22192_92537_62808",
+                        "Properties": {
+                            "Title": "Последовательность действий"
+                        },
+                        "Type": "SequenceActivity"
+                    }
+                ],
+                "Name": "A99014_21676_67321_91161",
+                "Properties": {
+                    "Title": "Цикл согласования",
+                    "fieldcondition": [
+                        [
+                            "PROPERTY_IS_APPROVED",
+                            "=",
+                            "2611"
+                        ]
+                    ]
+                },
+                "Type": "WhileActivity"
+            },
+            {
+                "Children": [
+                    {
+                        "Children": [
+                            {
+                                "Name": "A50891_79023_84569_96962",
+                                "Properties": {
+                                    "MessageOut": "",
+                                    "MessageSite": "Отпуск утвержден\n\nСотрудник: {=Document:CREATED_BY_PRINTABLE}\nДата начала: {=Document:PROPERTY_FROM}\nДата окончания: {=Document:PROPERTY_TO}\n",
+                                    "MessageType": "2",
+                                    "MessageUserFrom": [
+                                        "{=Variable:Approver}"
+                                    ],
+                                    "MessageUserTo": [
+                                        "author"
+                                    ],
+                                    "Title": "Уведомление пользователя"
+                                },
+                                "Type": "IMNotifyActivity"
+                            },
+                            {
+                                "Name": "A67388_91549_22195_11207",
+                                "Properties": {
+                                    "Permission": {
+                                        "R": [
+                                            "{=Constant:BookkeeperPay}"
+                                        ]
+                                    },
+                                    "Rewrite": "",
+                                    "SetMode": "1",
+                                    "SetScope": "1",
+                                    "Title": "Установка прав: бухгалтеру"
+                                },
+                                "Type": "SetPermissionsActivity"
+                            },
+                            {
+                                "Name": "A20175_76700_3468_54961",
+                                "Properties": {
+                                    "MessageOut": "",
+                                    "MessageSite": "Отпуск согласован с руководством. Необходимо оформить соответствующий приказ и начислить отпускные.\n\nСотрудник: {=Document:CREATED_BY_PRINTABLE}\nДата начала: {=Document:PROPERTY_FROM}\nДата окончания: {=Document:PROPERTY_TO}\nКомментарий: \n{=Document:PREVIEW_TEXT}\n",
+                                    "MessageType": "2",
+                                    "MessageUserFrom": [
+                                        "{=Variable:Approver}"
+                                    ],
+                                    "MessageUserTo": [
+                                        "{=Variable:BookkeeperPay}"
+                                    ],
+                                    "Title": "Уведомление пользователя"
+                                },
+                                "Type": "IMNotifyActivity"
+                            },
+                            {
+                                "Name": "A36851_93305_14606_68176",
+                                "Properties": {
+                                    "AbsenceDesrc": "Отпуск. {=Document:PREVIEW_TEXT}",
+                                    "AbsenceFinishState": "",
+                                    "AbsenceFrom": "{=Document:PROPERTY_FROM}",
+                                    "AbsenceName": "Отпуск",
+                                    "AbsenceSiteId": "s1",
+                                    "AbsenceState": "",
+                                    "AbsenceTo": "{=Document:PROPERTY_TO}",
+                                    "AbsenceType": "OTHER",
+                                    "AbsenceUser": [
+                                        "{=Document:CREATED_BY}"
+                                    ],
+                                    "Title": "График отсутствия"
+                                },
+                                "Type": "AbsenceActivity"
+                            },
+                            {
+                                "Name": "A24391_91756_61552_15542",
+                                "Properties": {
+                                    "TargetStateTitle": "Отпуск утвержден",
+                                    "Title": "Установить текст статуса"
+                                },
+                                "Type": "SetStateTitleActivity"
+                            },
+                            {
+                                "Children": [
+                                    {
+                                        "Children": [
+                                            {
+                                                "Name": "A89646_32580_52276_28755",
+                                                "Properties": {
+                                                    "TimeoutTime": "=dateadd({=Document:PROPERTY_FROM}, \"-5d\")",
+                                                    "Title": "Пауза в выполнении"
+                                                },
+                                                "Type": "DelayActivity"
+                                            },
+                                            {
+                                                "Name": "A70654_95606_86039_95192",
+                                                "Properties": {
+                                                    "MessageOut": "",
+                                                    "MessageSite": "Напоминание о начале отпуска (за 5 дней)\n\nОтпуск согласован с руководством. Необходимо оформить соответствующий приказ и начислить отпускные.\n\nСотрудник: {=Document:CREATED_BY_PRINTABLE}\nДата начала: {=Document:PROPERTY_FROM}\nДата окончания: {=Document:PROPERTY_TO}\nКомментарий:\n{=Document:PREVIEW_TEXT}\n",
+                                                    "MessageType": "2",
+                                                    "MessageUserFrom": [
+                                                        "{=Variable:Approver}"
+                                                    ],
+                                                    "MessageUserTo": [
+                                                        "{=Variable:BookkeeperPay}"
+                                                    ],
+                                                    "Title": "Уведомление пользователя"
+                                                },
+                                                "Type": "IMNotifyActivity"
+                                            }
+                                        ],
+                                        "Name": "A64449_57915_90641_75788",
+                                        "Properties": {
+                                            "Title": "Условие",
+                                            "fieldcondition": [
+                                                [
+                                                    "PROPERTY_FROM",
+                                                    ">",
+                                                    "=dateadd({=System:Now}, \"5d\")"
+                                                ]
+                                            ]
+                                        },
+                                        "Type": "IfElseBranchActivity"
+                                    },
+                                    {
+                                        "Name": "A80169_72227_38951_28368",
+                                        "Properties": {
+                                            "Title": "Условие"
+                                        },
+                                        "Type": "IfElseBranchActivity"
+                                    }
+                                ],
+                                "Name": "A9087_68735_16745_56657",
+                                "Properties": {
+                                    "Title": "Условие"
+                                },
+                                "Type": "IfElseActivity"
+                            },
+                            {
+                                "Name": "A3744_22119_9135_18015",
+                                "Properties": {
+                                    "AccessControl": "N",
+                                    "ApproveType": "any",
+                                    "CommentLabelMessage": "Комментарий",
+                                    "Description": "Отпуск согласован с руководством. Необходимо оформить соответствующий приказ и начислить отпускные.\n\nСотрудник: {=Variable:username_printable}\nДата начала: {=Document:PROPERTY_FROM}\nДата окончания: {=Document:PROPERTY_TO}\nКомментарий:\n{=Document:PREVIEW_TEXT}\n",
+                                    "Name": "Оформить отпуск: {=Variable:username_printable}, с {=Document:PROPERTY_FROM} по {=Document:PROPERTY_TO}",
+                                    "OverdueDate": "",
+                                    "Parameters": "",
+                                    "SetStatusMessage": "Y",
+                                    "ShowComment": "N",
+                                    "StatusMessage": "Оформление отпуска",
+                                    "TaskButtonMessage": "Отпуск оформлен",
+                                    "TimeoutDuration": "",
+                                    "TimeoutDurationType": "s",
+                                    "Title": "Ознакомление с документом",
+                                    "Users": [
+                                        "{=Constant:BookkeeperPay}"
+                                    ]
+                                },
+                                "Type": "ReviewActivity"
+                            },
+                            {
+                                "Name": "A29328_76608_55291_3781",
+                                "Properties": {
+                                    "TargetStateTitle": "Отпуск оформлен",
+                                    "Title": "Установить текст статуса"
+                                },
+                                "Type": "SetStateTitleActivity"
+                            }
+                        ],
+                        "Name": "A69256_74360_71431_89019",
+                        "Properties": {
+                            "Title": "Да",
+                            "fieldcondition": [
+                                [
+                                    "PROPERTY_IS_APPROVED",
+                                    "=",
+                                    "2610"
+                                ]
+                            ]
+                        },
+                        "Type": "IfElseBranchActivity"
+                    },
+                    {
+                        "Children": [
+                            {
+                                "Name": "A46191_85419_32185_80066",
+                                "Properties": {
+                                    "TargetStateTitle": "Отказано ({=Variable:Approver_printable})",
+                                    "Title": "Статус: не утвержден"
+                                },
+                                "Type": "SetStateTitleActivity"
+                            },
+                            {
+                                "Name": "A98331_15046_91396_66244",
+                                "Properties": {
+                                    "MessageOut": "",
+                                    "MessageSite": "Отпуск не утвержден\n\nСотрудник: {=Document:CREATED_BY_PRINTABLE}\nДата начала: {=Document:PROPERTY_FROM}\nДата окончания: {=Document:PROPERTY_TO}\n",
+                                    "MessageType": "2",
+                                    "MessageUserFrom": [
+                                        "{=Variable:Approver}"
+                                    ],
+                                    "MessageUserTo": [
+                                        "author"
+                                    ],
+                                    "Title": "Уведомление пользователя"
+                                },
+                                "Type": "IMNotifyActivity"
+                            }
+                        ],
+                        "Name": "A92121_88692_18191_72652",
+                        "Properties": {
+                            "Title": "Нет",
+                            "truecondition": "1"
+                        },
+                        "Type": "IfElseBranchActivity"
+                    }
+                ],
+                "Name": "A21763_99388_53150_1648",
+                "Properties": {
+                    "Title": "Отпуск утвержден",
+                    "_DesMinimized": "N"
+                },
+                "Type": "IfElseActivity"
+            }
+        ],
+        "Name": "Template",
+        "Properties": {
+            "Title": "Последовательный бизнес-процесс"
+        },
+        "Type": "SequentialWorkflowActivity"
+    }
+]

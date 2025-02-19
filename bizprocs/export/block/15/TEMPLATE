@@ -1,0 +1,856 @@
+[
+    {
+        "Children": [
+            {
+                "Children": [
+                    {
+                        "Children": [
+                            {
+                                "Name": "A43988_12689_71029_40803",
+                                "Properties": {
+                                    "Title": "Изменение переменных",
+                                    "VariableValue": {
+                                        "Author": "{=Document:CREATED_BY}"
+                                    }
+                                },
+                                "Type": "SetVariableActivity"
+                            },
+                            {
+                                "Name": "A56400_86193_70053_33925",
+                                "Properties": {
+                                    "FieldValue": {
+                                        "NAME": "{=Variable:Author_printable} добавил(а) счет \"{=Document:PROPERTY_NAME}\"",
+                                        "PROPERTY_IS_APPROVED": "1851",
+                                        "PROPERTY_IS_DOCS": "95696126791823f24cf605981db85b35",
+                                        "PROPERTY_IS_PAYED": "1154"
+                                    },
+                                    "Title": "Установка поля \"Утвержден\" документа"
+                                },
+                                "Type": "SetFieldActivity"
+                            },
+                            {
+                                "Name": "A70197_60940_99196_61268",
+                                "Properties": {
+                                    "Permission": {
+                                        "R": [
+                                            "author"
+                                        ]
+                                    },
+                                    "Rewrite": "",
+                                    "SetMode": "1",
+                                    "SetScope": "1",
+                                    "Title": "Установка прав: автору"
+                                },
+                                "Type": "SetPermissionsActivity"
+                            },
+                            {
+                                "Name": "A71026_84473_24610_19894",
+                                "Properties": {
+                                    "SetVariable": "0",
+                                    "Text": "Согласование счета для сотрудника {=Document:CREATED_BY_PRINTABLE} ({=Document:PROPERTY_NAME}, {=Document:PROPERTY_SUM} {=Document:PROPERTY_CURRENCY})",
+                                    "Title": "Запись в отчет"
+                                },
+                                "Type": "LogActivity"
+                            }
+                        ],
+                        "Name": "A20950_47418_28631_13134",
+                        "Properties": {
+                            "Title": "Последовательность действий"
+                        },
+                        "Type": "SequenceActivity"
+                    }
+                ],
+                "Name": "A49203_22480_14379_47961",
+                "Properties": {
+                    "Title": "Инициализация",
+                    "_DesMinimized": "N"
+                },
+                "Type": "EmptyBlockActivity"
+            },
+            {
+                "Name": "A1616_10288_22301_25856",
+                "Properties": {
+                    "Title": "Установка утверждающего",
+                    "VariableValue": {
+                        "Approver": [
+                            "{=Document:CREATED_BY}"
+                        ]
+                    }
+                },
+                "Type": "SetVariableActivity"
+            },
+            {
+                "Children": [
+                    {
+                        "Children": [
+                            {
+                                "Children": [
+                                    {
+                                        "Children": [
+                                            {
+                                                "Name": "A42632_30934_21795_54480",
+                                                "Properties": {
+                                                    "FieldValue": {
+                                                        "PROPERTY_IS_APPROVED": "1852"
+                                                    },
+                                                    "Title": "Установка поля \"Утвержден\" документа"
+                                                },
+                                                "Type": "SetFieldActivity"
+                                            }
+                                        ],
+                                        "Name": "A73194_18815_56133_13880",
+                                        "Properties": {
+                                            "Title": "Да",
+                                            "propertyvariablecondition": [
+                                                [
+                                                    "Approver",
+                                                    "in",
+                                                    [
+                                                        "{=Constant:Manager}"
+                                                    ]
+                                                ]
+                                            ]
+                                        },
+                                        "Type": "IfElseBranchActivity"
+                                    },
+                                    {
+                                        "Children": [
+                                            {
+                                                "Name": "A50278_76434_68172_28260",
+                                                "Properties": {
+                                                    "SetVariable": "0",
+                                                    "Text": "Поиск начальника для {=Variable:Approver} {=Variable:Approver_printable}",
+                                                    "Title": "Запись в отчет"
+                                                },
+                                                "Type": "LogActivity"
+                                            },
+                                            {
+                                                "Name": "A62351_13892_65034_70711",
+                                                "Properties": {
+                                                    "MaxLevel": "1",
+                                                    "ReserveUserParameter": [
+                                                        "{=Constant:Manager}"
+                                                    ],
+                                                    "SkipAbsent": "Y",
+                                                    "Title": "Выбор начальника",
+                                                    "UserParameter": [
+                                                        "{=Variable:Approver}"
+                                                    ],
+                                                    "UserType": "boss"
+                                                },
+                                                "Type": "GetUserActivity"
+                                            },
+                                            {
+                                                "Name": "A19319_19284_94376_40816",
+                                                "Properties": {
+                                                    "Title": "Установка утверждающего",
+                                                    "VariableValue": {
+                                                        "Approver": [
+                                                            "{=A62351_13892_65034_70711:GetUser}"
+                                                        ]
+                                                    }
+                                                },
+                                                "Type": "SetVariableActivity"
+                                            },
+                                            {
+                                                "Children": [
+                                                    {
+                                                        "Children": [
+                                                            {
+                                                                "Name": "A56357_56778_50061_37558",
+                                                                "Properties": {
+                                                                    "Title": "Назначить заместителей",
+                                                                    "VariableValue": {
+                                                                        "Approver": [
+                                                                            "{=Constant:Manager}"
+                                                                        ]
+                                                                    }
+                                                                },
+                                                                "Type": "SetVariableActivity"
+                                                            }
+                                                        ],
+                                                        "Name": "A19316_40219_16977_49833",
+                                                        "Properties": {
+                                                            "Title": "Не нашли начальника",
+                                                            "propertyvariablecondition": [
+                                                                [
+                                                                    "Approver",
+                                                                    "=",
+                                                                    ""
+                                                                ]
+                                                            ]
+                                                        },
+                                                        "Type": "IfElseBranchActivity"
+                                                    },
+                                                    {
+                                                        "Name": "A28631_19301_32917_27465",
+                                                        "Properties": {
+                                                            "Title": "Нашли начальника",
+                                                            "truecondition": "1"
+                                                        },
+                                                        "Type": "IfElseBranchActivity"
+                                                    }
+                                                ],
+                                                "Name": "A17124_65917_94569_16956",
+                                                "Properties": {
+                                                    "Title": "Нашли начальника? "
+                                                },
+                                                "Type": "IfElseActivity"
+                                            },
+                                            {
+                                                "Children": [
+                                                    {
+                                                        "Children": [
+                                                            {
+                                                                "Name": "A85303_24730_3916_1561",
+                                                                "Properties": {
+                                                                    "Title": "Прерывание процесса"
+                                                                },
+                                                                "Type": "TerminateActivity"
+                                                            }
+                                                        ],
+                                                        "Name": "A67937_1878_85467_52558",
+                                                        "Properties": {
+                                                            "Title": "Утверждающего нет",
+                                                            "propertyvariablecondition": [
+                                                                [
+                                                                    "Approver",
+                                                                    "=",
+                                                                    ""
+                                                                ]
+                                                            ]
+                                                        },
+                                                        "Type": "IfElseBranchActivity"
+                                                    },
+                                                    {
+                                                        "Name": "A50661_39039_70626_12504",
+                                                        "Properties": {
+                                                            "Title": "Да",
+                                                            "truecondition": "1"
+                                                        },
+                                                        "Type": "IfElseBranchActivity"
+                                                    }
+                                                ],
+                                                "Name": "A56022_87843_30521_11124",
+                                                "Properties": {
+                                                    "Title": "Установлен ли утверждающий?"
+                                                },
+                                                "Type": "IfElseActivity"
+                                            },
+                                            {
+                                                "Name": "A69423_63391_94988_95610",
+                                                "Properties": {
+                                                    "SetVariable": "0",
+                                                    "Text": "Начальник {=Variable:Approver} {=Variable:Approver_printable}",
+                                                    "Title": "Запись в отчет"
+                                                },
+                                                "Type": "LogActivity"
+                                            },
+                                            {
+                                                "Name": "A33518_77010_95258_20619",
+                                                "Properties": {
+                                                    "Permission": {
+                                                        "R": [
+                                                            "{=Variable:Approver}"
+                                                        ]
+                                                    },
+                                                    "Rewrite": "",
+                                                    "SetMode": "1",
+                                                    "SetScope": "1",
+                                                    "Title": "Установка прав: утверждающему чтение"
+                                                },
+                                                "Type": "SetPermissionsActivity"
+                                            },
+                                            {
+                                                "Name": "A79026_67071_21484_81734",
+                                                "Properties": {
+                                                    "MessageOut": "",
+                                                    "MessageSite": "Вам необходимо утвердить счет №{=Document:PROPERTY_NUMBER} от {=Document:PROPERTY_DATE}.\n\nЗа что платим:{=Document:PROPERTY_NAME}\n\nСумма: {=Document:PROPERTY_SUM} {=Document:PROPERTY_CURRENCY}",
+                                                    "MessageType": "2",
+                                                    "MessageUserFrom": [
+                                                        "author"
+                                                    ],
+                                                    "MessageUserTo": [
+                                                        "{=Variable:Approver}"
+                                                    ],
+                                                    "Title": "Уведомление пользователя"
+                                                },
+                                                "Type": "IMNotifyActivity"
+                                            },
+                                            {
+                                                "Children": [
+                                                    {
+                                                        "Children": [
+                                                            {
+                                                                "Name": "A17915_69641_82938_37949",
+                                                                "Properties": {
+                                                                    "Title": "Изменение переменных",
+                                                                    "VariableValue": {
+                                                                        "Approver": [
+                                                                            "{=A58853_60082_34258_61777:LastApprover}"
+                                                                        ]
+                                                                    }
+                                                                },
+                                                                "Type": "SetVariableActivity"
+                                                            }
+                                                        ],
+                                                        "Name": "A27147_6731_92080_88258",
+                                                        "Properties": {
+                                                            "Title": "Последовательность действий"
+                                                        },
+                                                        "Type": "SequenceActivity"
+                                                    },
+                                                    {
+                                                        "Children": [
+                                                            {
+                                                                "Name": "A77467_72171_34395_65026",
+                                                                "Properties": {
+                                                                    "FieldValue": {
+                                                                        "PROPERTY_IS_APPROVED": "1850"
+                                                                    },
+                                                                    "Title": "Установка поля \"Утвержден\" документа"
+                                                                },
+                                                                "Type": "SetFieldActivity"
+                                                            }
+                                                        ],
+                                                        "Name": "A27802_76371_20200_57131",
+                                                        "Properties": {
+                                                            "Title": "Последовательность действий"
+                                                        },
+                                                        "Type": "SequenceActivity"
+                                                    }
+                                                ],
+                                                "Name": "A58853_60082_34258_61777",
+                                                "Properties": {
+                                                    "ApproveMinPercent": "50",
+                                                    "ApproveType": "any",
+                                                    "ApproveWaitForAll": "N",
+                                                    "CommentLabelMessage": "Комментарий",
+                                                    "Description": "Вам необходимо утвердить счет №{=Document:PROPERTY_NUMBER} от {=Document:PROPERTY_DATE}.\n\nЗа что платим: {=Document:PROPERTY_NAME}\n\nСумма: {=Document:PROPERTY_SUM} {=Document:PROPERTY_CURRENCY}\nСчет: {=Document:PROPERTY_FILE_printable}\n",
+                                                    "Name": "Утверждение счета \"{=Document:PROPERTY_NAME}\"",
+                                                    "OverdueDate": "",
+                                                    "Parameters": "",
+                                                    "SetStatusMessage": "Y",
+                                                    "ShowComment": "N",
+                                                    "StatusMessage": "Утверждение руководителем",
+                                                    "TaskButton1Message": "Утвердить счет",
+                                                    "TaskButton2Message": "Отклонить счет",
+                                                    "TimeoutDuration": "0",
+                                                    "TimeoutDurationType": "d",
+                                                    "Title": "Утверждение",
+                                                    "Users": [
+                                                        "{=Variable:Approver}"
+                                                    ]
+                                                },
+                                                "Type": "ApproveActivity"
+                                            }
+                                        ],
+                                        "Name": "A99668_49419_49977_64690",
+                                        "Properties": {
+                                            "Title": "Утверждаем по структуре компании",
+                                            "truecondition": "1"
+                                        },
+                                        "Type": "IfElseBranchActivity"
+                                    }
+                                ],
+                                "Name": "A27506_14464_63914_70168",
+                                "Properties": {
+                                    "Title": "Разрешена оплата?",
+                                    "_DesMinimized": "N"
+                                },
+                                "Type": "IfElseActivity"
+                            }
+                        ],
+                        "Name": "A44262_22192_92537_62808",
+                        "Properties": {
+                            "Title": "Последовательность действий"
+                        },
+                        "Type": "SequenceActivity"
+                    }
+                ],
+                "Name": "A99014_21676_67321_91161",
+                "Properties": {
+                    "Title": "Цикл согласования",
+                    "fieldcondition": [
+                        [
+                            "PROPERTY_IS_APPROVED",
+                            "=",
+                            "1851"
+                        ]
+                    ]
+                },
+                "Type": "WhileActivity"
+            },
+            {
+                "Children": [
+                    {
+                        "Children": [
+                            {
+                                "Name": "A24839_43888_95377_51935",
+                                "Properties": {
+                                    "MessageOut": "",
+                                    "MessageSite": "Утвержден счет №{=Document:PROPERTY_NUMBER} от {=Document:PROPERTY_DATE}\n\nЗа что платим: {=Document:PROPERTY_NAME}\nСумма: {=Document:PROPERTY_SUM} {=Document:PROPERTY_CURRENCY}",
+                                    "MessageType": "2",
+                                    "MessageUserFrom": [
+                                        "{=Variable:Approver}"
+                                    ],
+                                    "MessageUserTo": [
+                                        "author"
+                                    ],
+                                    "Title": "Уведомление пользователя"
+                                },
+                                "Type": "IMNotifyActivity"
+                            },
+                            {
+                                "Name": "A65918_88401_61091_54037",
+                                "Properties": {
+                                    "Permission": {
+                                        "R": [
+                                            "{=Constant:BookkeeperPay}"
+                                        ]
+                                    },
+                                    "Rewrite": "",
+                                    "SetMode": "1",
+                                    "SetScope": "1",
+                                    "Title": "Установка прав: оплачивающему"
+                                },
+                                "Type": "SetPermissionsActivity"
+                            },
+                            {
+                                "Name": "A34526_29411_95525_16578",
+                                "Properties": {
+                                    "MessageOut": "",
+                                    "MessageSite": "Прошу оплатить счет №{=Document:PROPERTY_NUMBER} от {=Document:PROPERTY_DATE}.\n\nЗа что платим: {=Document:PROPERTY_NAME}\nСумма: {=Document:PROPERTY_SUM} {=Document:PROPERTY_CURRENCY}\n\nСчет: {=Document:PROPERTY_FILE_printable}\n",
+                                    "MessageType": "2",
+                                    "MessageUserFrom": [
+                                        "author"
+                                    ],
+                                    "MessageUserTo": [
+                                        "{=Constant:BookkeeperPay}"
+                                    ],
+                                    "Title": "Уведомление бухгалтеру"
+                                },
+                                "Type": "IMNotifyActivity"
+                            },
+                            {
+                                "Children": [
+                                    {
+                                        "Children": [
+                                            {
+                                                "Name": "A73644_72626_36326_19757",
+                                                "Properties": {
+                                                    "AccessControl": "N",
+                                                    "CommentLabelMessage": "Комментарий",
+                                                    "Description": "Прошу оплатить счет №{=Document:PROPERTY_NUMBER} от {=Document:PROPERTY_DATE}\n\nЗа что платим: {=Document:PROPERTY_NAME}\nСумма: {=Document:PROPERTY_SUM} {=Document:PROPERTY_CURRENCY}\n\nСчет: {=Document:PROPERTY_FILE_printable}\n",
+                                                    "Name": "Оплатить счет \"{=Document:PROPERTY_NAME}\"",
+                                                    "OverdueDate": "",
+                                                    "Parameters": "",
+                                                    "RequestedInformation": [
+                                                        {
+                                                            "Default": "",
+                                                            "Default_printable": "",
+                                                            "Multiple": "0",
+                                                            "Name": "PayDate",
+                                                            "Required": "1",
+                                                            "Title": "Дата оплаты",
+                                                            "Type": "date"
+                                                        },
+                                                        {
+                                                            "Default": "",
+                                                            "Default_printable": "",
+                                                            "Multiple": "0",
+                                                            "Name": "PayNum",
+                                                            "Required": "1",
+                                                            "Title": "Номер п/п",
+                                                            "Type": "string"
+                                                        }
+                                                    ],
+                                                    "SetStatusMessage": "Y",
+                                                    "ShowComment": "N",
+                                                    "StatusMessage": "Оплата счета",
+                                                    "TaskButtonMessage": "Оплатить",
+                                                    "Title": "Оплата счета",
+                                                    "Users": [
+                                                        "{=Constant:BookkeeperPay}"
+                                                    ]
+                                                },
+                                                "Type": "RequestInformationActivity"
+                                            },
+                                            {
+                                                "Name": "A44711_55976_47536_95701",
+                                                "Properties": {
+                                                    "FieldValue": {
+                                                        "PROPERTY_DATE_PAY": "{=Variable:PayDate}",
+                                                        "PROPERTY_IS_PAYED": "1112",
+                                                        "PROPERTY_NUMBER_PP": "{=Variable:PayNum_printable}"
+                                                    },
+                                                    "Title": "Изменение документа"
+                                                },
+                                                "Type": "SetFieldActivity"
+                                            },
+                                            {
+                                                "Name": "A42720_56553_46548_84327",
+                                                "Properties": {
+                                                    "MessageOut": "",
+                                                    "MessageSite": "Оплачен счет №{=Document:PROPERTY_NUMBER} от {=Document:PROPERTY_DATE}\n\nЗа что платим: {=Document:PROPERTY_NAME}\nСумма: {=Document:PROPERTY_SUM} {=Document:PROPERTY_CURRENCY}\n\nНомер п\\п: {=Document:PROPERTY_NUMBER_PP}\nДата оплаты: {=Document:PROPERTY_DATE_PAY}\n\nВНИМАНИЕ! Документы (акт, накладная, оригинал счета) должны быть сданы в бухгалтерию течение 5 дней после оплаты счета!",
+                                                    "MessageType": "2",
+                                                    "MessageUserFrom": [
+                                                        "{=Constant:BookkeeperPay}"
+                                                    ],
+                                                    "MessageUserTo": [
+                                                        "author"
+                                                    ],
+                                                    "Title": "Уведомление пользователя"
+                                                },
+                                                "Type": "IMNotifyActivity"
+                                            },
+                                            {
+                                                "Name": "A34327_74244_28299_19136",
+                                                "Properties": {
+                                                    "CommentLabelMessage": "Комментарий",
+                                                    "Description": "Собрать документы (акт, накладная, оригинал счета) по счету №{=Document:PROPERTY_NUMBER} от {=Document:PROPERTY_DATE}\n\nЗа что платим: {=Document:PROPERTY_NAME}\nСумма: {=Document:PROPERTY_SUM} {=Document:PROPERTY_CURRENCY}\n\nСчет: {=Document:PROPERTY_FILE_printable}\n",
+                                                    "Name": "Собрать документы по счету \"{=Document:PROPERTY_NAME}\"",
+                                                    "OverdueDate": "",
+                                                    "Parameters": "",
+                                                    "RequestedInformation": [
+                                                        {
+                                                            "Default_printable": "",
+                                                            "Multiple": "1",
+                                                            "Name": "sch_docs",
+                                                            "Required": "0",
+                                                            "Title": "Документы по счету",
+                                                            "Type": "file"
+                                                        }
+                                                    ],
+                                                    "SetStatusMessage": "Y",
+                                                    "ShowComment": "N",
+                                                    "StatusMessage": "Ожидание сбора документов по счету",
+                                                    "TaskButtonMessage": "Документы собраны",
+                                                    "Title": "Сбор документов по счету",
+                                                    "Users": [
+                                                        "author"
+                                                    ]
+                                                },
+                                                "Type": "RequestInformationActivity"
+                                            },
+                                            {
+                                                "Name": "A90174_57072_2065_66497",
+                                                "Properties": {
+                                                    "FieldValue": {
+                                                        "PROPERTY_DOCS": [
+                                                            "{=Variable:sch_docs}"
+                                                        ],
+                                                        "PROPERTY_IS_DOCS": "95696126791823f24cf605981db85b35"
+                                                    },
+                                                    "Title": "Изменение документа"
+                                                },
+                                                "Type": "SetFieldActivity"
+                                            },
+                                            {
+                                                "Children": [
+                                                    {
+                                                        "Children": [
+                                                            {
+                                                                "Name": "A43539_3710_92669_35309",
+                                                                "Properties": {
+                                                                    "MessageOut": "",
+                                                                    "MessageSite": "Собраны документы по счету №{=Document:PROPERTY_NUMBER} от {=Document:PROPERTY_DATE}\n\nЗа что платим: {=Document:PROPERTY_NAME}\nСумма: {=Document:PROPERTY_SUM} {=Document:PROPERTY_CURRENCY}\nСчет: {=Document:PROPERTY_FILE_printable}\n\nДокументы: {=Document:PROPERTY_DOCS_printable}\n",
+                                                                    "MessageType": "2",
+                                                                    "MessageUserFrom": [
+                                                                        "author"
+                                                                    ],
+                                                                    "MessageUserTo": [
+                                                                        "{=Constant:BookkeeperPay}"
+                                                                    ],
+                                                                    "Title": "Уведомление пользователя"
+                                                                },
+                                                                "Type": "IMNotifyActivity"
+                                                            },
+                                                            {
+                                                                "Children": [
+                                                                    {
+                                                                        "Children": [
+                                                                            {
+                                                                                "Name": "A95177_60997_2262_88968",
+                                                                                "Properties": {
+                                                                                    "FieldValue": {
+                                                                                        "PROPERTY_IS_DOCS": "72fe9c62d7254ed137fb0506661742b5"
+                                                                                    },
+                                                                                    "Title": "Изменение документа"
+                                                                                },
+                                                                                "Type": "SetFieldActivity"
+                                                                            }
+                                                                        ],
+                                                                        "Name": "A54228_55204_17116_72234",
+                                                                        "Properties": {
+                                                                            "Title": "Последовательность действий"
+                                                                        },
+                                                                        "Type": "SequenceActivity"
+                                                                    },
+                                                                    {
+                                                                        "Children": [
+                                                                            {
+                                                                                "Name": "A10044_98830_1368_77580",
+                                                                                "Properties": {
+                                                                                    "MessageOut": "",
+                                                                                    "MessageSite": "Вы должны предоставить документы (акт, накладная, оригинал счета) по счету №{=Document:PROPERTY_NUMBER} от {=Document:PROPERTY_DATE}\n\nЗа что платим: {=Document:PROPERTY_NAME}\nСумма: {=Document:PROPERTY_SUM} {=Document:PROPERTY_CURRENCY}\n\nСчет:\n{=Document:PROPERTY_FILE_printable}\n",
+                                                                                    "MessageType": "2",
+                                                                                    "MessageUserFrom": [
+                                                                                        "{=Constant:BookkeeperPay}"
+                                                                                    ],
+                                                                                    "MessageUserTo": [
+                                                                                        "author"
+                                                                                    ],
+                                                                                    "Title": "Уведомление пользователя"
+                                                                                },
+                                                                                "Type": "IMNotifyActivity"
+                                                                            },
+                                                                            {
+                                                                                "Name": "A36335_21977_59524_5921",
+                                                                                "Properties": {
+                                                                                    "CommentLabelMessage": "Комментарий",
+                                                                                    "Description": "Собрать документы (акт, накладная, оригинал счета) по счету №{=Document:PROPERTY_NUMBER} от {=Document:PROPERTY_DATE}\n\nЗа что платим: {=Document:PROPERTY_NAME}\nСумма: {=Document:PROPERTY_SUM} {=Document:PROPERTY_CURRENCY}\n\nСчет:\n{=Document:PROPERTY_FILE_printable}\n",
+                                                                                    "Name": "Собрать документы по счету \"{=Document:PROPERTY_NAME}\"",
+                                                                                    "OverdueDate": "",
+                                                                                    "Parameters": "",
+                                                                                    "RequestedInformation": [
+                                                                                        {
+                                                                                            "Default_printable": "",
+                                                                                            "Multiple": "1",
+                                                                                            "Name": "sch_docs",
+                                                                                            "Required": "0",
+                                                                                            "Title": "Документы по счету",
+                                                                                            "Type": "file"
+                                                                                        }
+                                                                                    ],
+                                                                                    "SetStatusMessage": "Y",
+                                                                                    "ShowComment": "N",
+                                                                                    "StatusMessage": "Ожидание сбора документов по счету",
+                                                                                    "TaskButtonMessage": "Документы собраны",
+                                                                                    "Title": "Запрос дополнительной информации",
+                                                                                    "Users": [
+                                                                                        "author"
+                                                                                    ]
+                                                                                },
+                                                                                "Type": "RequestInformationActivity"
+                                                                            },
+                                                                            {
+                                                                                "Name": "A1986_8091_67031_86667",
+                                                                                "Properties": {
+                                                                                    "FieldValue": {
+                                                                                        "PROPERTY_DOCS": [
+                                                                                            "{=Variable:sch_docs}"
+                                                                                        ]
+                                                                                    },
+                                                                                    "Title": "Изменение документа"
+                                                                                },
+                                                                                "Type": "SetFieldActivity"
+                                                                            }
+                                                                        ],
+                                                                        "Name": "A88945_21493_14271_44130",
+                                                                        "Properties": {
+                                                                            "Title": "Последовательность действий"
+                                                                        },
+                                                                        "Type": "SequenceActivity"
+                                                                    }
+                                                                ],
+                                                                "Name": "A86061_67332_434_81896",
+                                                                "Properties": {
+                                                                    "AccessControl": "N",
+                                                                    "ApproveMinPercent": "50",
+                                                                    "ApproveType": "any",
+                                                                    "ApproveWaitForAll": "N",
+                                                                    "CommentLabelMessage": "Комментарий",
+                                                                    "Description": "Собраны документы по счету №{=Document:PROPERTY_NUMBER} от {=Document:PROPERTY_DATE}\n\nЗа что платим: {=Document:PROPERTY_NAME}\nСумма: {=Document:PROPERTY_SUM} {=Document:PROPERTY_CURRENCY}\nСчет: {=Document:PROPERTY_FILE_printable}\n\nДокументы: {=Document:PROPERTY_DOCS_printable}\n",
+                                                                    "Name": "Подтвердить получение документов по счету \"{=Document:PROPERTY_NAME}\"",
+                                                                    "OverdueDate": "",
+                                                                    "Parameters": "",
+                                                                    "SetStatusMessage": "Y",
+                                                                    "ShowComment": "N",
+                                                                    "StatusMessage": "Получение документов",
+                                                                    "TaskButton1Message": "Документы получены",
+                                                                    "TaskButton2Message": "Предоставлены не все документы",
+                                                                    "TimeoutDuration": "0",
+                                                                    "TimeoutDurationType": "d",
+                                                                    "Title": "Докумены получены",
+                                                                    "Users": [
+                                                                        "{=Constant:BookkeeperPay}"
+                                                                    ]
+                                                                },
+                                                                "Type": "ApproveActivity"
+                                                            },
+                                                            {
+                                                                "Name": "A45199_90932_25287_87864",
+                                                                "Properties": {
+                                                                    "TargetStateTitle": "Закрыт",
+                                                                    "Title": "Статус: счет закрыт"
+                                                                },
+                                                                "Type": "SetStateTitleActivity"
+                                                            },
+                                                            {
+                                                                "Name": "A56500_85629_11325_14628",
+                                                                "Properties": {
+                                                                    "MessageOut": "",
+                                                                    "MessageSite": "Получены документы по счету №{=Document:PROPERTY_NUMBER} от {=Document:PROPERTY_DATE}. \nСчет закрыт.\n\nЗа что платим: {=Document:PROPERTY_NAME}\nСумма: {=Document:PROPERTY_SUM} {=Document:PROPERTY_CURRENCY}",
+                                                                    "MessageType": "2",
+                                                                    "MessageUserFrom": [
+                                                                        "{=Constant:BookkeeperPay}"
+                                                                    ],
+                                                                    "MessageUserTo": [
+                                                                        "author"
+                                                                    ],
+                                                                    "Title": "Уведомление пользователя"
+                                                                },
+                                                                "Type": "IMNotifyActivity"
+                                                            }
+                                                        ],
+                                                        "Name": "A76076_87243_22145_52658",
+                                                        "Properties": {
+                                                            "Title": "Последовательность действий"
+                                                        },
+                                                        "Type": "SequenceActivity"
+                                                    }
+                                                ],
+                                                "Name": "A51409_67093_76391_60665",
+                                                "Properties": {
+                                                    "Title": "Цикл",
+                                                    "fieldcondition": [
+                                                        [
+                                                            "PROPERTY_IS_DOCS",
+                                                            "=",
+                                                            "95696126791823f24cf605981db85b35"
+                                                        ]
+                                                    ]
+                                                },
+                                                "Type": "WhileActivity"
+                                            }
+                                        ],
+                                        "Name": "A855_12695_96719_53559",
+                                        "Properties": {
+                                            "Title": "Последовательность действий"
+                                        },
+                                        "Type": "SequenceActivity"
+                                    },
+                                    {
+                                        "Children": [
+                                            {
+                                                "Name": "A94692_93983_20313_60232",
+                                                "Properties": {
+                                                    "MessageOut": "",
+                                                    "MessageSite": "Отклонена оплата счета №{=Document:PROPERTY_NUMBER} от {=Document:PROPERTY_DATE}\n\nЗа что платим: {=Document:PROPERTY_NAME}\nСумма: {=Document:PROPERTY_SUM} {=Document:PROPERTY_CURRENCY}",
+                                                    "MessageType": "2",
+                                                    "MessageUserFrom": [
+                                                        "{=Constant:BookkeeperPay}"
+                                                    ],
+                                                    "MessageUserTo": [
+                                                        "author"
+                                                    ],
+                                                    "Title": "Уведомление пользователя"
+                                                },
+                                                "Type": "IMNotifyActivity"
+                                            },
+                                            {
+                                                "Name": "A11188_30892_75352_13676",
+                                                "Properties": {
+                                                    "TargetStateTitle": "Отклонена оплата",
+                                                    "Title": "Установить текст статуса"
+                                                },
+                                                "Type": "SetStateTitleActivity"
+                                            }
+                                        ],
+                                        "Name": "A54716_26099_73402_52537",
+                                        "Properties": {
+                                            "Title": "Последовательность действий"
+                                        },
+                                        "Type": "SequenceActivity"
+                                    }
+                                ],
+                                "Name": "A62678_90937_98359_22538",
+                                "Properties": {
+                                    "AccessControl": "N",
+                                    "ApproveMinPercent": "50",
+                                    "ApproveType": "all",
+                                    "ApproveWaitForAll": "N",
+                                    "CommentLabelMessage": "Комментарий",
+                                    "Description": "Прошу подтвердить возможность оплаты счет №{=Document:PROPERTY_NUMBER} от {=Document:PROPERTY_DATE}\n\nЗа что платим: {=Document:PROPERTY_NAME}\nСумма: {=Document:PROPERTY_SUM} {=Document:PROPERTY_CURRENCY}\n\nСчет: {=Document:PROPERTY_FILE_printable}\n",
+                                    "Name": "Подтвердить оплату счета \"{=Document:PROPERTY_NAME}\"",
+                                    "OverdueDate": "",
+                                    "Parameters": "",
+                                    "SetStatusMessage": "Y",
+                                    "ShowComment": "N",
+                                    "StatusMessage": "Подтверждение оплаты",
+                                    "TaskButton1Message": "Подтвердить оплату",
+                                    "TaskButton2Message": "Отклонить оплату",
+                                    "TimeoutDuration": "",
+                                    "TimeoutDurationType": "s",
+                                    "Title": "Утверждение оплаты",
+                                    "Users": [
+                                        "{=Constant:BookkeeperPay}"
+                                    ]
+                                },
+                                "Type": "ApproveActivity"
+                            }
+                        ],
+                        "Name": "A69256_74360_71431_89019",
+                        "Properties": {
+                            "Title": "Да",
+                            "fieldcondition": [
+                                [
+                                    "PROPERTY_IS_APPROVED",
+                                    "=",
+                                    "1852"
+                                ]
+                            ]
+                        },
+                        "Type": "IfElseBranchActivity"
+                    },
+                    {
+                        "Children": [
+                            {
+                                "Name": "A46191_85419_32185_80066",
+                                "Properties": {
+                                    "TargetStateTitle": "Отклонен ({=Variable:Approver_printable})",
+                                    "Title": "Статус: не утвержден"
+                                },
+                                "Type": "SetStateTitleActivity"
+                            },
+                            {
+                                "Name": "A50251_50802_84925_99401",
+                                "Properties": {
+                                    "MessageOut": "",
+                                    "MessageSite": "Отклонен счет №{=Document:PROPERTY_NUMBER} от {=Document:PROPERTY_DATE}\n\nЗа что платим: {=Document:PROPERTY_NAME}\nСумма: {=Document:PROPERTY_SUM} {=Document:PROPERTY_CURRENCY}\n",
+                                    "MessageType": "2",
+                                    "MessageUserFrom": [
+                                        "{=Variable:Approver}"
+                                    ],
+                                    "MessageUserTo": [
+                                        "author"
+                                    ],
+                                    "Title": "Уведомление пользователя"
+                                },
+                                "Type": "IMNotifyActivity"
+                            }
+                        ],
+                        "Name": "A92121_88692_18191_72652",
+                        "Properties": {
+                            "Title": "Нет",
+                            "truecondition": "1"
+                        },
+                        "Type": "IfElseBranchActivity"
+                    }
+                ],
+                "Name": "A21763_99388_53150_1648",
+                "Properties": {
+                    "Title": "Счет утвержден",
+                    "_DesMinimized": "N"
+                },
+                "Type": "IfElseActivity"
+            }
+        ],
+        "Name": "Template",
+        "Properties": {
+            "Title": "Последовательный бизнес-процесс"
+        },
+        "Type": "SequentialWorkflowActivity"
+    }
+]

@@ -1,0 +1,98 @@
+{
+    "ENTITY": {
+        "CATEGORY_ID": 5,
+        "ENTITY_TYPE_ID": 36,
+        "FIELD_ATTRIBUTE_SCOPE": "category_5",
+        "ID": "SMART_DOCUMENT_STAGE_5",
+        "IS_ENABLED": true,
+        "NAME": "Стадии документа",
+        "PREFIX": "DT36_5",
+        "SEMANTIC_INFO": []
+    },
+    "ITEMS": [
+        {
+            "CATEGORY_ID": "5",
+            "COLOR": "#00A9F4",
+            "ENTITY_ID": "SMART_DOCUMENT_STAGE_5",
+            "ID": "161",
+            "NAME": "Черновик",
+            "NAME_INIT": "Черновик",
+            "SEMANTICS": null,
+            "SORT": "10",
+            "STATUS_ID": "DT36_5:DRAFT",
+            "SYSTEM": "Y"
+        },
+        {
+            "CATEGORY_ID": "5",
+            "COLOR": "#00C9FA",
+            "ENTITY_ID": "SMART_DOCUMENT_STAGE_5",
+            "ID": "163",
+            "NAME": "На согласовании",
+            "NAME_INIT": "На согласовании",
+            "SEMANTICS": null,
+            "SORT": "20",
+            "STATUS_ID": "DT36_5:PROCESSING",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "5",
+            "COLOR": "#00D3E2",
+            "ENTITY_ID": "SMART_DOCUMENT_STAGE_5",
+            "ID": "165",
+            "NAME": "Отправлен",
+            "NAME_INIT": "Отправлен",
+            "SEMANTICS": null,
+            "SORT": "30",
+            "STATUS_ID": "DT36_5:SENT",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "5",
+            "COLOR": "#FEA300",
+            "ENTITY_ID": "SMART_DOCUMENT_STAGE_5",
+            "ID": "167",
+            "NAME": "Частично подписан",
+            "NAME_INIT": "Частично подписан",
+            "SEMANTICS": null,
+            "SORT": "40",
+            "STATUS_ID": "DT36_5:SEMISIGNED",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "5",
+            "COLOR": "#47E4C2",
+            "ENTITY_ID": "SMART_DOCUMENT_STAGE_5",
+            "ID": "169",
+            "NAME": "Полностью подписан",
+            "NAME_INIT": "Полностью подписан",
+            "SEMANTICS": null,
+            "SORT": "50",
+            "STATUS_ID": "DT36_5:SIGNED",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "5",
+            "COLOR": "#7BD500",
+            "ENTITY_ID": "SMART_DOCUMENT_STAGE_5",
+            "ID": "171",
+            "NAME": "В архив",
+            "NAME_INIT": "В архив",
+            "SEMANTICS": "S",
+            "SORT": "60",
+            "STATUS_ID": "DT36_5:ARCHIVE",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "5",
+            "COLOR": "#FF5752",
+            "ENTITY_ID": "SMART_DOCUMENT_STAGE_5",
+            "ID": "173",
+            "NAME": "Не подписано",
+            "NAME_INIT": "Не подписано",
+            "SEMANTICS": "F",
+            "SORT": "70",
+            "STATUS_ID": "DT36_5:NOTSIGNED",
+            "SYSTEM": "Y"
+        }
+    ]
+}

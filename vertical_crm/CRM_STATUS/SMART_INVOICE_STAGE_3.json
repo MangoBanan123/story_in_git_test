@@ -1,0 +1,62 @@
+{
+    "ENTITY": {
+        "CATEGORY_ID": 3,
+        "ENTITY_TYPE_ID": 31,
+        "FIELD_ATTRIBUTE_SCOPE": "category_3",
+        "ID": "SMART_INVOICE_STAGE_3",
+        "IS_ENABLED": true,
+        "NAME": "Стадии счёта",
+        "PREFIX": "DT31_3",
+        "SEMANTIC_INFO": []
+    },
+    "ITEMS": [
+        {
+            "CATEGORY_ID": "3",
+            "COLOR": "#39A8EF",
+            "ENTITY_ID": "SMART_INVOICE_STAGE_3",
+            "ID": "153",
+            "NAME": "Новый",
+            "NAME_INIT": "Новый",
+            "SEMANTICS": null,
+            "SORT": "10",
+            "STATUS_ID": "DT31_3:N",
+            "SYSTEM": "Y"
+        },
+        {
+            "CATEGORY_ID": "3",
+            "COLOR": "#2FC6F6",
+            "ENTITY_ID": "SMART_INVOICE_STAGE_3",
+            "ID": "155",
+            "NAME": "Отправлен клиенту",
+            "NAME_INIT": "Отправлен клиенту",
+            "SEMANTICS": null,
+            "SORT": "20",
+            "STATUS_ID": "DT31_3:S",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "3",
+            "COLOR": "#7BD500",
+            "ENTITY_ID": "SMART_INVOICE_STAGE_3",
+            "ID": "157",
+            "NAME": "Оплачен",
+            "NAME_INIT": "Оплачен",
+            "SEMANTICS": "S",
+            "SORT": "30",
+            "STATUS_ID": "DT31_3:P",
+            "SYSTEM": "Y"
+        },
+        {
+            "CATEGORY_ID": "3",
+            "COLOR": "#FF5752",
+            "ENTITY_ID": "SMART_INVOICE_STAGE_3",
+            "ID": "159",
+            "NAME": "Не оплачен",
+            "NAME_INIT": "Не оплачен",
+            "SEMANTICS": "F",
+            "SORT": "40",
+            "STATUS_ID": "DT31_3:D",
+            "SYSTEM": "Y"
+        }
+    ]
+}

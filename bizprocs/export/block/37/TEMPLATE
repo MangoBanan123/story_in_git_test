@@ -1,0 +1,41 @@
+[
+    {
+        "Activated": "Y",
+        "Children": [
+            {
+                "Activated": "Y",
+                "Children": [],
+                "Name": "A4170_48385_10513_77664",
+                "Properties": {
+                    "EditorComment": "",
+                    "MessageOut": "",
+                    "MessageSite": "{=Document:PROPERTY_json}",
+                    "MessageType": "2",
+                    "MessageUserFrom": [
+                        "user_13"
+                    ],
+                    "MessageUserTo": [
+                        "user_13"
+                    ],
+                    "Title": "Уведомление пользователя"
+                },
+                "Type": "IMNotifyActivity"
+            }
+        ],
+        "Name": "Template",
+        "Properties": {
+            "Permission": {
+                "D": [],
+                "E": [],
+                "R": [],
+                "S": [],
+                "T": [],
+                "U": [],
+                "W": [],
+                "X": []
+            },
+            "Title": "Последовательный бизнес-процесс"
+        },
+        "Type": "SequentialWorkflowActivity"
+    }
+]

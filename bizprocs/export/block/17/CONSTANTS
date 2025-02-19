@@ -1,0 +1,11 @@
+{
+    "Manager": {
+        "Default": "",
+        "Default_printable": "",
+        "Description": "Кто фиксирует, контролирует реестр документов",
+        "Multiple": "0",
+        "Name": "Кто фиксирует",
+        "Required": "1",
+        "Type": "user"
+    }
+}

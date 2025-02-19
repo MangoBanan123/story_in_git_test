@@ -1,0 +1,20 @@
+{
+    "Employee": {
+        "Default": "",
+        "Default_printable": "",
+        "Description": "",
+        "Multiple": "0",
+        "Name": "Ответственный",
+        "Required": "0",
+        "Type": "user"
+    },
+    "NUM": {
+        "Default": "",
+        "Default_printable": "",
+        "Multiple": "0",
+        "Name": "Номер",
+        "Required": "1",
+        "Title": "Номер",
+        "Type": "string"
+    }
+}

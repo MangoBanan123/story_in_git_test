@@ -1,0 +1,113 @@
+{
+    "ENTITY": {
+        "CATEGORY_ID": 0,
+        "ENTITY_TYPE_ID": 2,
+        "FIELD_ATTRIBUTE_SCOPE": "",
+        "ID": "DEAL_STAGE",
+        "NAME": "Общая",
+        "SEMANTIC_INFO": {
+            "FINAL_SORT": 0,
+            "FINAL_SUCCESS_FIELD": "WON",
+            "FINAL_UNSUCCESS_FIELD": "LOSE",
+            "START_FIELD": "NEW"
+        }
+    },
+    "ITEMS": [
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": "#39A8EF",
+            "ENTITY_ID": "DEAL_STAGE",
+            "ID": "101",
+            "NAME": "Новая",
+            "NAME_INIT": "Новая",
+            "SEMANTICS": null,
+            "SORT": "10",
+            "STATUS_ID": "NEW",
+            "SYSTEM": "Y"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": "#2FC6F6",
+            "ENTITY_ID": "DEAL_STAGE",
+            "ID": "103",
+            "NAME": "Подготовка документов",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "20",
+            "STATUS_ID": "PREPARATION",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": "#55D0E0",
+            "ENTITY_ID": "DEAL_STAGE",
+            "ID": "105",
+            "NAME": "Cчёт на предоплату",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "30",
+            "STATUS_ID": "PREPAYMENT_INVOICE",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": "#47E4C2",
+            "ENTITY_ID": "DEAL_STAGE",
+            "ID": "107",
+            "NAME": "В работе",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "40",
+            "STATUS_ID": "EXECUTING",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": "#FFA900",
+            "ENTITY_ID": "DEAL_STAGE",
+            "ID": "109",
+            "NAME": "Финальный счёт",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "50",
+            "STATUS_ID": "FINAL_INVOICE",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": "#7BD500",
+            "ENTITY_ID": "DEAL_STAGE",
+            "ID": "111",
+            "NAME": "Сделка успешна",
+            "NAME_INIT": "Сделка успешна",
+            "SEMANTICS": "S",
+            "SORT": "60",
+            "STATUS_ID": "WON",
+            "SYSTEM": "Y"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": "#FF5752",
+            "ENTITY_ID": "DEAL_STAGE",
+            "ID": "113",
+            "NAME": "Сделка провалена",
+            "NAME_INIT": "Сделка провалена",
+            "SEMANTICS": "F",
+            "SORT": "70",
+            "STATUS_ID": "LOSE",
+            "SYSTEM": "Y"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": "#FF5752",
+            "ENTITY_ID": "DEAL_STAGE",
+            "ID": "115",
+            "NAME": "Анализ причины провала",
+            "NAME_INIT": "",
+            "SEMANTICS": "F",
+            "SORT": "80",
+            "STATUS_ID": "APOLOGY",
+            "SYSTEM": "N"
+        }
+    ]
+}

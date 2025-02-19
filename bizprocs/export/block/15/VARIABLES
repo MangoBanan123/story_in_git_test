@@ -1,0 +1,60 @@
+{
+    "Approver": {
+        "Default": "",
+        "Default_printable": "",
+        "Description": "",
+        "Multiple": "1",
+        "Name": "Утверждающий",
+        "Required": "0",
+        "Type": "user"
+    },
+    "Author": {
+        "Default": "",
+        "Default_printable": "",
+        "Description": "",
+        "Multiple": "0",
+        "Name": "Запустил утверждение",
+        "Required": "0",
+        "Type": "user"
+    },
+    "PayDate": {
+        "Default": "",
+        "Default_printable": "",
+        "Multiple": "0",
+        "Name": "Дата оплаты",
+        "Required": "1",
+        "Title": "Дата оплаты",
+        "Type": "date"
+    },
+    "PayNum": {
+        "Default": "",
+        "Default_printable": "",
+        "Multiple": "0",
+        "Name": "Номер п/п",
+        "Required": "1",
+        "Title": "Номер п/п",
+        "Type": "string"
+    },
+    "PayProcessed": {
+        "Default": "YES",
+        "Default_printable": "Да",
+        "Multiple": "0",
+        "Name": "Счет оплачен",
+        "Options": {
+            "NO": "Нет",
+            "YES": "Да"
+        },
+        "Required": "1",
+        "Title": "Счет оплачен",
+        "Type": "select"
+    },
+    "sch_docs": {
+        "Default": "",
+        "Default_printable": "",
+        "Multiple": "1",
+        "Name": "Документы по счету",
+        "Required": "0",
+        "Title": "Документы по счету",
+        "Type": "file"
+    }
+}

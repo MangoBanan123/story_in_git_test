@@ -1,0 +1,52 @@
+[
+    {
+        "Activated": "Y",
+        "Children": [
+            {
+                "Activated": "Y",
+                "Children": [],
+                "Name": "A93490_50542_51658_43464",
+                "Properties": {
+                    "AuthUserId": [
+                        "user_13"
+                    ],
+                    "EditorComment": "",
+                    "SetStatusMessage": "Y",
+                    "StatusMessage": "Ожидание ответа от приложения",
+                    "TimeoutDuration": "",
+                    "TimeoutDurationType": "s",
+                    "Title": "[articles] Ознакомленность пользователя со статьей",
+                    "UseSubscription": "Y",
+                    "article_id": "{=Variable:article_id_var}",
+                    "user_id": "{=Variable:user_id_var}"
+                },
+                "Type": "rest_2ed48a95fd35de7cb5dbad08268ab131"
+            },
+            {
+                "Activated": "Y",
+                "Children": [],
+                "Name": "A34279_48132_95310_95249",
+                "Properties": {
+                    "EditorComment": "",
+                    "MessageOut": "",
+                    "MessageSite": "ok: {=A93490_50542_51658_43464:ok}\nresult: {=A93490_50542_51658_43464:result}\nerror: {=A93490_50542_51658_43464:error}\ncode: {=A93490_50542_51658_43464:status_code}",
+                    "MessageType": "2",
+                    "MessageUserFrom": [
+                        "user_13"
+                    ],
+                    "MessageUserTo": [
+                        "user_13"
+                    ],
+                    "Title": "Уведомление пользователя"
+                },
+                "Type": "IMNotifyActivity"
+            }
+        ],
+        "Name": "Template",
+        "Properties": {
+            "Permission": [],
+            "Title": "Последовательный бизнес-процесс"
+        },
+        "Type": "SequentialWorkflowActivity"
+    }
+]

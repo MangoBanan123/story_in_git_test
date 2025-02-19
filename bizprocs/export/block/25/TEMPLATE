@@ -1,0 +1,185 @@
+[
+    {
+        "Activated": "Y",
+        "Children": [
+            {
+                "Activated": "Y",
+                "Children": [
+                    {
+                        "Activated": "Y",
+                        "Children": [
+                            {
+                                "Activated": "Y",
+                                "Children": [],
+                                "Name": "A77670_35370_11410_56276",
+                                "Properties": {
+                                    "AuthUserId": [
+                                        "user_13"
+                                    ],
+                                    "EditorComment": "",
+                                    "SetStatusMessage": "Y",
+                                    "StatusMessage": "Ожидание ответа от приложения",
+                                    "TimeoutDuration": "",
+                                    "TimeoutDurationType": "s",
+                                    "Title": "[restTest] Получить параметр через REST",
+                                    "UseSubscription": "Y",
+                                    "debug_user": "",
+                                    "is_list": "N",
+                                    "json_path": [
+                                        "$"
+                                    ],
+                                    "rest_method_name": "crm.deal.update",
+                                    "rest_params": "{\nid: 5,\nfields: {'TITLE': 'Privet'}\n}"
+                                },
+                                "Type": "rest_1219308a79cd4027344342711c20d7f1"
+                            },
+                            {
+                                "Activated": "N",
+                                "Children": [],
+                                "Name": "A4882_23278_99233_26803",
+                                "Properties": {
+                                    "EditorComment": "",
+                                    "MessageOut": "",
+                                    "MessageSite": "count: {=A77670_35370_11410_56276:rest_total}\njsonpath: {=A77670_35370_11410_56276:rest_result_1}",
+                                    "MessageType": "2",
+                                    "MessageUserFrom": [
+                                        "user_13"
+                                    ],
+                                    "MessageUserTo": [
+                                        "user_13"
+                                    ],
+                                    "Title": "Уведомление пользователя"
+                                },
+                                "Type": "IMNotifyActivity"
+                            }
+                        ],
+                        "Name": "A39802_91784_81494_78949",
+                        "Properties": {
+                            "Title": "Условие"
+                        },
+                        "Type": "IfElseBranchActivity"
+                    },
+                    {
+                        "Activated": "Y",
+                        "Children": [
+                            {
+                                "Activated": "Y",
+                                "Children": [],
+                                "Name": "A20296_80379_36257_87045",
+                                "Properties": {
+                                    "AuthUserId": [
+                                        "user_13"
+                                    ],
+                                    "EditorComment": "",
+                                    "SetStatusMessage": "Y",
+                                    "StatusMessage": "Ожидание ответа от приложения",
+                                    "TimeoutDuration": "",
+                                    "TimeoutDurationType": "s",
+                                    "Title": "[rest] Получить параметр через REST",
+                                    "UseSubscription": "Y",
+                                    "debug_user": "user_13",
+                                    "is_list": "Y",
+                                    "json_path": [
+                                        "$"
+                                    ],
+                                    "rest_method_name": "task.commentitem.add",
+                                    "rest_params": "{'TASKID': 1, 'FIELDS': {'POST_MESSAGE': 'test2'}}"
+                                },
+                                "Type": "rest_1219308a79cd4027344342711c20d7f1"
+                            },
+                            {
+                                "Activated": "Y",
+                                "Children": [],
+                                "Name": "A66892_58369_66265_58050",
+                                "Properties": {
+                                    "EditorComment": "",
+                                    "MessageOut": "",
+                                    "MessageSite": "count: {=A20296_80379_36257_87045:rest_total}",
+                                    "MessageType": "2",
+                                    "MessageUserFrom": [
+                                        "user_13"
+                                    ],
+                                    "MessageUserTo": [
+                                        "user_13"
+                                    ],
+                                    "Title": "Уведомление пользователя"
+                                },
+                                "Type": "IMNotifyActivity"
+                            }
+                        ],
+                        "Name": "A45617_35114_20477_70020",
+                        "Properties": {
+                            "Title": "Условие"
+                        },
+                        "Type": "IfElseBranchActivity"
+                    },
+                    {
+                        "Activated": "Y",
+                        "Children": [
+                            {
+                                "Activated": "Y",
+                                "Children": [],
+                                "Name": "A20926_18506_31705_19219",
+                                "Properties": {
+                                    "AuthUserId": [
+                                        "user_13"
+                                    ],
+                                    "EditorComment": "",
+                                    "SetStatusMessage": "Y",
+                                    "StatusMessage": "Ожидание ответа от приложения",
+                                    "TimeoutDuration": "",
+                                    "TimeoutDurationType": "s",
+                                    "Title": "[REST Активити Б24] Получить параметр через REST",
+                                    "UseSubscription": "Y",
+                                    "debug_user": "",
+                                    "is_list": "N",
+                                    "json_path": [
+                                        "$"
+                                    ],
+                                    "rest_method_name": "crm.deal.update",
+                                    "rest_params": "{\nid: 5,\nfields: {'TITLE': 'Привет'}\n}"
+                                },
+                                "Type": "rest_00871f833ed964a3ad8c2ac3b7b516be"
+                            },
+                            {
+                                "Activated": "N",
+                                "Children": [],
+                                "Name": "A4963_7016_79950_68355",
+                                "Properties": {
+                                    "EditorComment": "",
+                                    "MessageOut": "",
+                                    "MessageSite": "count: {=A20926_18506_31705_19219:rest_total}",
+                                    "MessageType": "2",
+                                    "MessageUserFrom": [
+                                        "user_13"
+                                    ],
+                                    "MessageUserTo": [
+                                        "user_13"
+                                    ],
+                                    "Title": "Уведомление пользователя"
+                                },
+                                "Type": "IMNotifyActivity"
+                            }
+                        ],
+                        "Name": "A19770_35129_26328_12248",
+                        "Properties": {
+                            "Title": "Условие"
+                        },
+                        "Type": "IfElseBranchActivity"
+                    }
+                ],
+                "Name": "A98038_89755_57221_56661",
+                "Properties": {
+                    "Title": "Условие"
+                },
+                "Type": "IfElseActivity"
+            }
+        ],
+        "Name": "Template",
+        "Properties": {
+            "Permission": [],
+            "Title": "Последовательный бизнес-процесс"
+        },
+        "Type": "SequentialWorkflowActivity"
+    }
+]

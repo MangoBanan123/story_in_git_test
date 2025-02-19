@@ -1,0 +1,29 @@
+{
+    "Approver": {
+        "Default": "",
+        "Default_printable": "",
+        "Description": "",
+        "Multiple": "0",
+        "Name": "Утверждающий",
+        "Required": "0",
+        "Type": "user"
+    },
+    "Report": {
+        "Default": "{=Variable:Report}",
+        "Default_printable": "{=Variable:Report}",
+        "Multiple": "0",
+        "Name": "Отчет",
+        "Required": "1",
+        "Title": "Отчет",
+        "Type": "text"
+    },
+    "username": {
+        "Default": "",
+        "Default_printable": "",
+        "Description": "",
+        "Multiple": "0",
+        "Name": "Сотрудник",
+        "Required": "0",
+        "Type": "user"
+    }
+}

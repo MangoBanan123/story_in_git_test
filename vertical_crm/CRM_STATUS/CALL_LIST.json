@@ -1,0 +1,56 @@
+{
+    "ENTITY": {
+        "ID": "CALL_LIST",
+        "NAME": "Статусы обзвона"
+    },
+    "ITEMS": [
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "CALL_LIST",
+            "ID": "61",
+            "NAME": "В работе",
+            "NAME_INIT": "В работе",
+            "SEMANTICS": null,
+            "SORT": "10",
+            "STATUS_ID": "IN_WORK",
+            "SYSTEM": "Y"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "CALL_LIST",
+            "ID": "63",
+            "NAME": "Успешно",
+            "NAME_INIT": "Успешно",
+            "SEMANTICS": null,
+            "SORT": "20",
+            "STATUS_ID": "SUCCESS",
+            "SYSTEM": "Y"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "CALL_LIST",
+            "ID": "65",
+            "NAME": "Неверный номер",
+            "NAME_INIT": "Неверный номер",
+            "SEMANTICS": null,
+            "SORT": "30",
+            "STATUS_ID": "WRONG_NUMBER",
+            "SYSTEM": "Y"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "CALL_LIST",
+            "ID": "67",
+            "NAME": "Больше не звонить",
+            "NAME_INIT": "Больше не звонить",
+            "SEMANTICS": null,
+            "SORT": "40",
+            "STATUS_ID": "STOP_CALLING",
+            "SYSTEM": "Y"
+        }
+    ]
+}

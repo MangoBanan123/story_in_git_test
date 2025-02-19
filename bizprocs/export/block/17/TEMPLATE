@@ -1,0 +1,121 @@
+[
+    {
+        "Children": [
+            {
+                "Name": "A96598_63341_60465_91956",
+                "Properties": {
+                    "Title": "Изменение переменных",
+                    "VariableValue": {
+                        "Employee": "{=Document:CREATED_BY}"
+                    }
+                },
+                "Type": "SetVariableActivity"
+            },
+            {
+                "Name": "A13301_41713_88178_51624",
+                "Properties": {
+                    "FieldValue": {
+                        "NAME": "{=Variable:Employee_printable} добавил(а) исходящий документ от {=Document:PROPERTY_DATE}"
+                    },
+                    "Title": "Изменение документа"
+                },
+                "Type": "SetFieldActivity"
+            },
+            {
+                "Name": "A15194_44629_63359_76306",
+                "Properties": {
+                    "Permission": {
+                        "R": [
+                            "{=Document:CREATED_BY}",
+                            "{=Constant:Manager}"
+                        ]
+                    },
+                    "Rewrite": "",
+                    "SetMode": "1",
+                    "SetScope": "1",
+                    "Title": "Установка прав автору"
+                },
+                "Type": "SetPermissionsActivity"
+            },
+            {
+                "Name": "A82051_1974_22580_17152",
+                "Properties": {
+                    "MessageOut": "",
+                    "MessageSite": "Вам необходимо зафиксировать исходящий документ и указать его номер по реестру.\nВ случае получения ответа на этот документ, запустите новый процесс Входящие документы в Живой ленте. ",
+                    "MessageType": "4",
+                    "MessageUserFrom": [
+                        "{=Document:CREATED_BY}"
+                    ],
+                    "MessageUserTo": [
+                        "{=Constant:Manager}"
+                    ],
+                    "Title": "Уведомление пользователя"
+                },
+                "Type": "IMNotifyActivity"
+            },
+            {
+                "Name": "A76923_33199_90972_23015",
+                "Properties": {
+                    "AccessControl": "N",
+                    "CommentLabelMessage": "Комментарий",
+                    "Description": "Вам необходимо зафиксировать исходящий документ от {=Document:PROPERTY_DATE} и указать его номер по реестру.\nВ случае получения ответа на этот документ, запустите новый процесс Входящие документы в Живой ленте. \n\nЗагрузил(а): {=Variable:Employee_printable}\nО документе: {=Document:PREVIEW_TEXT}\nФайл:\n{=Document:PROPERTY_FILE_printable}",
+                    "Name": "Зафиксировать исходящий документ",
+                    "OverdueDate": "",
+                    "Parameters": "",
+                    "RequestedInformation": [
+                        {
+                            "Default": "",
+                            "Default_printable": "",
+                            "Multiple": "0",
+                            "Name": "NUM",
+                            "Required": "1",
+                            "Title": "Номер",
+                            "Type": "string"
+                        }
+                    ],
+                    "SetStatusMessage": "Y",
+                    "ShowComment": "N",
+                    "StatusMessage": "Фиксация в реестре",
+                    "TaskButtonMessage": "Сохранить",
+                    "Title": "Запрос дополнительной информации",
+                    "Users": [
+                        "{=Constant:Manager}"
+                    ]
+                },
+                "Type": "RequestInformationActivity"
+            },
+            {
+                "Name": "A33285_28880_93635_57075",
+                "Properties": {
+                    "FieldValue": {
+                        "NAME": "{=Variable:Employee_printable} добавил(а) исходящий документ №{=Variable:NUM} от {=Document:PROPERTY_DATE}",
+                        "PROPERTY_NUM": "{=Variable:NUM}"
+                    },
+                    "Title": "Изменение документа"
+                },
+                "Type": "SetFieldActivity"
+            },
+            {
+                "Name": "A56793_91156_58410_41488",
+                "Properties": {
+                    "MessageOut": "",
+                    "MessageSite": "Исходящий документ №{=Document:PROPERTY_NUM} от {=Document:PROPERTY_DATE} отправлен.\n\nО документе:\n{=Document:PREVIEW_TEXT}",
+                    "MessageType": "2",
+                    "MessageUserFrom": [
+                        "{=Constant:Manager}"
+                    ],
+                    "MessageUserTo": [
+                        "{=Document:CREATED_BY}"
+                    ],
+                    "Title": "Уведомление пользователя"
+                },
+                "Type": "IMNotifyActivity"
+            }
+        ],
+        "Name": "Template",
+        "Properties": {
+            "Title": "Последовательный бизнес-процесс"
+        },
+        "Type": "SequentialWorkflowActivity"
+    }
+]

@@ -1,0 +1,56 @@
+{
+    "ENTITY": {
+        "ID": "EMPLOYEES",
+        "NAME": "Кол-во сотрудников"
+    },
+    "ITEMS": [
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "EMPLOYEES",
+            "ID": "53",
+            "NAME": "менее 50",
+            "NAME_INIT": "менее 50",
+            "SEMANTICS": null,
+            "SORT": "10",
+            "STATUS_ID": "EMPLOYEES_1",
+            "SYSTEM": "Y"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "EMPLOYEES",
+            "ID": "55",
+            "NAME": "50-250",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "20",
+            "STATUS_ID": "EMPLOYEES_2",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "EMPLOYEES",
+            "ID": "57",
+            "NAME": "250-500",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "30",
+            "STATUS_ID": "EMPLOYEES_3",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "EMPLOYEES",
+            "ID": "59",
+            "NAME": "более 500",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "40",
+            "STATUS_ID": "EMPLOYEES_4",
+            "SYSTEM": "N"
+        }
+    ]
+}

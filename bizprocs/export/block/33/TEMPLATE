@@ -1,0 +1,53 @@
+[
+    {
+        "Activated": "Y",
+        "Children": [
+            {
+                "Activated": "N",
+                "Children": [],
+                "Name": "A88252_75944_66701_56291",
+                "Properties": {
+                    "AuthUserId": [
+                        "user_13"
+                    ],
+                    "EditorComment": "",
+                    "SetStatusMessage": "Y",
+                    "StatusMessage": "Ожидание ответа от приложения",
+                    "TimeoutDuration": "",
+                    "TimeoutDurationType": "s",
+                    "Title": "[articles] Создать студента",
+                    "UseSubscription": "Y",
+                    "bitrix_id": "15",
+                    "student_name": "Cool!"
+                },
+                "Type": "rest_ec5a9e0c292852e0dc62066bfe57bda4"
+            },
+            {
+                "Activated": "Y",
+                "Children": [],
+                "Name": "A18703_17506_85280_76678",
+                "Properties": {
+                    "AuthUserId": [
+                        "user_13"
+                    ],
+                    "EditorComment": "",
+                    "SetStatusMessage": "Y",
+                    "StatusMessage": "Ожидание ответа от приложения",
+                    "TimeoutDuration": "",
+                    "TimeoutDurationType": "s",
+                    "Title": "[articles] Есть ли статья в папке",
+                    "UseSubscription": "Y",
+                    "article_id": "7",
+                    "directory_id": "1"
+                },
+                "Type": "rest_49bac94181f4f0a8c00d82c05415c549"
+            }
+        ],
+        "Name": "Template",
+        "Properties": {
+            "Permission": [],
+            "Title": "Последовательный бизнес-процесс"
+        },
+        "Type": "SequentialWorkflowActivity"
+    }
+]

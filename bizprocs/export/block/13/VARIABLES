@@ -1,0 +1,38 @@
+{
+    "Approver": {
+        "Default": "",
+        "Default_printable": "",
+        "Description": "",
+        "Multiple": "1",
+        "Name": "Утверждающий",
+        "Required": "0",
+        "Type": "user"
+    },
+    "new_vacation_end_date": {
+        "Default": "",
+        "Default_printable": "",
+        "Multiple": "0",
+        "Name": "Дата окончания отпуска",
+        "Required": "1",
+        "Title": "Дата окончания отпуска",
+        "Type": "datetime"
+    },
+    "new_vacation_start_date": {
+        "Default": "",
+        "Default_printable": "",
+        "Multiple": "0",
+        "Name": "Дата начала отпуска",
+        "Required": "1",
+        "Title": "Дата начала отпуска",
+        "Type": "datetime"
+    },
+    "username": {
+        "Default": "",
+        "Default_printable": "",
+        "Description": "",
+        "Multiple": "0",
+        "Name": "Сотрудник",
+        "Required": "0",
+        "Type": "user"
+    }
+}

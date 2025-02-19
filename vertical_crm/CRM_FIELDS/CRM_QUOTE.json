@@ -1,0 +1,11 @@
+{
+    "ATTRIBUTE": [
+        {
+            "CONFIG": [],
+            "ENTITY_TYPE_NAME": "QUOTE",
+            "OPTION": []
+        }
+    ],
+    "ITEMS": [],
+    "TYPE": "CRM_QUOTE"
+}

@@ -1,0 +1,74 @@
+{
+    "ENTITY": {
+        "CATEGORY_ID": 11,
+        "ENTITY_TYPE_ID": 1036,
+        "FIELD_ATTRIBUTE_SCOPE": "category_11",
+        "ID": "DYNAMIC_1036_STAGE_11",
+        "IS_ENABLED": false,
+        "NAME": "test (Общая)",
+        "PREFIX": "DT1036_11",
+        "SEMANTIC_INFO": []
+    },
+    "ITEMS": [
+        {
+            "CATEGORY_ID": "11",
+            "COLOR": "#22B9FF",
+            "ENTITY_ID": "DYNAMIC_1036_STAGE_11",
+            "ID": "177",
+            "NAME": "Начало",
+            "NAME_INIT": "Начало",
+            "SEMANTICS": null,
+            "SORT": "10",
+            "STATUS_ID": "DT1036_11:NEW",
+            "SYSTEM": "Y"
+        },
+        {
+            "CATEGORY_ID": "11",
+            "COLOR": "#88B9FF",
+            "ENTITY_ID": "DYNAMIC_1036_STAGE_11",
+            "ID": "179",
+            "NAME": "Подготовка",
+            "NAME_INIT": "Подготовка",
+            "SEMANTICS": null,
+            "SORT": "20",
+            "STATUS_ID": "DT1036_11:PREPARATION",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "11",
+            "COLOR": "#10e5fc",
+            "ENTITY_ID": "DYNAMIC_1036_STAGE_11",
+            "ID": "181",
+            "NAME": "Согласование",
+            "NAME_INIT": "Согласование",
+            "SEMANTICS": null,
+            "SORT": "30",
+            "STATUS_ID": "DT1036_11:CLIENT",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "11",
+            "COLOR": "#00ff00",
+            "ENTITY_ID": "DYNAMIC_1036_STAGE_11",
+            "ID": "183",
+            "NAME": "Успех",
+            "NAME_INIT": "Успех",
+            "SEMANTICS": "S",
+            "SORT": "40",
+            "STATUS_ID": "DT1036_11:SUCCESS",
+            "SYSTEM": "Y"
+        },
+        {
+            "CATEGORY_ID": "11",
+            "COLOR": "#ff0000",
+            "ENTITY_ID": "DYNAMIC_1036_STAGE_11",
+            "ID": "185",
+            "NAME": "Провал",
+            "NAME_INIT": "Провал",
+            "SEMANTICS": "F",
+            "SORT": "50",
+            "STATUS_ID": "DT1036_11:FAIL",
+            "SYSTEM": "Y"
+        }
+    ]
+}

@@ -1,0 +1,72 @@
+{
+    "ATTRIBUTE": [
+        {
+            "CONFIG": {
+                "NAME": [
+                    {
+                        "groups": [
+                            {
+                                "items": [
+                                    {
+                                        "finishPhaseId": "",
+                                        "startPhaseId": ""
+                                    }
+                                ],
+                                "phaseGroupTypeId": 1
+                            }
+                        ],
+                        "typeId": 3
+                    }
+                ]
+            },
+            "ENTITY_TYPE_NAME": "CONTACT",
+            "OPTION": []
+        }
+    ],
+    "ITEMS": {
+        "UF_CRM_CONTACT_ITS_ARTICLE_ID": {
+            "EDIT_FORM_LABEL": "ID статьи в Базе Знаний",
+            "EDIT_IN_LIST": "Y",
+            "ENTITY_ID": "CRM_CONTACT",
+            "ERROR_MESSAGE": "UF_CRM_CONTACT_ITS_ARTICLE_ID",
+            "FIELD_NAME": "UF_CRM_CONTACT_ITS_ARTICLE_ID",
+            "HELP_MESSAGE": "UF_CRM_CONTACT_ITS_ARTICLE_ID",
+            "ID": "237",
+            "IS_SEARCHABLE": "N",
+            "LIST_COLUMN_LABEL": "ID статьи в Базе Знаний",
+            "LIST_FILTER_LABEL": "UF_CRM_CONTACT_ITS_ARTICLE_ID",
+            "MANDATORY": "N",
+            "MULTIPLE": "N",
+            "SETTINGS": {
+                "DEFAULT_VALUE": "",
+                "MAX_LENGTH": 0,
+                "MIN_LENGTH": 0,
+                "REGEXP": "",
+                "ROWS": 1,
+                "SIZE": 20
+            },
+            "SHOW_FILTER": "N",
+            "SHOW_IN_LIST": "Y",
+            "SORT": "100",
+            "USER_TYPE": {
+                "BASE_TYPE": "string",
+                "CLASS_NAME": "Bitrix\\Main\\UserField\\Types\\StringType",
+                "DESCRIPTION": "Строка",
+                "EDIT_CALLBACK": [
+                    "Bitrix\\Main\\UserField\\Types\\StringType",
+                    "renderEdit"
+                ],
+                "USER_TYPE_ID": "string",
+                "USE_FIELD_COMPONENT": true,
+                "VIEW_CALLBACK": [
+                    "Bitrix\\Main\\UserField\\Types\\StringType",
+                    "renderView"
+                ]
+            },
+            "USER_TYPE_ID": "string",
+            "VALUE": false,
+            "XML_ID": null
+        }
+    },
+    "TYPE": "CRM_CONTACT"
+}

@@ -1,0 +1,20 @@
+{
+    "BookkeeperPay": {
+        "Default": "",
+        "Default_printable": "",
+        "Description": "бухгалтер или заместитель",
+        "Multiple": "1",
+        "Name": "Кто оплачивает",
+        "Required": "1",
+        "Type": "user"
+    },
+    "Manager": {
+        "Default": "",
+        "Default_printable": "",
+        "Description": "директор или заместитель",
+        "Multiple": "1",
+        "Name": "Кто утверждает",
+        "Required": "1",
+        "Type": "user"
+    }
+}

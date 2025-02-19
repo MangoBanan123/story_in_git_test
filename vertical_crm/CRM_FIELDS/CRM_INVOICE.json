@@ -1,0 +1,11 @@
+{
+    "ATTRIBUTE": [
+        {
+            "CONFIG": [],
+            "ENTITY_TYPE_NAME": "INVOICE",
+            "OPTION": []
+        }
+    ],
+    "ITEMS": [],
+    "TYPE": "CRM_INVOICE"
+}

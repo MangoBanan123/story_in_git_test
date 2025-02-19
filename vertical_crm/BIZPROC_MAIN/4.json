@@ -1,0 +1,1936 @@
+{
+    "AUTO_EXECUTE": 8,
+    "DESCRIPTION": "",
+    "DOCUMENT_STATUS": "EXECUTING",
+    "DOCUMENT_TYPE": "DEAL",
+    "ENTITY": "CCrmDocumentDeal",
+    "ID": 9,
+    "MODULE_ID": "crm",
+    "NAME": "Шаблон автоматизации (EXECUTING)",
+    "ORIGINATOR_ID": "",
+    "ORIGIN_ID": "",
+    "SYSTEM_CODE": "bitrix_bizproc_automation",
+    "TEMPLATE_DATA": {
+        "CONSTANTS": [],
+        "DOCUMENT_FIELDS": {
+            "ACCOUNT_CURRENCY_ID": {
+                "BaseType": "select",
+                "Editable": true,
+                "Filterable": true,
+                "Name": "Валюта учета",
+                "Options": {
+                    "BYN": "Белорусский рубль",
+                    "EUR": "Евро",
+                    "RUB": "Российский рубль",
+                    "UAH": "Гривна",
+                    "USD": "Доллар США"
+                },
+                "Required": false,
+                "Type": "select"
+            },
+            "ASSIGNED_BY.ACTIVE": {
+                "BaseType": "bool",
+                "Name": "Ответственный: Активен",
+                "Type": "bool"
+            },
+            "ASSIGNED_BY.IS_ABSENT": {
+                "BaseType": "bool",
+                "Name": "Ответственный: Отсутствует (по графику отсутствий)",
+                "Type": "bool"
+            },
+            "ASSIGNED_BY.LAST_NAME": {
+                "BaseType": "string",
+                "Name": "Ответственный: Фамилия",
+                "Type": "string"
+            },
+            "ASSIGNED_BY.LOGIN": {
+                "BaseType": "string",
+                "Name": "Ответственный: Логин",
+                "Type": "string"
+            },
+            "ASSIGNED_BY.NAME": {
+                "BaseType": "string",
+                "Name": "Ответственный: Имя",
+                "Type": "string"
+            },
+            "ASSIGNED_BY.PERSONAL_CITY": {
+                "BaseType": "string",
+                "Name": "Ответственный: Город",
+                "Type": "string"
+            },
+            "ASSIGNED_BY.PERSONAL_WWW": {
+                "BaseType": "string",
+                "Name": "Ответственный: WWW-страница",
+                "Type": "string"
+            },
+            "ASSIGNED_BY.SECOND_NAME": {
+                "BaseType": "string",
+                "Name": "Ответственный: Отчество",
+                "Type": "string"
+            },
+            "ASSIGNED_BY.TIMEMAN_STATUS": {
+                "BaseType": "select",
+                "Name": "Ответственный: Статус рабочего дня",
+                "Options": {
+                    "CLOSED": "Завершён",
+                    "EXPIRED": "Не закрыт",
+                    "OPENED": "Работает",
+                    "PAUSED": "Перерыв"
+                },
+                "Type": "select"
+            },
+            "ASSIGNED_BY.UF_DEPARTMENT": {
+                "BaseType": "int",
+                "Multiple": true,
+                "Name": "Ответственный: Подразделение (список ID)",
+                "Type": "int"
+            },
+            "ASSIGNED_BY.UF_FACEBOOK": {
+                "BaseType": "string",
+                "Name": "Ответственный: Facebook",
+                "Type": "string"
+            },
+            "ASSIGNED_BY.UF_HEAD": {
+                "BaseType": "user",
+                "Multiple": true,
+                "Name": "Ответственный: Руководитель",
+                "Type": "user"
+            },
+            "ASSIGNED_BY.UF_LINKEDIN": {
+                "BaseType": "string",
+                "Name": "Ответственный: LinkedIn",
+                "Type": "string"
+            },
+            "ASSIGNED_BY.UF_PHONE_INNER": {
+                "BaseType": "string",
+                "Name": "Ответственный: Внутренний телефон",
+                "Type": "string"
+            },
+            "ASSIGNED_BY.UF_SKYPE": {
+                "BaseType": "string",
+                "Name": "Ответственный: Skype",
+                "Type": "string"
+            },
+            "ASSIGNED_BY.UF_TWITTER": {
+                "BaseType": "string",
+                "Name": "Ответственный: Twitter",
+                "Type": "string"
+            },
+            "ASSIGNED_BY.UF_WEB_SITES": {
+                "BaseType": "string",
+                "Name": "Ответственный: Другие сайты",
+                "Type": "string"
+            },
+            "ASSIGNED_BY.UF_XING": {
+                "BaseType": "string",
+                "Name": "Ответственный: Xing",
+                "Type": "string"
+            },
+            "ASSIGNED_BY.WORK_POSITION": {
+                "BaseType": "string",
+                "Name": "Ответственный: Должность",
+                "Type": "string"
+            },
+            "ASSIGNED_BY_EMAIL": {
+                "BaseType": "string",
+                "Name": "Ответственный (e-mail)",
+                "Type": "string"
+            },
+            "ASSIGNED_BY_ID": {
+                "BaseType": "user",
+                "Editable": true,
+                "Filterable": true,
+                "Name": "Ответственный",
+                "Required": false,
+                "Type": "user"
+            },
+            "ASSIGNED_BY_PERSONAL_MOBILE": {
+                "BaseType": "string",
+                "Name": "Ответственный (Мобильный телефон)",
+                "Type": "string"
+            },
+            "ASSIGNED_BY_WORK_PHONE": {
+                "BaseType": "string",
+                "Name": "Ответственный (Рабочий телефон)",
+                "Type": "string"
+            },
+            "BEGINDATE": {
+                "BaseType": "date",
+                "Editable": true,
+                "Filterable": true,
+                "Name": "Дата начала",
+                "Required": false,
+                "Type": "date"
+            },
+            "CATEGORY_ID": {
+                "BaseType": "select",
+                "Editable": true,
+                "Filterable": true,
+                "Name": "Направление",
+                "Options": [
+                    "Общая"
+                ],
+                "Required": false,
+                "Type": "select"
+            },
+            "CLOSED": {
+                "BaseType": "bool",
+                "Editable": true,
+                "Filterable": true,
+                "Name": "Сделка закрыта",
+                "Required": false,
+                "Type": "bool"
+            },
+            "CLOSEDATE": {
+                "BaseType": "datetime",
+                "Editable": true,
+                "Filterable": true,
+                "Name": "Предполагаемая дата закрытия",
+                "Required": false,
+                "Type": "datetime"
+            },
+            "COMMENTS": {
+                "BaseType": "text",
+                "Editable": true,
+                "Filterable": false,
+                "Name": "Комментарий",
+                "Required": false,
+                "Type": "text",
+                "ValueContentType": "bb"
+            },
+            "COMMUNICATIONS.LAST_CALL_DATE": {
+                "BaseType": "datetime",
+                "Name": "Дата последней коммуникации: Звонок",
+                "Type": "datetime"
+            },
+            "COMMUNICATIONS.LAST_EMAIL_DATE": {
+                "BaseType": "datetime",
+                "Name": "Дата последней коммуникации: E-mail",
+                "Type": "datetime"
+            },
+            "COMMUNICATIONS.LAST_FORM_DATE": {
+                "BaseType": "datetime",
+                "Name": "Дата последней коммуникации: CRM-форма",
+                "Type": "datetime"
+            },
+            "COMMUNICATIONS.LAST_OL_DATE": {
+                "BaseType": "datetime",
+                "Name": "Дата последней коммуникации: Открытые линии",
+                "Type": "datetime"
+            },
+            "COMPANY.ADDRESS": {
+                "BaseType": "text",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Фактический адрес",
+                "Required": false,
+                "Type": "text"
+            },
+            "COMPANY.ADDRESS_LEGAL": {
+                "BaseType": "text",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Юридический адрес",
+                "Required": false,
+                "Type": "text"
+            },
+            "COMPANY.ASSIGNED_BY_EMAIL": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Ответственный (e-mail)",
+                "Type": "string"
+            },
+            "COMPANY.ASSIGNED_BY_ID": {
+                "BaseType": "user",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Ответственный",
+                "Required": false,
+                "Type": "user"
+            },
+            "COMPANY.ASSIGNED_BY_PERSONAL_MOBILE": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Ответственный (Мобильный телефон)",
+                "Type": "string"
+            },
+            "COMPANY.ASSIGNED_BY_WORK_PHONE": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Ответственный (Рабочий телефон)",
+                "Type": "string"
+            },
+            "COMPANY.BANKING_DETAILS": {
+                "BaseType": "text",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Банковские реквизиты",
+                "Required": false,
+                "Type": "text"
+            },
+            "COMPANY.COMMENTS": {
+                "BaseType": "text",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Комментарий",
+                "Required": false,
+                "Type": "text",
+                "ValueContentType": "bb"
+            },
+            "COMPANY.COMPANY_TYPE": {
+                "BaseType": "select",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Тип компании",
+                "Options": {
+                    "COMPETITOR": "Конкурент",
+                    "CUSTOMER": "Клиент",
+                    "OTHER": "Другое",
+                    "PARTNER": "Партнер",
+                    "SUPPLIER": "Поставщик"
+                },
+                "Required": false,
+                "Type": "select"
+            },
+            "COMPANY.CONTACT_ID": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Multiple": true,
+                "Name": "Компания: Контакты компании",
+                "Options": {
+                    "CONTACT": "Y"
+                },
+                "Required": false,
+                "Type": "UF:crm"
+            },
+            "COMPANY.CREATED_BY_ID": {
+                "BaseType": "user",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Создатель компании",
+                "Type": "user"
+            },
+            "COMPANY.CRM_ID": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: ID элемента CRM",
+                "Type": "string"
+            },
+            "COMPANY.CURRENCY_ID": {
+                "BaseType": "select",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Валюта",
+                "Options": {
+                    "BYN": "Белорусский рубль",
+                    "EUR": "Евро",
+                    "RUB": "Российский рубль",
+                    "UAH": "Гривна",
+                    "USD": "Доллар США"
+                },
+                "Required": false,
+                "Type": "select"
+            },
+            "COMPANY.DATE_CREATE": {
+                "BaseType": "datetime",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Дата создания",
+                "Required": false,
+                "Type": "datetime"
+            },
+            "COMPANY.DATE_MODIFY": {
+                "BaseType": "datetime",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Дата последнего изменения",
+                "Required": false,
+                "Type": "datetime"
+            },
+            "COMPANY.EMAIL": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: E-mail",
+                "Required": false,
+                "Type": "email"
+            },
+            "COMPANY.EMAIL_HOME": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Частный e-mail",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.EMAIL_MAILING": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: E-mail для рассылок",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.EMAIL_OTHER": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Другой e-mail",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.EMAIL_WORK": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Рабочий e-mail",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.EMPLOYEES": {
+                "BaseType": "select",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Кол-во сотрудников",
+                "Options": {
+                    "EMPLOYEES_1": "менее 50",
+                    "EMPLOYEES_2": "50-250",
+                    "EMPLOYEES_3": "250-500",
+                    "EMPLOYEES_4": "более 500"
+                },
+                "Required": false,
+                "Type": "select"
+            },
+            "COMPANY.ID": {
+                "BaseType": "int",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: ID",
+                "Required": false,
+                "Type": "int"
+            },
+            "COMPANY.IM": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Мессенджер",
+                "Required": false,
+                "Type": "im"
+            },
+            "COMPANY.IM_BITRIX24": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Контакт Битрикс24 Network",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.IM_FACEBOOK": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Контакт Facebook",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.IM_ICQ": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Контакт ICQ",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.IM_IMOL": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Контакт Открытая линия",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.IM_INSTAGRAM": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Комментарии Instagram",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.IM_JABBER": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Контакт Jabber",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.IM_MSN": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Контакт MSN/Live!",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.IM_OPENLINE": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Онлайн-чат",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.IM_OTHER": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Другой контакт",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.IM_SKYPE": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Контакт Skype",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.IM_TELEGRAM": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Контакт Telegram",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.IM_VIBER": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Контакт Viber",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.IM_VK": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Контакт ВКонтакте",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.INDUSTRY": {
+                "BaseType": "select",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Сфера деятельности",
+                "Options": {
+                    "BANKING": "Банковские услуги",
+                    "CONSULTING": "Консалтинг",
+                    "DELIVERY": "Доставка",
+                    "ENTERTAINMENT": "Развлечения",
+                    "FINANCE": "Финансы",
+                    "GOVERNMENT": "Правительство",
+                    "IT": "Информационные технологии",
+                    "MANUFACTURING": "Производство",
+                    "NOTPROFIT": "Не для получения прибыли",
+                    "OTHER": "Другое",
+                    "TELECOM": "Телекоммуникации и связь"
+                },
+                "Required": false,
+                "Type": "select"
+            },
+            "COMPANY.LEAD_ID": {
+                "BaseType": "int",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Лид",
+                "Required": false,
+                "Type": "int"
+            },
+            "COMPANY.LINK_USER": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Связанный пользователь",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.LOGO": {
+                "BaseType": "file",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Логотип",
+                "Required": false,
+                "Type": "file"
+            },
+            "COMPANY.MODIFY_BY_ID": {
+                "BaseType": "user",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Кем изменен",
+                "Type": "user"
+            },
+            "COMPANY.OBSERVER_IDS": {
+                "BaseType": "user",
+                "Default": [],
+                "Editable": false,
+                "Filterable": false,
+                "Multiple": true,
+                "Name": "Компания: Наблюдатели",
+                "Required": false,
+                "Type": "user"
+            },
+            "COMPANY.OPENED": {
+                "BaseType": "bool",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Доступна для всех",
+                "Required": false,
+                "Type": "bool"
+            },
+            "COMPANY.ORIGINATOR_ID": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Магазин",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.ORIGIN_ID": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Покупатель магазина",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.PHONE": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Телефон",
+                "Required": false,
+                "Type": "phone"
+            },
+            "COMPANY.PHONE_FAX": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Номер факса",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.PHONE_HOME": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Домашний телефон",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.PHONE_MAILING": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Телефон для рассылок",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.PHONE_MOBILE": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Мобильный телефон",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.PHONE_OTHER": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Другой телефон",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.PHONE_PAGER": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Номер пейджера",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.PHONE_WORK": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Рабочий телефон",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.REVENUE": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Годовой оборот",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.TIME_CREATE": {
+                "BaseType": "time",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Время создания",
+                "Required": false,
+                "Type": "time"
+            },
+            "COMPANY.TITLE": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Название компании",
+                "Required": true,
+                "Type": "string"
+            },
+            "COMPANY.TRACKING_SOURCE_ID": {
+                "BaseType": "select",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Источник сквозной аналитики",
+                "Options": [
+                    "Прочий трафик",
+                    "Email Маркетинг"
+                ],
+                "Required": false,
+                "Type": "select"
+            },
+            "COMPANY.UF_CRM_COMPANY_ITS_ARTICLE_ID": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Multiple": false,
+                "Name": "Компания: ID статьи в Базе Знаний",
+                "Options": [],
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.URL": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Ссылка на элемент",
+                "Type": "string"
+            },
+            "COMPANY.URL_BB": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Ссылка на элемент (BBcode)",
+                "Type": "string"
+            },
+            "COMPANY.UTM_CAMPAIGN": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: UTM Campaign",
+                "Type": "string"
+            },
+            "COMPANY.UTM_CONTENT": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: UTM Content",
+                "Type": "string"
+            },
+            "COMPANY.UTM_MEDIUM": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: UTM Medium",
+                "Type": "string"
+            },
+            "COMPANY.UTM_SOURCE": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: UTM Source",
+                "Type": "string"
+            },
+            "COMPANY.UTM_TERM": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: UTM Term",
+                "Type": "string"
+            },
+            "COMPANY.WEB": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Сайт",
+                "Required": false,
+                "Type": "web"
+            },
+            "COMPANY.WEBFORM_ID": {
+                "BaseType": "select",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: CRM-форма",
+                "Options": [],
+                "Required": false,
+                "Type": "select"
+            },
+            "COMPANY.WEB_FACEBOOK": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Страница Facebook",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.WEB_HOME": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Личная страница",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.WEB_LIVEJOURNAL": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Страница LiveJournal",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.WEB_OTHER": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Другой сайт",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.WEB_TWITTER": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Микроблог Twitter",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.WEB_VK": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Страница ВКонтакте",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY.WEB_WORK": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Компания: Корпоративный сайт",
+                "Required": false,
+                "Type": "string"
+            },
+            "COMPANY_ID": {
+                "BaseType": "string",
+                "Editable": true,
+                "Filterable": true,
+                "Multiple": false,
+                "Name": "Компания",
+                "Options": {
+                    "COMPANY": "Y"
+                },
+                "Required": false,
+                "Type": "UF:crm"
+            },
+            "CONTACT.ADDRESS": {
+                "BaseType": "text",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Улица, номер дома",
+                "Required": false,
+                "Type": "text"
+            },
+            "CONTACT.ADDRESS_2": {
+                "BaseType": "text",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Квартира, офис, комната, этаж",
+                "Required": false,
+                "Type": "text"
+            },
+            "CONTACT.ADDRESS_CITY": {
+                "BaseType": "text",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Населенный пункт",
+                "Required": false,
+                "Type": "text"
+            },
+            "CONTACT.ADDRESS_COUNTRY": {
+                "BaseType": "text",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Страна",
+                "Required": false,
+                "Type": "text"
+            },
+            "CONTACT.ADDRESS_POSTAL_CODE": {
+                "BaseType": "text",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Почтовый индекс",
+                "Required": false,
+                "Type": "text"
+            },
+            "CONTACT.ADDRESS_PROVINCE": {
+                "BaseType": "text",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Регион",
+                "Required": false,
+                "Type": "text"
+            },
+            "CONTACT.ADDRESS_REGION": {
+                "BaseType": "text",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Район",
+                "Required": false,
+                "Type": "text"
+            },
+            "CONTACT.ASSIGNED_BY_EMAIL": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Ответственный (e-mail)",
+                "Type": "string"
+            },
+            "CONTACT.ASSIGNED_BY_ID": {
+                "BaseType": "user",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Ответственный",
+                "Required": false,
+                "Type": "user"
+            },
+            "CONTACT.ASSIGNED_BY_PERSONAL_MOBILE": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Ответственный (Мобильный телефон)",
+                "Type": "string"
+            },
+            "CONTACT.ASSIGNED_BY_WORK_PHONE": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Ответственный (Рабочий телефон)",
+                "Type": "string"
+            },
+            "CONTACT.BIRTHDATE": {
+                "BaseType": "date",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Дата рождения",
+                "Required": false,
+                "Type": "date"
+            },
+            "CONTACT.COMMENTS": {
+                "BaseType": "text",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Комментарий",
+                "Required": false,
+                "Type": "text",
+                "ValueContentType": "bb"
+            },
+            "CONTACT.COMPANY_ID": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Компания",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.COMPANY_IDS": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Multiple": true,
+                "Name": "Контакт: Компании",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.CREATED_BY_ID": {
+                "BaseType": "user",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Создатель контакта",
+                "Type": "user"
+            },
+            "CONTACT.CRM_ID": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: ID элемента CRM",
+                "Type": "string"
+            },
+            "CONTACT.DATE_CREATE": {
+                "BaseType": "datetime",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Дата создания",
+                "Required": false,
+                "Type": "datetime"
+            },
+            "CONTACT.DATE_MODIFY": {
+                "BaseType": "datetime",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Дата последнего изменения",
+                "Required": false,
+                "Type": "datetime"
+            },
+            "CONTACT.EMAIL": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: E-mail",
+                "Required": false,
+                "Type": "email"
+            },
+            "CONTACT.EMAIL_HOME": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Частный e-mail",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.EMAIL_MAILING": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: E-mail для рассылок",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.EMAIL_OTHER": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Другой e-mail",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.EMAIL_WORK": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Рабочий e-mail",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.EXPORT": {
+                "BaseType": "bool",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Участвует  в экспорте контактов",
+                "Required": false,
+                "Type": "bool"
+            },
+            "CONTACT.FULL_ADDRESS": {
+                "BaseType": "text",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Адрес",
+                "Required": false,
+                "Type": "text"
+            },
+            "CONTACT.HONORIFIC": {
+                "BaseType": "select",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Обращение",
+                "Options": {
+                    "HNR_RU_1": "г-н",
+                    "HNR_RU_2": "г-жа"
+                },
+                "Required": false,
+                "Type": "select"
+            },
+            "CONTACT.ID": {
+                "BaseType": "int",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: ID",
+                "Required": false,
+                "Type": "int"
+            },
+            "CONTACT.IM": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Мессенджер",
+                "Required": false,
+                "Type": "im"
+            },
+            "CONTACT.IM_BITRIX24": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Контакт Битрикс24 Network",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.IM_FACEBOOK": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Контакт Facebook",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.IM_ICQ": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Контакт ICQ",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.IM_IMOL": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Контакт Открытая линия",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.IM_INSTAGRAM": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Комментарии Instagram",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.IM_JABBER": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Контакт Jabber",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.IM_MSN": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Контакт MSN/Live!",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.IM_OPENLINE": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Онлайн-чат",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.IM_OTHER": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Другой контакт",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.IM_SKYPE": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Контакт Skype",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.IM_TELEGRAM": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Контакт Telegram",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.IM_VIBER": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Контакт Viber",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.IM_VK": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Контакт ВКонтакте",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.LAST_NAME": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Фамилия",
+                "Required": true,
+                "Type": "string"
+            },
+            "CONTACT.LEAD_ID": {
+                "BaseType": "int",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Лид",
+                "Required": false,
+                "Type": "int"
+            },
+            "CONTACT.LINK_USER": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Связанный пользователь",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.MODIFY_BY_ID": {
+                "BaseType": "user",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Кем изменен",
+                "Type": "user"
+            },
+            "CONTACT.NAME": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Имя",
+                "Required": true,
+                "Type": "string"
+            },
+            "CONTACT.OBSERVER_IDS": {
+                "BaseType": "user",
+                "Default": [],
+                "Editable": false,
+                "Filterable": false,
+                "Multiple": true,
+                "Name": "Контакт: Наблюдатели",
+                "Required": false,
+                "Type": "user"
+            },
+            "CONTACT.OPENED": {
+                "BaseType": "bool",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Доступен для всех",
+                "Required": false,
+                "Type": "bool"
+            },
+            "CONTACT.ORIGINATOR_ID": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Магазин",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.ORIGIN_ID": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Код пользователя в магазине",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.PHONE": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Телефон",
+                "Required": false,
+                "Type": "phone"
+            },
+            "CONTACT.PHONE_FAX": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Номер факса",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.PHONE_HOME": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Домашний телефон",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.PHONE_MAILING": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Телефон для рассылок",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.PHONE_MOBILE": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Мобильный телефон",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.PHONE_OTHER": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Другой телефон",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.PHONE_PAGER": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Номер пейджера",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.PHONE_WORK": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Рабочий телефон",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.PHOTO": {
+                "BaseType": "file",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Фотография",
+                "Required": false,
+                "Type": "file"
+            },
+            "CONTACT.POST": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Должность",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.SECOND_NAME": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Отчество",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.SOURCE_DESCRIPTION": {
+                "BaseType": "text",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Описание",
+                "Required": false,
+                "Type": "text"
+            },
+            "CONTACT.SOURCE_ID": {
+                "BaseType": "select",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Источник",
+                "Options": {
+                    "1|OPENLINE": "Онлайн-чат - Открытая линия",
+                    "ADVERTISING": "Реклама",
+                    "CALL": "Звонок",
+                    "CALLBACK": "Обратный звонок",
+                    "EMAIL": "Электронная почта",
+                    "OTHER": "Другое",
+                    "PARTNER": "Существующий клиент",
+                    "RC_GENERATOR": "Генератор продаж",
+                    "RECOMMENDATION": "По рекомендации",
+                    "STORE": "Интернет-магазин",
+                    "TRADE_SHOW": "Выставка",
+                    "WEB": "Веб-сайт",
+                    "WEBFORM": "CRM-форма"
+                },
+                "Required": false,
+                "Type": "select"
+            },
+            "CONTACT.TIME_CREATE": {
+                "BaseType": "time",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Время создания",
+                "Required": false,
+                "Type": "time"
+            },
+            "CONTACT.TRACKING_SOURCE_ID": {
+                "BaseType": "select",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Источник сквозной аналитики",
+                "Options": [
+                    "Прочий трафик",
+                    "Email Маркетинг"
+                ],
+                "Required": false,
+                "Type": "select"
+            },
+            "CONTACT.TYPE_ID": {
+                "BaseType": "select",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Тип контакта",
+                "Options": {
+                    "CLIENT": "Клиенты",
+                    "OTHER": "Другое",
+                    "PARTNER": "Партнеры",
+                    "SUPPLIER": "Поставщики"
+                },
+                "Required": false,
+                "Type": "select"
+            },
+            "CONTACT.UF_CRM_CONTACT_ITS_ARTICLE_ID": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Multiple": false,
+                "Name": "Контакт: ID статьи в Базе Знаний",
+                "Options": [],
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.URL": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Ссылка на элемент",
+                "Type": "string"
+            },
+            "CONTACT.URL_BB": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Ссылка на элемент (BBcode)",
+                "Type": "string"
+            },
+            "CONTACT.UTM_CAMPAIGN": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: UTM Campaign",
+                "Type": "string"
+            },
+            "CONTACT.UTM_CONTENT": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: UTM Content",
+                "Type": "string"
+            },
+            "CONTACT.UTM_MEDIUM": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: UTM Medium",
+                "Type": "string"
+            },
+            "CONTACT.UTM_SOURCE": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: UTM Source",
+                "Type": "string"
+            },
+            "CONTACT.UTM_TERM": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: UTM Term",
+                "Type": "string"
+            },
+            "CONTACT.WEB": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Сайт",
+                "Required": false,
+                "Type": "web"
+            },
+            "CONTACT.WEBFORM_ID": {
+                "BaseType": "select",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: CRM-форма",
+                "Options": [],
+                "Required": false,
+                "Type": "select"
+            },
+            "CONTACT.WEB_FACEBOOK": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Страница Facebook",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.WEB_HOME": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Личная страница",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.WEB_LIVEJOURNAL": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Страница LiveJournal",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.WEB_OTHER": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Другой сайт",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.WEB_TWITTER": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Микроблог Twitter",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.WEB_VK": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Страница ВКонтакте",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT.WEB_WORK": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "Контакт: Корпоративный сайт",
+                "Required": false,
+                "Type": "string"
+            },
+            "CONTACT_ID": {
+                "BaseType": "string",
+                "Editable": true,
+                "Filterable": true,
+                "Multiple": false,
+                "Name": "Контакт",
+                "Options": {
+                    "CONTACT": "Y"
+                },
+                "Required": false,
+                "Type": "UF:crm"
+            },
+            "CONTACT_IDS": {
+                "BaseType": "string",
+                "Editable": true,
+                "Filterable": true,
+                "Multiple": true,
+                "Name": "Контакты",
+                "Required": false,
+                "Type": "string"
+            },
+            "CREATED_BY_ID": {
+                "BaseType": "user",
+                "Name": "Создатель сделки",
+                "Type": "user"
+            },
+            "CRM_ID": {
+                "BaseType": "string",
+                "Name": "ID элемента CRM",
+                "Type": "string"
+            },
+            "CURRENCY_ID": {
+                "BaseType": "select",
+                "Editable": true,
+                "Filterable": true,
+                "Name": "Валюта",
+                "Options": {
+                    "BYN": "Белорусский рубль",
+                    "EUR": "Евро",
+                    "RUB": "Российский рубль",
+                    "UAH": "Гривна",
+                    "USD": "Доллар США"
+                },
+                "Required": false,
+                "Type": "select"
+            },
+            "DATE_CREATE": {
+                "BaseType": "datetime",
+                "Editable": false,
+                "Filterable": true,
+                "Name": "Дата создания",
+                "Required": false,
+                "Type": "datetime"
+            },
+            "DATE_MODIFY": {
+                "BaseType": "datetime",
+                "Editable": false,
+                "Filterable": true,
+                "Name": "Дата последнего изменения",
+                "Required": false,
+                "Type": "datetime"
+            },
+            "EVENT_DATE": {
+                "BaseType": "datetime",
+                "Editable": true,
+                "Filterable": true,
+                "Name": "Дата события",
+                "Required": false,
+                "Type": "datetime"
+            },
+            "EVENT_DESCRIPTION": {
+                "BaseType": "text",
+                "Editable": true,
+                "Filterable": false,
+                "Name": "Описание события",
+                "Required": false,
+                "Type": "text"
+            },
+            "EVENT_ID": {
+                "BaseType": "select",
+                "Editable": true,
+                "Filterable": true,
+                "Name": "Тип события",
+                "Options": {
+                    "INFO": "Информация",
+                    "MESSAGE": "Отправлен email",
+                    "PHONE": "Телефонный звонок"
+                },
+                "Required": false,
+                "Type": "select"
+            },
+            "FORMS.HASH.PARAMETER": {
+                "BaseType": "string",
+                "Editable": false,
+                "Name": "Персонализированные CRM-формы: Параметр автозаполнения для ссылок",
+                "Type": "string"
+            },
+            "ID": {
+                "BaseType": "int",
+                "Editable": false,
+                "Filterable": true,
+                "Name": "ID",
+                "Required": false,
+                "Type": "int"
+            },
+            "IS_REPEATED_APPROACH": {
+                "BaseType": "bool",
+                "Editable": false,
+                "Name": "Повторное обращение",
+                "Type": "bool"
+            },
+            "IS_RETURN_CUSTOMER": {
+                "BaseType": "bool",
+                "Editable": false,
+                "Name": "Повторная сделка",
+                "Type": "bool"
+            },
+            "LEAD_ID": {
+                "BaseType": "int",
+                "Editable": true,
+                "Filterable": true,
+                "Name": "Лид",
+                "Required": false,
+                "Type": "int"
+            },
+            "MODIFY_BY_ID": {
+                "BaseType": "user",
+                "Name": "Кем изменен",
+                "Type": "user"
+            },
+            "OBSERVER_IDS": {
+                "BaseType": "user",
+                "Default": [],
+                "Editable": false,
+                "Filterable": true,
+                "Multiple": true,
+                "Name": "Наблюдатели",
+                "Required": false,
+                "Type": "user"
+            },
+            "OPENED": {
+                "BaseType": "bool",
+                "Editable": true,
+                "Filterable": true,
+                "Name": "Доступна для всех",
+                "Required": false,
+                "Type": "bool"
+            },
+            "OPPORTUNITY": {
+                "BaseType": "string",
+                "Editable": true,
+                "Filterable": true,
+                "Name": "Сумма",
+                "Required": false,
+                "Type": "string"
+            },
+            "OPPORTUNITY_ACCOUNT": {
+                "BaseType": "string",
+                "Editable": false,
+                "Filterable": true,
+                "Name": "Сумма в валюте учета",
+                "Required": false,
+                "Type": "string"
+            },
+            "ORDER_IDS": {
+                "BaseType": "int",
+                "Multiple": true,
+                "Name": "Заказы",
+                "Type": "int"
+            },
+            "ORIGINATOR_ID": {
+                "BaseType": "string",
+                "Editable": true,
+                "Filterable": true,
+                "Name": "Код магазина",
+                "Required": false,
+                "Type": "string"
+            },
+            "ORIGIN_ID": {
+                "BaseType": "string",
+                "Editable": true,
+                "Filterable": true,
+                "Name": "Покупатель магазина",
+                "Required": false,
+                "Type": "string"
+            },
+            "PROBABILITY": {
+                "BaseType": "string",
+                "Editable": true,
+                "Filterable": true,
+                "Name": "Вероятность,%",
+                "Required": false,
+                "Type": "string"
+            },
+            "PRODUCT_IDS": {
+                "BaseType": "int",
+                "Multiple": true,
+                "Name": "Товарные позиции",
+                "Type": "int"
+            },
+            "SOURCE_DESCRIPTION": {
+                "BaseType": "text",
+                "Editable": true,
+                "Filterable": false,
+                "Name": "Дополнительно об источнике",
+                "Required": false,
+                "Type": "text"
+            },
+            "SOURCE_ID": {
+                "BaseType": "select",
+                "Editable": true,
+                "Filterable": true,
+                "Name": "Источник",
+                "Options": {
+                    "1|OPENLINE": "Онлайн-чат - Открытая линия",
+                    "ADVERTISING": "Реклама",
+                    "CALL": "Звонок",
+                    "CALLBACK": "Обратный звонок",
+                    "EMAIL": "Электронная почта",
+                    "OTHER": "Другое",
+                    "PARTNER": "Существующий клиент",
+                    "RC_GENERATOR": "Генератор продаж",
+                    "RECOMMENDATION": "По рекомендации",
+                    "STORE": "Интернет-магазин",
+                    "TRADE_SHOW": "Выставка",
+                    "WEB": "Веб-сайт",
+                    "WEBFORM": "CRM-форма"
+                },
+                "Required": false,
+                "Type": "select"
+            },
+            "STAGE_ID": {
+                "BaseType": "select",
+                "Editable": true,
+                "Filterable": true,
+                "Name": "Стадия сделки",
+                "Options": {
+                    "APOLOGY": "Анализ причины провала",
+                    "EXECUTING": "В работе",
+                    "FINAL_INVOICE": "Финальный счёт",
+                    "LOSE": "Сделка провалена",
+                    "NEW": "Новая",
+                    "PREPARATION": "Подготовка документов",
+                    "PREPAYMENT_INVOICE": "Cчёт на предоплату",
+                    "WON": "Сделка успешна"
+                },
+                "Required": false,
+                "Settings": {
+                    "Groups": [
+                        {
+                            "items": {
+                                "APOLOGY": "Анализ причины провала",
+                                "EXECUTING": "В работе",
+                                "FINAL_INVOICE": "Финальный счёт",
+                                "LOSE": "Сделка провалена",
+                                "NEW": "Новая",
+                                "PREPARATION": "Подготовка документов",
+                                "PREPAYMENT_INVOICE": "Cчёт на предоплату",
+                                "WON": "Сделка успешна"
+                            }
+                        }
+                    ]
+                },
+                "Type": "select"
+            },
+            "TIME_CREATE": {
+                "BaseType": "time",
+                "Editable": false,
+                "Filterable": true,
+                "Name": "Время создания",
+                "Required": false,
+                "Type": "time"
+            },
+            "TITLE": {
+                "BaseType": "string",
+                "Editable": true,
+                "Filterable": true,
+                "Name": "Название",
+                "Required": true,
+                "Type": "string"
+            },
+            "TRACKING_SOURCE_ID": {
+                "BaseType": "select",
+                "Editable": true,
+                "Filterable": true,
+                "Name": "Источник сквозной аналитики",
+                "Options": [
+                    "Прочий трафик",
+                    "Email Маркетинг"
+                ],
+                "Required": false,
+                "Type": "select"
+            },
+            "TYPE_ID": {
+                "BaseType": "select",
+                "Editable": true,
+                "Filterable": true,
+                "Name": "Тип",
+                "Options": {
+                    "COMPLEX": "Комплексная продажа",
+                    "GOODS": "Продажа товара",
+                    "SALE": "Продажа",
+                    "SERVICE": "Сервисное обслуживание",
+                    "SERVICES": "Продажа услуги"
+                },
+                "Required": false,
+                "Type": "select"
+            },
+            "UF_CRM_DEAL_ITS_ARTICLE_ID": {
+                "BaseType": "string",
+                "Editable": true,
+                "Filterable": true,
+                "Multiple": false,
+                "Name": "ID статьи в Базе Знаний",
+                "Options": [],
+                "Required": false,
+                "Type": "string"
+            },
+            "URL": {
+                "BaseType": "string",
+                "Name": "Ссылка на элемент",
+                "Type": "string"
+            },
+            "URL_BB": {
+                "BaseType": "string",
+                "Name": "Ссылка на элемент (BBcode)",
+                "Type": "string"
+            },
+            "UTM_CAMPAIGN": {
+                "BaseType": "string",
+                "Editable": true,
+                "Name": "UTM Campaign",
+                "Type": "string"
+            },
+            "UTM_CONTENT": {
+                "BaseType": "string",
+                "Editable": true,
+                "Name": "UTM Content",
+                "Type": "string"
+            },
+            "UTM_MEDIUM": {
+                "BaseType": "string",
+                "Editable": true,
+                "Name": "UTM Medium",
+                "Type": "string"
+            },
+            "UTM_SOURCE": {
+                "BaseType": "string",
+                "Editable": true,
+                "Name": "UTM Source",
+                "Type": "string"
+            },
+            "UTM_TERM": {
+                "BaseType": "string",
+                "Editable": true,
+                "Name": "UTM Term",
+                "Type": "string"
+            },
+            "WEBFORM_ID": {
+                "BaseType": "select",
+                "Editable": false,
+                "Filterable": false,
+                "Name": "CRM-форма",
+                "Options": [],
+                "Required": false,
+                "Type": "select"
+            }
+        },
+        "PARAMETERS": [],
+        "TEMPLATE": [
+            {
+                "Children": [],
+                "Name": "Template",
+                "Properties": {
+                    "Title": "Bizproc Automation template"
+                },
+                "Type": "SequentialWorkflowActivity"
+            }
+        ],
+        "VARIABLES": [],
+        "VERSION": 2
+    }
+}

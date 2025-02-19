@@ -1,0 +1,68 @@
+{
+    "ENTITY": {
+        "ID": "DEAL_TYPE",
+        "NAME": "Тип сделки"
+    },
+    "ITEMS": [
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "DEAL_TYPE",
+            "ID": "91",
+            "NAME": "Продажа",
+            "NAME_INIT": "Продажа",
+            "SEMANTICS": null,
+            "SORT": "10",
+            "STATUS_ID": "SALE",
+            "SYSTEM": "Y"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "DEAL_TYPE",
+            "ID": "93",
+            "NAME": "Комплексная продажа",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "20",
+            "STATUS_ID": "COMPLEX",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "DEAL_TYPE",
+            "ID": "95",
+            "NAME": "Продажа товара",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "30",
+            "STATUS_ID": "GOODS",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "DEAL_TYPE",
+            "ID": "97",
+            "NAME": "Продажа услуги",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "40",
+            "STATUS_ID": "SERVICES",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "DEAL_TYPE",
+            "ID": "99",
+            "NAME": "Сервисное обслуживание",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "50",
+            "STATUS_ID": "SERVICE",
+            "SYSTEM": "N"
+        }
+    ]
+}

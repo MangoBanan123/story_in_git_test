@@ -1,0 +1,75 @@
+{
+    "ENTITY": {
+        "ENTITY_TYPE_ID": 1,
+        "ID": "STATUS",
+        "NAME": "Стадии лида",
+        "SEMANTIC_INFO": {
+            "FINAL_SORT": 0,
+            "FINAL_SUCCESS_FIELD": "CONVERTED",
+            "FINAL_UNSUCCESS_FIELD": "JUNK",
+            "START_FIELD": "NEW"
+        }
+    },
+    "ITEMS": [
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": "#39A8EF",
+            "ENTITY_ID": "STATUS",
+            "ID": "1",
+            "NAME": "Не обработан",
+            "NAME_INIT": "Не обработан",
+            "SEMANTICS": null,
+            "SORT": "10",
+            "STATUS_ID": "NEW",
+            "SYSTEM": "Y"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": "#2FC6F6",
+            "ENTITY_ID": "STATUS",
+            "ID": "3",
+            "NAME": "В работе",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "20",
+            "STATUS_ID": "IN_PROCESS",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": "#55D0E0",
+            "ENTITY_ID": "STATUS",
+            "ID": "5",
+            "NAME": "Обработан",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "30",
+            "STATUS_ID": "PROCESSED",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": "#7BD500",
+            "ENTITY_ID": "STATUS",
+            "ID": "7",
+            "NAME": "Качественный лид",
+            "NAME_INIT": "Качественный лид",
+            "SEMANTICS": "S",
+            "SORT": "40",
+            "STATUS_ID": "CONVERTED",
+            "SYSTEM": "Y"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": "#FF5752",
+            "ENTITY_ID": "STATUS",
+            "ID": "9",
+            "NAME": "Некачественный лид",
+            "NAME_INIT": "Некачественный лид",
+            "SEMANTICS": "F",
+            "SORT": "50",
+            "STATUS_ID": "JUNK",
+            "SYSTEM": "Y"
+        }
+    ]
+}

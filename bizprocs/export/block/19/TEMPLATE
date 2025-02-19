@@ -1,0 +1,663 @@
+[
+    {
+        "Children": [
+            {
+                "Name": "A48314_14744_30339_17133",
+                "Properties": {
+                    "Title": "Изменение переменных",
+                    "VariableValue": {
+                        "Approver": [
+                            "{=Document:CREATED_BY}"
+                        ],
+                        "Employee": "{=Document:CREATED_BY}"
+                    }
+                },
+                "Type": "SetVariableActivity"
+            },
+            {
+                "Name": "A14018_67349_83199_88336",
+                "Properties": {
+                    "FieldValue": {
+                        "NAME": "{=Variable:Employee_printable} запрашивает командировку с {=Document:PROPERTY_FROM} по {=Document:PROPERTY_TO}, {=Document:PROPERTY_WHERE}",
+                        "PROPERTY_APPROVED": "EMPTY"
+                    },
+                    "Title": "Изменение документа"
+                },
+                "Type": "SetFieldActivity"
+            },
+            {
+                "Name": "A40802_93901_38443_67199",
+                "Properties": {
+                    "Permission": {
+                        "R": [
+                            "author"
+                        ]
+                    },
+                    "Rewrite": "",
+                    "SetMode": "1",
+                    "SetScope": "1",
+                    "Title": "Установка прав"
+                },
+                "Type": "SetPermissionsActivity"
+            },
+            {
+                "Name": "A44406_60256_17658_80774",
+                "Properties": {
+                    "SetVariable": "0",
+                    "Text": "Утверждение командировки для сотрудника {=Variable:Employee_printable} с {=Document:PROPERTY_FROM} по {=Document:PROPERTY_TO} в {=Document:PROPERTY_WHERE}",
+                    "Title": "Запись в отчет"
+                },
+                "Type": "LogActivity"
+            },
+            {
+                "Children": [
+                    {
+                        "Children": [
+                            {
+                                "Children": [
+                                    {
+                                        "Children": [
+                                            {
+                                                "Name": "A77528_46139_89478_92721",
+                                                "Properties": {
+                                                    "FieldValue": {
+                                                        "PROPERTY_APPROVED": "APPROVED"
+                                                    },
+                                                    "Title": "Установка поля \"Утвержден\" документа"
+                                                },
+                                                "Type": "SetFieldActivity"
+                                            }
+                                        ],
+                                        "Name": "A52261_55978_4813_86977",
+                                        "Properties": {
+                                            "Title": "Да",
+                                            "propertyvariablecondition": [
+                                                [
+                                                    "Approver",
+                                                    "in",
+                                                    [
+                                                        "{=Constant:Manager}"
+                                                    ]
+                                                ]
+                                            ]
+                                        },
+                                        "Type": "IfElseBranchActivity"
+                                    },
+                                    {
+                                        "Children": [
+                                            {
+                                                "Name": "A4546_76347_16478_18736",
+                                                "Properties": {
+                                                    "SetVariable": "0",
+                                                    "Text": "Поиск начальника для {=Variable:Approver_printable}",
+                                                    "Title": "Запись в отчет"
+                                                },
+                                                "Type": "LogActivity"
+                                            },
+                                            {
+                                                "Name": "A19429_10315_83739_11751",
+                                                "Properties": {
+                                                    "MaxLevel": "1",
+                                                    "ReserveUserParameter": [
+                                                        "{=Constant:Manager}"
+                                                    ],
+                                                    "SkipAbsent": "Y",
+                                                    "Title": "Выбор начальника",
+                                                    "UserParameter": [
+                                                        "{=Variable:Approver}"
+                                                    ],
+                                                    "UserType": "boss"
+                                                },
+                                                "Type": "GetUserActivity"
+                                            },
+                                            {
+                                                "Name": "A89843_86045_3653_86435",
+                                                "Properties": {
+                                                    "Title": "Установка утверждающего",
+                                                    "VariableValue": {
+                                                        "Approver": [
+                                                            "{=A19429_10315_83739_11751:GetUser}"
+                                                        ]
+                                                    }
+                                                },
+                                                "Type": "SetVariableActivity"
+                                            },
+                                            {
+                                                "Children": [
+                                                    {
+                                                        "Children": [
+                                                            {
+                                                                "Name": "A80054_79038_67708_93824",
+                                                                "Properties": {
+                                                                    "Title": "Изменение переменных",
+                                                                    "VariableValue": {
+                                                                        "Approver": [
+                                                                            "{=Constant:Manager}"
+                                                                        ]
+                                                                    }
+                                                                },
+                                                                "Type": "SetVariableActivity"
+                                                            }
+                                                        ],
+                                                        "Name": "A66671_5332_43862_22313",
+                                                        "Properties": {
+                                                            "Title": "Нет утверждающего",
+                                                            "propertyvariablecondition": [
+                                                                [
+                                                                    "Approver",
+                                                                    "=",
+                                                                    ""
+                                                                ]
+                                                            ]
+                                                        },
+                                                        "Type": "IfElseBranchActivity"
+                                                    },
+                                                    {
+                                                        "Name": "A51684_71103_99600_11523",
+                                                        "Properties": {
+                                                            "Title": "Условие",
+                                                            "truecondition": "1"
+                                                        },
+                                                        "Type": "IfElseBranchActivity"
+                                                    }
+                                                ],
+                                                "Name": "A22910_82893_46280_49531",
+                                                "Properties": {
+                                                    "Title": "Условие"
+                                                },
+                                                "Type": "IfElseActivity"
+                                            },
+                                            {
+                                                "Children": [
+                                                    {
+                                                        "Children": [
+                                                            {
+                                                                "Name": "A82170_46991_69737_75430",
+                                                                "Properties": {
+                                                                    "Title": "Прерывание процесса"
+                                                                },
+                                                                "Type": "TerminateActivity"
+                                                            }
+                                                        ],
+                                                        "Name": "A27805_16986_66743_89422",
+                                                        "Properties": {
+                                                            "Title": "Нет утверждающего",
+                                                            "propertyvariablecondition": [
+                                                                [
+                                                                    "Approver",
+                                                                    "="
+                                                                ]
+                                                            ]
+                                                        },
+                                                        "Type": "IfElseBranchActivity"
+                                                    },
+                                                    {
+                                                        "Name": "A27455_36911_13077_84538",
+                                                        "Properties": {
+                                                            "Title": "Условие",
+                                                            "truecondition": "1"
+                                                        },
+                                                        "Type": "IfElseBranchActivity"
+                                                    }
+                                                ],
+                                                "Name": "A52060_43329_33621_2442",
+                                                "Properties": {
+                                                    "Title": "Условие"
+                                                },
+                                                "Type": "IfElseActivity"
+                                            },
+                                            {
+                                                "Name": "A1114_98853_11585_95239",
+                                                "Properties": {
+                                                    "SetVariable": "0",
+                                                    "Text": "Начальник {=Variable:Approver_printable}",
+                                                    "Title": "Запись в отчет"
+                                                },
+                                                "Type": "LogActivity"
+                                            },
+                                            {
+                                                "Name": "A39493_81346_81595_77500",
+                                                "Properties": {
+                                                    "Permission": {
+                                                        "R": [
+                                                            "{=Variable:Approver}"
+                                                        ]
+                                                    },
+                                                    "Rewrite": "",
+                                                    "SetMode": "1",
+                                                    "SetScope": "1",
+                                                    "Title": "Установка прав: утверждающему чтение"
+                                                },
+                                                "Type": "SetPermissionsActivity"
+                                            },
+                                            {
+                                                "Name": "A14639_57888_11471_20599",
+                                                "Properties": {
+                                                    "MessageOut": "",
+                                                    "MessageSite": "Вам необходимо утвердить или отклонить заявление на командировку.\n\nСотрудник: {=Variable:Employee_printable}\nДата начала: {=Document:PROPERTY_FROM}\nДата окончания: {=Document:PROPERTY_TO}\nКуда: {=Document:PROPERTY_WHERE}\n\nЦель поездки:\n{=Document:PREVIEW_TEXT}\n",
+                                                    "MessageType": "2",
+                                                    "MessageUserFrom": [
+                                                        "author"
+                                                    ],
+                                                    "MessageUserTo": [
+                                                        "{=Variable:Approver}"
+                                                    ],
+                                                    "Title": "Уведомление пользователя"
+                                                },
+                                                "Type": "IMNotifyActivity"
+                                            },
+                                            {
+                                                "Children": [
+                                                    {
+                                                        "Children": [
+                                                            {
+                                                                "Name": "A66080_42798_63443_88940",
+                                                                "Properties": {
+                                                                    "Title": "Изменение переменных",
+                                                                    "VariableValue": {
+                                                                        "Approver": [
+                                                                            "{=A64696_64609_13825_72841:LastApprover}"
+                                                                        ]
+                                                                    }
+                                                                },
+                                                                "Type": "SetVariableActivity"
+                                                            }
+                                                        ],
+                                                        "Name": "A24893_44227_30478_28800",
+                                                        "Properties": {
+                                                            "Title": "Последовательность действий"
+                                                        },
+                                                        "Type": "SequenceActivity"
+                                                    },
+                                                    {
+                                                        "Children": [
+                                                            {
+                                                                "Name": "A34487_13921_97785_56991",
+                                                                "Properties": {
+                                                                    "FieldValue": {
+                                                                        "PROPERTY_APPROVED": "REJECTED"
+                                                                    },
+                                                                    "Title": "Установка поля \"Утвержден\" документа"
+                                                                },
+                                                                "Type": "SetFieldActivity"
+                                                            }
+                                                        ],
+                                                        "Name": "A13401_31312_41650_65157",
+                                                        "Properties": {
+                                                            "Title": "Последовательность действий"
+                                                        },
+                                                        "Type": "SequenceActivity"
+                                                    }
+                                                ],
+                                                "Name": "A64696_64609_13825_72841",
+                                                "Properties": {
+                                                    "AccessControl": "N",
+                                                    "ApproveMinPercent": "50",
+                                                    "ApproveType": "any",
+                                                    "ApproveWaitForAll": "N",
+                                                    "CommentLabelMessage": "Комментарий",
+                                                    "Description": "Вам необходимо утвердить или отклонить заявление на командировку.\n\nСотрудник: {=Variable:Employee_printable}\nДата начала: {=Document:PROPERTY_FROM}\nДата окончания: {=Document:PROPERTY_TO}\nКуда: {=Document:PROPERTY_WHERE}\nЦель поездки: {=Document:PREVIEW_TEXT}\n",
+                                                    "Name": "Утверждение командировки {=Document:CREATED_BY_PRINTABLE} с {=Document:PROPERTY_FROM} по {=Document:PROPERTY_TO}, {=Document:PROPERTY_WHERE}",
+                                                    "OverdueDate": "",
+                                                    "Parameters": "",
+                                                    "SetStatusMessage": "Y",
+                                                    "ShowComment": "N",
+                                                    "StatusMessage": "Утверждение руководителем",
+                                                    "TaskButton1Message": "Утвердить командировку",
+                                                    "TaskButton2Message": "Отклонить командировку",
+                                                    "TimeoutDuration": "0",
+                                                    "TimeoutDurationType": "d",
+                                                    "Title": "Утверждение",
+                                                    "Users": [
+                                                        "{=Variable:Approver}"
+                                                    ]
+                                                },
+                                                "Type": "ApproveActivity"
+                                            }
+                                        ],
+                                        "Name": "A94299_42184_84034_30257",
+                                        "Properties": {
+                                            "Title": "Нет",
+                                            "truecondition": "1"
+                                        },
+                                        "Type": "IfElseBranchActivity"
+                                    }
+                                ],
+                                "Name": "A87781_87302_72642_41090",
+                                "Properties": {
+                                    "Title": "Дошли до руководства",
+                                    "_DesMinimized": "N"
+                                },
+                                "Type": "IfElseActivity"
+                            }
+                        ],
+                        "Name": "A95640_73854_87590_68502",
+                        "Properties": {
+                            "Title": "Последовательность действий"
+                        },
+                        "Type": "SequenceActivity"
+                    }
+                ],
+                "Name": "A74565_27697_83505_7259",
+                "Properties": {
+                    "Title": "Цикл согласования",
+                    "fieldcondition": [
+                        [
+                            "PROPERTY_APPROVED",
+                            "=",
+                            "EMPTY"
+                        ]
+                    ]
+                },
+                "Type": "WhileActivity"
+            },
+            {
+                "Children": [
+                    {
+                        "Children": [
+                            {
+                                "Name": "A21874_19609_250_46168",
+                                "Properties": {
+                                    "MessageOut": "",
+                                    "MessageSite": "Командировка согласована. Желаю успешной поездки!\n\nВнимание! Командируемому необходимо предоставить отчетные документы в Бухгалтерию по завершению командировки.\n{=Constant:Instruction_printable}\n\nДата начала: {=Document:PROPERTY_FROM}\nДата окончания: {=Document:PROPERTY_TO}\nКуда: {=Document:PROPERTY_WHERE}\nЦель поездки: \n{=Document:PREVIEW_TEXT}\n",
+                                    "MessageType": "2",
+                                    "MessageUserFrom": [
+                                        "{=Variable:Approver}"
+                                    ],
+                                    "MessageUserTo": [
+                                        "{=Document:CREATED_BY}"
+                                    ],
+                                    "Title": "Уведомление пользователя"
+                                },
+                                "Type": "IMNotifyActivity"
+                            },
+                            {
+                                "Name": "A35713_2934_14625_99462",
+                                "Properties": {
+                                    "Permission": {
+                                        "R": [
+                                            "{=Constant:Bookkeeper}"
+                                        ]
+                                    },
+                                    "Rewrite": "",
+                                    "SetMode": "1",
+                                    "SetScope": "1",
+                                    "Title": "Установка прав"
+                                },
+                                "Type": "SetPermissionsActivity"
+                            },
+                            {
+                                "Name": "A97994_3994_42015_62700",
+                                "Properties": {
+                                    "MessageOut": "",
+                                    "MessageSite": "Согласована командировка. \n\nСотрудник: {=Variable:Employee_printable}\nДата начала: {=Document:PROPERTY_FROM}\nДата окончания: {=Document:PROPERTY_TO}\nКуда: {=Document:PROPERTY_WHERE}\n\nЦель поездки: \n{=Document:PREVIEW_TEXT}\n\nКомандируемый предупрежден о необходимости предоставить отчетные документы в Бухгалтерию по завершению командировки.\n",
+                                    "MessageType": "2",
+                                    "MessageUserFrom": [
+                                        "{=Variable:Employee}"
+                                    ],
+                                    "MessageUserTo": [
+                                        "{=Constant:Bookkeeper}"
+                                    ],
+                                    "Title": "Уведомление бухгалтеру"
+                                },
+                                "Type": "IMNotifyActivity"
+                            },
+                            {
+                                "Name": "A92370_44114_85673_78244",
+                                "Properties": {
+                                    "AccessControl": "N",
+                                    "ApproveType": "any",
+                                    "CommentLabelMessage": "Комментарий",
+                                    "Description": "Согласована командировка. \n\nСотрудник: {=Variable:Employee_printable}\nДата начала: {=Document:PROPERTY_FROM}\nДата окончания: {=Document:PROPERTY_TO}\nКуда: {=Document:PROPERTY_WHERE}\n\nЦель поездки: \n{=Document:PREVIEW_TEXT}\n\nКомандируемый предупрежден о необходимости предоставить отчетные документы в Бухгалтерию по завершению командировки.\n",
+                                    "Name": "Ознакомиться с командировкой: {=Variable:Employee_printable}, с {=Document:PROPERTY_FROM} по {=Document:PROPERTY_TO}",
+                                    "OverdueDate": "",
+                                    "Parameters": "",
+                                    "SetStatusMessage": "Y",
+                                    "ShowComment": "N",
+                                    "StatusMessage": "Ознакомление бухгалтерии",
+                                    "TaskButtonMessage": "Ознакомлен",
+                                    "TimeoutDuration": "",
+                                    "TimeoutDurationType": "s",
+                                    "Title": "Ознакомление бухгалтера",
+                                    "Users": [
+                                        "{=Constant:Bookkeeper}"
+                                    ]
+                                },
+                                "Type": "ReviewActivity"
+                            },
+                            {
+                                "Name": "A25161_56259_31980_3520",
+                                "Properties": {
+                                    "FieldValue": {
+                                        "PROPERTY_DOCUMENTS_RECEIVED": "N"
+                                    },
+                                    "Title": "Изменение документа"
+                                },
+                                "Type": "SetFieldActivity"
+                            },
+                            {
+                                "Children": [
+                                    {
+                                        "Children": [
+                                            {
+                                                "Name": "A82508_18007_81310_28686",
+                                                "Properties": {
+                                                    "AccessControl": "N",
+                                                    "CommentLabelMessage": "Дополнительные сведения",
+                                                    "Description": "Вам необходимо в течение трех дней после окончания командировки предоставить в бухгалтерию отчетные документы.\n\nДата начала: {=Document:PROPERTY_FROM}\nДата окончания: {=Document:PROPERTY_TO}\nКуда: {=Document:PROPERTY_WHERE}\n\nЦель поездки:\n{=Document:PREVIEW_TEXT}\n",
+                                                    "Name": "Предоставить отчетные документы по командировке",
+                                                    "OverdueDate": "",
+                                                    "Parameters": "",
+                                                    "RequestedInformation": [
+                                                        {
+                                                            "Default_printable": "",
+                                                            "Multiple": "1",
+                                                            "Name": "Documents",
+                                                            "Required": "0",
+                                                            "Title": "Документы",
+                                                            "Type": "file"
+                                                        }
+                                                    ],
+                                                    "SetStatusMessage": "Y",
+                                                    "ShowComment": "N",
+                                                    "StatusMessage": "Ждем документы",
+                                                    "TaskButtonMessage": "Отправить",
+                                                    "Title": "Предоставить отчетные документы по командировке",
+                                                    "Users": [
+                                                        "{=Document:CREATED_BY}"
+                                                    ]
+                                                },
+                                                "Type": "RequestInformationActivity"
+                                            },
+                                            {
+                                                "Name": "A610_33648_76704_6418",
+                                                "Properties": {
+                                                    "FieldValue": {
+                                                        "PROPERTY_DOCUMENTS": [
+                                                            "{=Variable:Documents}"
+                                                        ]
+                                                    },
+                                                    "Title": "Изменение документа"
+                                                },
+                                                "Type": "SetFieldActivity"
+                                            },
+                                            {
+                                                "Children": [
+                                                    {
+                                                        "Children": [
+                                                            {
+                                                                "Name": "A61321_12834_16910_87046",
+                                                                "Properties": {
+                                                                    "FieldValue": {
+                                                                        "PROPERTY_DOCUMENTS_RECEIVED": "Y"
+                                                                    },
+                                                                    "Title": "Изменение документа"
+                                                                },
+                                                                "Type": "SetFieldActivity"
+                                                            }
+                                                        ],
+                                                        "Name": "A79997_91062_14427_76131",
+                                                        "Properties": {
+                                                            "Title": "Последовательность действий"
+                                                        },
+                                                        "Type": "SequenceActivity"
+                                                    },
+                                                    {
+                                                        "Children": [
+                                                            {
+                                                                "Name": "A71988_21980_12074_49896",
+                                                                "Properties": {
+                                                                    "MessageOut": "",
+                                                                    "MessageSite": "К сожалению, не можем принять пакет отчетных документов по командировке. \n\nДокументы необходимо предоставить еще раз.\n",
+                                                                    "MessageType": "2",
+                                                                    "MessageUserFrom": [
+                                                                        "{=A90716_9397_4159_71548:LastApprover}"
+                                                                    ],
+                                                                    "MessageUserTo": [
+                                                                        "{=Document:CREATED_BY}"
+                                                                    ],
+                                                                    "Title": "Уведомление пользователю"
+                                                                },
+                                                                "Type": "IMNotifyActivity"
+                                                            }
+                                                        ],
+                                                        "Name": "A82427_3460_7953_94618",
+                                                        "Properties": {
+                                                            "Title": "Последовательность действий"
+                                                        },
+                                                        "Type": "SequenceActivity"
+                                                    }
+                                                ],
+                                                "Name": "A90716_9397_4159_71548",
+                                                "Properties": {
+                                                    "AccessControl": "N",
+                                                    "ApproveMinPercent": "50",
+                                                    "ApproveType": "any",
+                                                    "ApproveWaitForAll": "N",
+                                                    "CommentLabelMessage": "Причина отклонения",
+                                                    "Description": "Необходимо проверить отчетные документы по командировке. Детали командировки:\n\nСотрудник: {=Variable:Employee_printable}\nДата начала: {=Document:PROPERTY_FROM}\nДата окончания: {=Document:PROPERTY_TO}\nКуда: {=Document:PROPERTY_WHERE}\n\nЦель поездки:\n{=Document:PREVIEW_TEXT}\n\nДокументы на проверку:\n{=Variable:Documents_printable}\n",
+                                                    "Name": "Проверка отчетных документов по командировке",
+                                                    "OverdueDate": "",
+                                                    "Parameters": "",
+                                                    "SetStatusMessage": "Y",
+                                                    "ShowComment": "N",
+                                                    "StatusMessage": "Документы на проверке в бухгалтерии",
+                                                    "TaskButton1Message": "Все в порядке",
+                                                    "TaskButton2Message": "Отклонить",
+                                                    "TimeoutDuration": "",
+                                                    "TimeoutDurationType": "s",
+                                                    "Title": "Проверка документов",
+                                                    "Users": [
+                                                        "{=Constant:Bookkeeper}"
+                                                    ]
+                                                },
+                                                "Type": "ApproveActivity"
+                                            }
+                                        ],
+                                        "Name": "A76272_46241_6768_56278",
+                                        "Properties": {
+                                            "Title": "Последовательность действий"
+                                        },
+                                        "Type": "SequenceActivity"
+                                    }
+                                ],
+                                "Name": "A41871_53858_56847_53220",
+                                "Properties": {
+                                    "Title": "Цикл",
+                                    "fieldcondition": [
+                                        [
+                                            "PROPERTY_DOCUMENTS_RECEIVED",
+                                            "=",
+                                            "N"
+                                        ]
+                                    ]
+                                },
+                                "Type": "WhileActivity"
+                            },
+                            {
+                                "Name": "A70095_2249_71378_38087",
+                                "Properties": {
+                                    "TargetStateTitle": "Процесс завершен",
+                                    "Title": "Установить текст статуса"
+                                },
+                                "Type": "SetStateTitleActivity"
+                            },
+                            {
+                                "Name": "A68078_42756_93668_38635",
+                                "Properties": {
+                                    "MessageOut": "",
+                                    "MessageSite": "Документы приняты. Процесс завершен.\n\nСотрудник: {=Variable:Employee_printable}\nДата начала: {=Document:PROPERTY_FROM}\nДата окончания: {=Document:PROPERTY_TO}\nКуда: {=Document:PROPERTY_WHERE}\n",
+                                    "MessageType": "2",
+                                    "MessageUserFrom": [
+                                        "{=Constant:Bookkeeper}"
+                                    ],
+                                    "MessageUserTo": [
+                                        "{=Document:CREATED_BY}"
+                                    ],
+                                    "Title": "Уведомление пользователя"
+                                },
+                                "Type": "IMNotifyActivity"
+                            }
+                        ],
+                        "Name": "A86320_43757_61762_32284",
+                        "Properties": {
+                            "Title": "Да",
+                            "fieldcondition": [
+                                [
+                                    "PROPERTY_APPROVED",
+                                    "=",
+                                    "APPROVED"
+                                ]
+                            ]
+                        },
+                        "Type": "IfElseBranchActivity"
+                    },
+                    {
+                        "Children": [
+                            {
+                                "Name": "A60244_12844_9196_88416",
+                                "Properties": {
+                                    "TargetStateTitle": "Отказано ({=Variable:Approver_printable})",
+                                    "Title": "Статус: не утвержден"
+                                },
+                                "Type": "SetStateTitleActivity"
+                            },
+                            {
+                                "Name": "A29283_3345_78899_13603",
+                                "Properties": {
+                                    "MessageOut": "",
+                                    "MessageSite": "Заявка на командировку не может быть согласована. Бизнес-процесс завершен.\n\nДата начала: {=Document:PROPERTY_FROM}\nДата окончания: {=Document:PROPERTY_TO}\nКуда: {=Document:PROPERTY_WHERE}\n\nЦель поездки:\n{=Document:PREVIEW_TEXT}\n",
+                                    "MessageType": "2",
+                                    "MessageUserFrom": [
+                                        "{=Variable:Approver}"
+                                    ],
+                                    "MessageUserTo": [
+                                        "{=Document:CREATED_BY}"
+                                    ],
+                                    "Title": "Уведомление пользователя"
+                                },
+                                "Type": "IMNotifyActivity"
+                            }
+                        ],
+                        "Name": "A38571_58971_28705_32188",
+                        "Properties": {
+                            "Title": "Нет",
+                            "truecondition": "1"
+                        },
+                        "Type": "IfElseBranchActivity"
+                    }
+                ],
+                "Name": "A24363_9702_51381_55685",
+                "Properties": {
+                    "Title": "Командировка утверджена"
+                },
+                "Type": "IfElseActivity"
+            }
+        ],
+        "Name": "Template",
+        "Properties": {
+            "Title": "Последовательный бизнес-процесс"
+        },
+        "Type": "SequentialWorkflowActivity"
+    }
+]

@@ -1,0 +1,32 @@
+{
+    "ENTITY": {
+        "ID": "HONORIFIC",
+        "NAME": "Обращения"
+    },
+    "ITEMS": [
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "HONORIFIC",
+            "ID": "149",
+            "NAME": "г-н",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "10",
+            "STATUS_ID": "HNR_RU_1",
+            "SYSTEM": "N"
+        },
+        {
+            "CATEGORY_ID": "0",
+            "COLOR": null,
+            "ENTITY_ID": "HONORIFIC",
+            "ID": "151",
+            "NAME": "г-жа",
+            "NAME_INIT": "",
+            "SEMANTICS": null,
+            "SORT": "20",
+            "STATUS_ID": "HNR_RU_2",
+            "SYSTEM": "N"
+        }
+    ]
+}
