@@ -1927,7 +1927,7 @@
                     {
                         "Activated": "Y",
                         "Children": [],
-                        "Name": "A93490_50542_51658_43464",
+                        "Name": "A98513_87981_74122_1132",
                         "Properties": {
                             "AuthUserId": [
                                 "user_13"
@@ -1937,15 +1937,17 @@
                             "StatusMessage": "Ожидание ответа от приложения",
                             "TimeoutDuration": "",
                             "TimeoutDurationType": "s",
-                            "Title": "[articles] Ознакомленность пользователя со статьей",
+                            "Title": "[articles] Добавить задание в курс",
                             "UseSubscription": "Y",
-                            "article_id": "{=Variable:article_id_var}",
-                            "user_id": "{=Variable:user_id_var}"
+                            "article_id": "26",
+                            "course_id": "2",
+                            "group_id": "",
+                            "sort": ""
                         },
-                        "Type": "rest_2ed48a95fd35de7cb5dbad08268ab131"
+                        "Type": "rest_1cb22142e36586e1e191969b0dc4d941"
                     },
                     {
-                        "Activated": "Y",
+                        "Activated": "N",
                         "Children": [],
                         "Name": "A34279_48132_95310_95249",
                         "Properties": {
@@ -1962,34 +1964,6 @@
                             "Title": "Уведомление пользователя"
                         },
                         "Type": "IMNotifyActivity"
-                    },
-                    {
-                        "Activated": "Y",
-                        "Children": [
-                            {
-                                "Activated": "Y",
-                                "Children": [],
-                                "Name": "A54444_15528_81115_59290",
-                                "Properties": {
-                                    "Title": "Условие"
-                                },
-                                "Type": "IfElseBranchActivity"
-                            },
-                            {
-                                "Activated": "Y",
-                                "Children": [],
-                                "Name": "A60394_66342_9887_38415",
-                                "Properties": {
-                                    "Title": "Условие"
-                                },
-                                "Type": "IfElseBranchActivity"
-                            }
-                        ],
-                        "Name": "A28792_36966_12272_95286",
-                        "Properties": {
-                            "Title": "Условие"
-                        },
-                        "Type": "IfElseActivity"
                     }
                 ],
                 "Name": "Template",
