@@ -1,4 +1,13 @@
 {
+    "Variable1": {
+        "Default": "taaaaaa",
+        "Description": "",
+        "Multiple": "0",
+        "Name": "ttttt",
+        "Options": "",
+        "Required": "0",
+        "Type": "string"
+    },
     "article_id_var": {
         "Default": "26",
         "Description": "",
