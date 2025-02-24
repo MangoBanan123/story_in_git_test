@@ -1941,8 +1941,10 @@
                             "UseSubscription": "Y",
                             "article_id": "26",
                             "course_id": "2",
+                            "create_admin_notifications": "Y",
+                            "create_student_notifications": "Y",
                             "group_id": "",
-                            "sort": ""
+                            "sort": "100"
                         },
                         "Type": "rest_1cb22142e36586e1e191969b0dc4d941"
                     },
