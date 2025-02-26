@@ -1940,7 +1940,7 @@
                             "Title": "[articles] Добавить задание в курс",
                             "UseSubscription": "Y",
                             "article_id": "26",
-                            "course_id": "2",
+                            "course_id": "{=Variable:user_id_var}",
                             "create_admin_notifications": "Y",
                             "create_student_notifications": "Y",
                             "group_id": "",
@@ -1977,26 +1977,8 @@
             }
         ],
         "VARIABLES": {
-            "Variable1": {
-                "Default": "taaaaaa",
-                "Description": "",
-                "Multiple": "0",
-                "Name": "ttttt",
-                "Options": "",
-                "Required": "0",
-                "Type": "string"
-            },
-            "article_id_var": {
-                "Default": "26",
-                "Description": "",
-                "Multiple": "0",
-                "Name": "article_id",
-                "Options": "",
-                "Required": "0",
-                "Type": "string"
-            },
             "user_id_var": {
-                "Default": "1",
+                "Default": "",
                 "Description": "",
                 "Multiple": "0",
                 "Name": "user_id",

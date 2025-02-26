@@ -21,7 +21,7 @@
     {
         "ID": "13",
         "XML_ID": "51338788",
-        "ACTIVE": true,
+        "ACTIVE": false,
         "NAME": "Илья",
         "LAST_NAME": "Голобородько",
         "TIME_ZONE_OFFSET": "0",

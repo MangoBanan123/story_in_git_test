@@ -18,7 +18,7 @@
                     "Title": "[articles] Добавить задание в курс",
                     "UseSubscription": "Y",
                     "article_id": "26",
-                    "course_id": "2",
+                    "course_id": "{=Variable:user_id_var}",
                     "create_admin_notifications": "Y",
                     "create_student_notifications": "Y",
                     "group_id": "",
