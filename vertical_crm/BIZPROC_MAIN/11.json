@@ -1942,6 +1942,28 @@
                             "test_property": "123"
                         },
                         "Type": "rest_25ee5b6592fb92bba3cedb141dddfab7"
+                    },
+                    {
+                        "Activated": "Y",
+                        "Children": [
+                            {
+                                "Activated": "Y",
+                                "Children": [],
+                                "Name": "A65114_28409_30465_15545",
+                                "Properties": {
+                                    "Title": "Последовательность действий"
+                                },
+                                "Type": "SequenceActivity"
+                            }
+                        ],
+                        "Name": "A40753_19492_19203_79545",
+                        "Properties": {
+                            "EditorComment": "",
+                            "Object": "A15271_8498_92359_31494",
+                            "Title": "Итератор",
+                            "Variable": "IsTimeout"
+                        },
+                        "Type": "ForEachActivity"
                     }
                 ],
                 "Name": "Template",
