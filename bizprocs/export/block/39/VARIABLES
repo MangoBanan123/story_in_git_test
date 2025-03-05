@@ -1,6 +1,6 @@
 {
     "user_id_var": {
-        "Default": "",
+        "Default": "фыв",
         "Description": "",
         "Multiple": "0",
         "Name": "user_id",
